@@ -1,0 +1,18 @@
+[30-May-2025 17:23:25 America/Bogota] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediamar/public_html/enviar.php on line 6
+[30-May-2025 17:23:25 America/Bogota] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediamar/public_html/enviar.php on line 6
+[30-May-2025 17:23:25 America/Bogota] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/mediamar/public_html/enviar.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/mediamar/public_html/enviar.php on line 6
+[30-May-2025 17:24:13 America/Bogota] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediamar/public_html/enviar.php on line 6
+[30-May-2025 17:24:13 America/Bogota] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediamar/public_html/enviar.php on line 6
+[30-May-2025 17:24:13 America/Bogota] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/mediamar/public_html/enviar.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/mediamar/public_html/enviar.php on line 6
+[30-May-2025 17:33:21 America/Bogota] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediamar/public_html/enviar.php on line 6
+[30-May-2025 17:33:21 America/Bogota] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/mediamar/public_html/enviar.php on line 6
+[30-May-2025 17:33:21 America/Bogota] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/mediamar/public_html/enviar.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/mediamar/public_html/enviar.php on line 6

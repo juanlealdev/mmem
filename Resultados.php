@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Resultados | Media Maratón Entre Montañas | Desafío Cocora</title>
+     <link rel="icon" type="image/png" href="favicon.png">
+    
+    <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.">
+
+    
+    <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
+
+    
+    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora ">
+    <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://tudominio.com/favicon.ico" type="image/x-icon">
+
+    <!-- Canonical para evitar contenido duplicado -->
+    <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="<meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />">
+
+    <meta name="robots" content="index, follow">
+</head>
+
+<?php
+include_once('./Templates/header.php');
+?>
+
+<section id="resultados-maraton">
+    <!-- <h2>M.M. Entre MontaÃ±as 2024</h2> -->
+
+    <div class="container my-5">
+        <div class="video-section text-center">
+            <h3 class="mb-3">ğŸ¥ Video Entre MontaÃ±as 2024</h3>
+            <div class="ratio ratio-16x9">
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/NztZJIUBlkQ"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="resultados-section">
+        <h3>Resultados Entre MontaÃ±as 2024</h3>
+        <a href="https://tustiempos.com/resultados/media-maraton-entre-montanas/" class="btn-resultado" target="_blank">
+            ğŸ“Š Consulta aquÃ­ tus resultados 2024
+        </a>
+    </div>
+</section>
+
+
+<footer class="text-center text-white py-3 footer_marathon">
+    <div class="container">
+        <p class="mb-1"><i class="ri-whatsapp-fill"></i> Whatsapp: 3138157376</p>
+        <p class="mb-1"><i class="ri-mail-fill"></i> Correo: mediamaratonentremontanas@gmail.com</p>
+        <p class="mb-0"><i class="ri-time-fill"></i> Horario de atenciÃ³n: 8 am a 12 m y de 2 pm a 6 pm de lunes a viernes</p>
+        <b>
+            <p>Armenia-QuindÃ­o</p>
+        </b>
+    </div>
+</footer>

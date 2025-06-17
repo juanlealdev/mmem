@@ -1,0 +1,134 @@
+/* Estilo general del Navbar */
+.navbar {
+    background-color: #648d00;
+    /* Fondo verde oscuro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0px 0px;
+    /* Sombra suave */
+}
+
+
+.navbar-logo-container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    max-width: 200px;
+    /* Alto del navbar, ajusta según el tamaño de tu navbar */
+}
+
+.navbar-logo {
+    width: auto;
+    /* Ajusta el ancho según lo necesites */
+    height: 100%;
+    /* Mantiene la proporción */
+    /* O el tamaño grande que quieras */
+    /* width: auto; */
+    margin-right: 15px;
+    position: relative;
+    padding: 8px 10px;
+
+    /* Ajusta para que la imagen se "desborde" sin aumentar el alto del navbar */
+}
+
+/* Logo o marca del navbar */
+.navbar-brand {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffca01;
+    /* Amarillo fuerte */
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #f18500;
+    /* Naranja quemado */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Enlaces del navbar */
+.nav-link {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #ffca01;
+    /* Amarillo fuerte */
+    margin-right: 15px;
+    text-transform: capitalize;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #f18500;
+    /* Naranja quemado */
+    transform: scale(1.05);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón destacado (Ejemplo de inscripción o acción principal) */
+.btn-primary {
+    background-color: #86af05;
+    /* Verde claro pasto */
+    border: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #648d00;
+    /* Verde oscuro */
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+/* No es estrictamente necesario, pero puede ayudar a darle un toque más suave */
+.navbar-collapse {
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* RESPONSIVE */
+/* Para pantallas menores a 768px */
+.imagen-responsive img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.btn-offer-mobile,
+.btn-offer {
+    background-color: black;
+    color: white;
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 10px 24px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin: auto;
+}
+
+.btn-offer-mobile {
+    display: none;
+}
+
+.btn-offer {
+    display: inline-block;
+}
+
+@media (max-width: 992px) {
+
+    .btn-offer-mobile {
+        margin-right: 8px;
+        display: inline-block;
+    }
+
+    .btn-offer {
+        display: none;
+    }
+
+}
