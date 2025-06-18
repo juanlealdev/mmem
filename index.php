@@ -55,12 +55,15 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
 </head>
 
 <?php
+include_once('./Templates/alert.php')?>;
 
 
+<?php
 
 include_once('./Templates/header.php');
-
 ?>
+
+
 
 <main class="site-main">
 

@@ -1,0 +1,94 @@
+/* .barra-inscripcion {
+    background-color: #fffae5;
+    color: #d32f2f;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 2px solid #648d00;
+    position: fixed;
+    /* Esto la fija arriba */
+    /* top: 0;
+    width: 100%;
+    z-index: 1040;
+    font-family: 'Arial', sans-serif;
+}
+
+.barra-inscripcion a {
+    color: #388e3c;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.barra-inscripcion a:hover {
+    color: #2e7d32;
+  } */
+
+  /* .barra-inscripcion {
+    background-color: #f3f0e0;  
+    color: #2e7d32;           
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    border-bottom: 2px solid #c8b992;
+    z-index: 1040;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .barra-inscripcion a {
+    color: #1b5e20; 
+    text-decoration: underline;
+  }
+  
+  .barra-inscripcion a:hover {
+    color: #33691e;
+  } */
+
+  .barra-inscripcion {
+    background-color: #1b1b1b; 
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 1040;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .barra-inscripcion a {
+    color: #00e676;  /* #648d00*/
+    text-decoration: none;
+  }
+  
+  .barra-inscripcion a:hover {
+    color: #00c853;
+  }
+
+  
+  @keyframes latido {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.06);
+    }
+  }
+  
+  .latido {
+    display: inline-block;
+    animation: latido 1.6s ease-in-out infinite;
+    color: yellow; /* Ajusta según fondo */
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  
+  
+  
