@@ -66,6 +66,7 @@
     <meta name="robots" content="index, follow">
 </head>
 
+<?php include_once('./Templates/alert.php'); ?>
 <?php
 include_once('./Templates/header.php');
 ?>

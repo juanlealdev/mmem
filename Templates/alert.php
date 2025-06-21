@@ -19,14 +19,13 @@
   <!-- Nuevo archivo de la barra de inscripción -->
   <link rel="stylesheet" href="./styles/alert.css" />
 
-  <!-- Remixicon -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  
 </head>
 
 <body>
   <!-- Barra de inscripción -->
   <div class="barra-inscripcion">
-    ¡Últimos días para inscribirte! <a href="inscripcion.php" class="latido">Haz clic aquí</a>
+    ¡Últimos días para inscribirte! <a href="#" class="latido">Haz clic aquí</a>
   </div>
 
   <!-- Aquí seguiría el resto de tu contenido, como el navbar -->

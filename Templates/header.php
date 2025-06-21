@@ -27,7 +27,7 @@
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container d-flex align-items-center">
             <a href="#" class="navbar-logo-container">
-                <img src="./Images/logo/Logo_3.png" alt="Logo" class="navbar-logo">
+                <img src="./Images/logo/Logo_3.webp" alt="Logo" class="navbar-logo">
             </a>
             
             <div>

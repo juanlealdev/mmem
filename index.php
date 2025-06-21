@@ -27,6 +27,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel ="stylesheet" href="styles/carrusel.css">
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
@@ -73,10 +74,10 @@ include_once('./Templates/header.php');
         <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./Images/2025/BANNER MMEM 1.png" alt="">
+                    <img src="./Images/2025/BANNER MMEM 1.png" alt="Corredores Media Maratón Entre Montañas en Salento">
                 </div>
                 <div class="carousel-item">
-                    <img src="./Images/2025/BANNER MMEM 2.png" alt="">
+                    <img src="./Images/2025/BANNER MMEM 2.png" alt="Participantes saltando en la Media Maratón Entre Montañas, Valle del Cocora">
                 </div>
                 <!-- <div class="carousel-item">
                     <img src="./Images/portada1-1-1019x1024.png" alt="">
@@ -194,7 +195,7 @@ include_once('./Templates/header.php');
 
                 <div class="info-icon">
 
-                    <img src="./Images/Icon/ico-fecha.png" alt="" style="width: 80px; height: 80px;">
+                    <img src="./Images/Icon/ico-fecha.png" alt="Ícono de calendario para la fecha del evento" style="width: 80px; height: 80px;">
 
                 </div>
 
@@ -210,7 +211,7 @@ include_once('./Templates/header.php');
 
                 <div class="info-icon">
 
-                    <img src="./Images/Icon/ico-recorrido.png" alt="" style="width: 80px; height: 80px;">
+                    <img src="./Images/Icon/ico-recorrido.png" alt="Ícono de mapa señalando las distancias de la carrera" style="width: 80px; height: 80px;">
 
                 </div>
 
@@ -226,7 +227,7 @@ include_once('./Templates/header.php');
 
                 <div class="info-icon">
 
-                    <img src="./Images/Icon/ico-zona.png" alt="" style="width: 80px; height: 80px;">
+                    <img src="./Images/Icon/ico-zona.png" alt="Ícono de ubicación para la salida y meta en Salento" style="width: 80px; height: 80px;">
 
                 </div>
 
@@ -343,175 +344,194 @@ include_once('./Templates/header.php');
 
     </section>
 
+    <section class="patrocinadores-carousel">
+  <h3>Nuestros Patrocinadores</h3>
+  <div class="slider-wrapper">
+    <div class="slider-track">
+      <?php
+      $patrocinadores = ['Logo.png', 'Logo_2.png', 'Logo_3.png'];
+      $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores);
 
-
-    <section class="container-fluid my-5 d-flex gap-1 flex-column" id="section_8">
-
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-
-            <div class="carousel-inner">
-
-                <!-- Slide 1 -->
-
-                <div class="carousel-item active">
-
-                    <div class="d-flex justify-content-center gap-2">
-
-                        <img src="./Images/2025/MMEM (226).jpg" class="rounded img-fluid" alt="Imagen 4">
-
-                        <img src="./Images/2025/MMEM (283).jpg" class="rounded img-fluid" alt="Imagen 5">
-
-                        <img src="./Images/2025/MMEM (280).jpg" class="rounded img-fluid" alt="Imagen 6">
-
-                    </div>
-
-                </div>
-
-                <!-- Slide 2 -->
-
-                <div class="carousel-item">
-
-                    <div class="d-flex justify-content-center gap-2">
-
-                        <img src="./Images/2025/MMEM (234).jpg" class="rounded img-fluid" alt="Imagen 4">
-
-                        <img src="./Images/2025/MMEM (233).jpg" class="rounded img-fluid" alt="Imagen 5">
-
-                        <img src="./Images/2025/MMEM (232).jpg" class="rounded img-fluid" alt="Imagen 6">
-                    </div>
-
-                </div>
-
-                <!-- Slide 3 (Solo 2 imágenes) -->
-
-                <div class="carousel-item">
-
-                    <div class="d-flex justify-content-center gap-2">
-                        <img src="./Images/2025/MMEM (270).jpg" class="rounded img-fluid" alt="Imagen 4">
-                        <img src="./Images/2025/MMEM (7).jpg" class="rounded img-fluid" alt="Imagen 5">
-                        <img src="./Images/2025/MMEM (130).jpg" class="rounded img-fluid" alt="Imagen 3">
+      foreach ($logos as $logo) {
+        echo "<div class='logo-item'>
+                <img src='Images/logo/$logo' alt='Patrocinador'>
+              </div>";
+      }
+      ?>
+    </div>
+  </div>
+</section>
 
 
 
-                    </div>
+<section class="container-fluid my-5 d-flex gap-1 flex-column" id="section_8">
 
-                </div>
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+    <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+
+        <div class="carousel-item active">
+
+            <div class="d-flex justify-content-center gap-2">
+
+                <img src="./Images/2025/MMEM (226).jpg" class="rounded img-fluid" alt="Imagen 4">
+
+                <img src="./Images/2025/MMEM (283).jpg" class="rounded img-fluid" alt="Imagen 5">
+
+                <img src="./Images/2025/MMEM (280).jpg" class="rounded img-fluid" alt="Imagen 6">
 
             </div>
 
-            <!-- Controles de navegación -->
+        </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <!-- Slide 2 -->
 
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <div class="carousel-item">
 
-            </button>
+            <div class="d-flex justify-content-center gap-2">
 
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <img src="./Images/2025/MMEM (234).jpg" class="rounded img-fluid" alt="Imagen 4">
 
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <img src="./Images/2025/MMEM (233).jpg" class="rounded img-fluid" alt="Imagen 5">
 
-            </button>
+                <img src="./Images/2025/MMEM (232).jpg" class="rounded img-fluid" alt="Imagen 6">
+            </div>
 
         </div>
 
-        <div id="carouselExample_2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <!-- Slide 3 (Solo 2 imágenes) -->
 
-            <div class="carousel-inner">
+        <div class="carousel-item">
 
-                <!-- Slide 1 -->
-
-                <div class="carousel-item active">
-
-                    <div class="d-flex justify-content-center gap-2">
-
-                        <img src="./Images/2025/Media Maratón Entre Montañas (602).jpg" class="rounded img-fluid" alt="Imagen 1">
-
-                        <img src="./Images/2025/MMEM (1).jpg" class="rounded img-fluid" alt="Imagen 2">
+            <div class="d-flex justify-content-center gap-2">
+                <img src="./Images/2025/MMEM (270).jpg" class="rounded img-fluid" alt="Imagen 4">
+                <img src="./Images/2025/MMEM (7).jpg" class="rounded img-fluid" alt="Imagen 5">
+                <img src="./Images/2025/MMEM (130).jpg" class="rounded img-fluid" alt="Imagen 3">
 
 
-                        <img src="./Images/2025/MMEM (289).jpg" class="rounded img-fluid" alt="Imagen 3">
-
-                    </div>
-
-                </div>
-
-                <!-- Slide 2 -->
-
-                <div class="carousel-item">
-
-                    <div class="d-flex justify-content-center gap-2">
-
-                        <img src="./Images/2025/MMEM (80).jpg" alt="Imagen 4">
-
-                        <img src="./Images/2025/MMEM (257).jpg" class="rounded img-fluid" alt="Imagen 6">
-                        <img src="./Images/2025/MMEM (252).jpg" class="rounded img-fluid" alt="Imagen 6">
-
-                    </div>
-
-                </div>
-
-                <!-- Slide 3 (Solo 2 imágenes) -->
-
-                <div class="carousel-item">
-
-                    <div class="d-flex justify-content-center gap-2">
-
-
-                        <img src="./Images/2025/Media Maratón Entre Montañas (596).jpg" class="rounded img-fluid" alt="Imagen 6">
-                        <img src="./Images/2025/Media Maratón Entre Montañas (589).jpg" class="rounded img-fluid" alt="Imagen 6">
-                        <img src="./Images/2025/Media Maratón Entre Montañas (558).jpg" class="rounded img-fluid" alt="Imagen 6">
-
-                    </div>
-
-                </div>
 
             </div>
 
-            <!-- Controles de navegación -->
+        </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample_2" data-bs-slide="prev">
+    </div>
 
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <!-- Controles de navegación -->
 
-            </button>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
 
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample_2" data-bs-slide="next">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
 
-            </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+    </button>
+
+</div>
+
+<div id="carouselExample_2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+
+    <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+
+        <div class="carousel-item active">
+
+            <div class="d-flex justify-content-center gap-2">
+
+                <img src="./Images/2025/Media Maratón Entre Montañas (602).jpg" class="rounded img-fluid" alt="Imagen 1">
+
+                <img src="./Images/2025/MMEM (1).jpg" class="rounded img-fluid" alt="Imagen 2">
+
+
+                <img src="./Images/2025/MMEM (289).jpg" class="rounded img-fluid" alt="Imagen 3">
+
+            </div>
 
         </div>
 
-    </section>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let carousels = document.querySelectorAll(".carousel");
+        <!-- Slide 2 -->
 
-            carousels.forEach(carousel => {
-                let touchStartX = 0;
-                let touchEndX = 0;
+        <div class="carousel-item">
 
-                carousel.addEventListener("touchstart", function(event) {
-                    touchStartX = event.changedTouches[0].screenX;
-                });
+            <div class="d-flex justify-content-center gap-2">
 
-                carousel.addEventListener("touchend", function(event) {
-                    touchEndX = event.changedTouches[0].screenX;
-                    if (touchStartX - touchEndX > 50) {
-                        // Deslizamiento hacia la izquierda -> Avanza una imagen
-                        let nextButton = carousel.querySelector(".carousel-control-next");
-                        if (nextButton) nextButton.click();
-                    } else if (touchEndX - touchStartX > 50) {
-                        // Deslizamiento hacia la derecha -> Retrocede una imagen
-                        let prevButton = carousel.querySelector(".carousel-control-prev");
-                        if (prevButton) prevButton.click();
-                    }
-                });
-            });
+                <img src="./Images/2025/MMEM (80).jpg" alt="Imagen 4">
+
+                <img src="./Images/2025/MMEM (257).jpg" class="rounded img-fluid" alt="Imagen 6">
+                <img src="./Images/2025/MMEM (252).jpg" class="rounded img-fluid" alt="Imagen 6">
+
+            </div>
+
+        </div>
+
+        <!-- Slide 3 (Solo 2 imágenes) -->
+
+        <div class="carousel-item">
+
+            <div class="d-flex justify-content-center gap-2">
+
+
+                <img src="./Images/2025/Media Maratón Entre Montañas (596).jpg" class="rounded img-fluid" alt="Imagen 6">
+                <img src="./Images/2025/Media Maratón Entre Montañas (589).jpg" class="rounded img-fluid" alt="Imagen 6">
+                <img src="./Images/2025/Media Maratón Entre Montañas (558).jpg" class="rounded img-fluid" alt="Imagen 6">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Controles de navegación -->
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample_2" data-bs-slide="prev">
+
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample_2" data-bs-slide="next">
+
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+    </button>
+
+</div>
+
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let carousels = document.querySelectorAll(".carousel");
+
+    carousels.forEach(carousel => {
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener("touchstart", function(event) {
+            touchStartX = event.changedTouches[0].screenX;
         });
-    </script>
+
+        carousel.addEventListener("touchend", function(event) {
+            touchEndX = event.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) {
+                // Deslizamiento hacia la izquierda -> Avanza una imagen
+                let nextButton = carousel.querySelector(".carousel-control-next");
+                if (nextButton) nextButton.click();
+            } else if (touchEndX - touchStartX > 50) {
+                // Deslizamiento hacia la derecha -> Retrocede una imagen
+                let prevButton = carousel.querySelector(".carousel-control-prev");
+                if (prevButton) prevButton.click();
+            }
+        });
+    });
+});
+</script>
 
 
 
