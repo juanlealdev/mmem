@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<?php $cdn = "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev"; ?>
+
 <html lang="es">
 
 <head>
@@ -27,7 +30,7 @@
     <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
         <div class="container d-flex align-items-center">
             <a href="#" class="navbar-logo-container">
-                <img src="./Images/logo/Logo_3.webp" alt="Logo" class="navbar-logo">
+                <img src="<?php echo $cdn . '/Images/logo/Logo_3.webp'; ?>" alt="Logo" class="navbar-logo">
             </a>
             
             <div>
