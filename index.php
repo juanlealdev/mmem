@@ -48,7 +48,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
 
 <?php
 include_once('./Templates/header.php');
-$cdn = "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev";
+$cdn = "https://cdn.mmem.com.co";
 ?>
 
 <main class="site-main">

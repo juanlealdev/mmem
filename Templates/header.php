@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $cdn = "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev"; ?>
+<?php $cdn = "https://cdn.mmem.com.co"; ?>
 
 <html lang="es">
 
