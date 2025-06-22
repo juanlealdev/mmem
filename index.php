@@ -58,10 +58,10 @@ $cdn = "https://cdn.mmem.com.co";
         <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="<?php echo $cdn . '/Images/2025/BANNER_MMEM_1.webp'; ?>" alt="Corredores en Valle de Cocora con texto: Corre 100% en asfalto.">
+                    <img src="<?= $cdn ?>/Images/2025/BANNER_MMEM_1.webp" alt="Corredores en Valle de Cocora con texto: Corre 100% en asfalto.">
                 </div>
                 <div class="carousel-item">
-                    <img src="<?php echo $cdn . '/Images/2025/BANNER_MMEM_2.webp'; ?>" alt="Corredores saltando con texto: 10K y 21K - 14 de septiembre.">
+                    <img src="<?= $cdn ?>/Images/2025/BANNER_MMEM_2.webp" alt="Corredores saltando con texto: 10K y 21K - 14 de septiembre.">
                 </div>
                 <!-- <div class="carousel-item">
                     <img src="./Images/portada1-1-1019x1024.png" alt="">
@@ -128,7 +128,7 @@ $cdn = "https://cdn.mmem.com.co";
             <!-- Ítem 1 -->
             <div class="col-md-3 info-item">
                 <div class="info-icon">
-                    <img src="<?php echo $cdn . '/Images/Icon/ico-fecha.png'; ?>" alt="Icono de calendario" style="width: 80px; height: 80px;">
+                    <img src="<?= $cdn ?>/Images/Icon/icono-fecha.svg" alt="Icono de calendario" style="width: 80px; height: 80px;">
                 </div>
                 <div class="info-title" style="font-size: 16px;">FECHA</div>
                 <div class="info-description" style="font-size: 14px;">SEPTIEMBRE 14/2025</div>
@@ -137,7 +137,7 @@ $cdn = "https://cdn.mmem.com.co";
             <!-- Ítem 2 -->
             <div class="col-md-3 info-item">
                 <div class="info-icon">
-                    <img src="<?php echo $cdn . '/Images/Icon/ico-recorrido.webp'; ?>" alt="Icono de mapa con marcador" style="width: 80px; height: 80px;">
+                    <img src="<?= $cdn ?>/Images/Icon/ico-recorrido.webp" alt="Icono de mapa con marcador" style="width: 80px; height: 80px;">
                 </div>
                 <div class="info-title" style="font-size: 16px;">DISTANCIAS</div>
                 <div class="info-description" style="font-size: 14px;">21 K y 10 K</div>
@@ -146,7 +146,7 @@ $cdn = "https://cdn.mmem.com.co";
             <!-- Ítem 3 -->
             <div class="col-md-3 info-item">
                 <div class="info-icon">
-                    <img src="<?php echo $cdn . '/Images/Icon/ico-zona.png'; ?>" alt="Icono de ubicación"" style="width: 80px; height: 80px;">
+                    <img src="<?= $cdn ?>/Images/Icon/icono-zona.svg" alt="Icono de ubicación"" style="width: 80px; height: 80px;">
                 </div>
                 <div class="info-title" style="font-size: 16px;">SALIDA Y META</div>
                 <div class="info-description" style="font-size: 14px;">
@@ -162,7 +162,7 @@ $cdn = "https://cdn.mmem.com.co";
 
                 <!-- Primer bloque: Recorrido 21K -->
                 <div class="img">
-                    <img src="<?php echo $cdn . '/Images/2025/MMEM_recorrido21k.webp'; ?>" class="rounded img-fluid" alt="Mapa del recorrido 21K de la carrera Entre Montañas">
+                    <img src="<?= $cdn ?>/Images/2025/MMEM_recorrido21k.webp" class="rounded img-fluid" alt="Mapa del recorrido 21K de la carrera Entre Montañas">
                 </div>
                 <div class="texto">
                     <div>
@@ -173,7 +173,7 @@ $cdn = "https://cdn.mmem.com.co";
                     </div>
                     <!-- <div class="nubes"></div> -->
                     <div class="section">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_21k.webp'; ?>" alt="Palmas de cera en el Valle de Cocora" width="570" height="400">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_21k.webp" alt="Palmas de cera en el Valle de Cocora" width="570" height="400">
                     </div>
                     <div class="section_6_link">
                         <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=467843139351314432" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
@@ -184,7 +184,7 @@ $cdn = "https://cdn.mmem.com.co";
             <div class="col ">
                 <!-- Primer bloque: Recorrido 21K -->
                 <div class="img">
-                    <img src="<?php echo $cdn . '/Images/2025/MMEM_recorrido10k.webp'; ?>" class="rounded img-fluid" alt="Mapa del recorrido 10K de la carrera Entre Montañas">
+                    <img src="<?= $cdn ?>/Images/2025/MMEM_recorrido10k.webp" class="rounded img-fluid" alt="Mapa del recorrido 10K de la carrera Entre Montañas">
                 </div>
                 <div class="texto">
                     <div>
@@ -195,7 +195,7 @@ $cdn = "https://cdn.mmem.com.co";
                     </div>
                     <!-- <div class="nubes"></div> -->
                     <div class="section">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_10k.webp'; ?>" alt="Corredores participando en la carrera 10K de Entre Montañas" width="570" height="400">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_10k.webp" alt="Corredores participando en la carrera 10K de Entre Montañas" width="570" height="400">
                     </div>
                     <div class="section_6_link">
                         <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=466450603311333376" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
@@ -219,27 +219,27 @@ $cdn = "https://cdn.mmem.com.co";
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(226).webp'; ?>" class="rounded img-fluid" alt="Imagen 4">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(283).webp'; ?>" class="rounded img-fluid" alt="Imagen 5">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(280).webp'; ?>" class="rounded img-fluid" alt="Imagen 6">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(226).webp" class="rounded img-fluid" alt="Imagen 4">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(283).webp" class="rounded img-fluid" alt="Imagen 5">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(280).webp" class="rounded img-fluid" alt="Imagen 6">
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(234).webp'; ?>" class="rounded img-fluid" alt="Imagen 4">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(233).webp'; ?>" class="rounded img-fluid" alt="Imagen 5">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(232).webp'; ?>" class="rounded img-fluid" alt="Imagen 6">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(234).webp" class="rounded img-fluid" alt="Imagen 4">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(233).webp" class="rounded img-fluid" alt="Imagen 5">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(232).webp" class="rounded img-fluid" alt="Imagen 6">
                     </div>
                 </div>
 
                 <!-- Slide 3 (Solo 2 imágenes) -->
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(270).webp'; ?>" class="rounded img-fluid" alt="Imagen 4">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(7).webp'; ?>" class="rounded img-fluid" alt="Imagen 5">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(130).webp'; ?>" class="rounded img-fluid" alt="Imagen 3">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(270).webp" class="rounded img-fluid" alt="Imagen 4">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(7).webp" class="rounded img-fluid" alt="Imagen 5">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(130).webp" class="rounded img-fluid" alt="Imagen 3">
                     </div>
                 </div>
             </div>
@@ -259,27 +259,27 @@ $cdn = "https://cdn.mmem.com.co";
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?php echo $cdn . '/Images/2025/Media_Maratón_Entre_Montañas_(602).webp'; ?>" class="rounded img-fluid" alt="Imagen 1">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(1).webp'; ?>" class="rounded img-fluid" alt="Imagen 2">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(289).webp'; ?>" class="rounded img-fluid" alt="Imagen 3">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(602).webp" class="rounded img-fluid" alt="Imagen 1">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(1).webp" class="rounded img-fluid" alt="Imagen 2">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(289).webp" class="rounded img-fluid" alt="Imagen 3">
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(80).webp'; ?>" alt="Imagen 4">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(257).webp'; ?>" class="rounded img-fluid" alt="Imagen 6">
-                        <img src="<?php echo $cdn . '/Images/2025/MMEM_(252).webp'; ?>" class="rounded img-fluid" alt="Imagen 6">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(80).webp" alt="Imagen 4">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(257).webp" class="rounded img-fluid" alt="Imagen 6">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(252).webp" class="rounded img-fluid" alt="Imagen 6">
                     </div>
                 </div>
 
                 <!-- Slide 3 (Solo 2 imágenes) -->
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?php echo $cdn . '/Images/2025/Media_Maratón_Entre_Montañas_(596).webp'; ?>" class="rounded img-fluid" alt="Imagen 6">
-                        <img src="<?php echo $cdn . '/Images/2025/Media_Maratón_Entre_Montañas_(589).webp'; ?>" class="rounded img-fluid" alt="Imagen 6">
-                        <img src="<?php echo $cdn . '/Images/2025/Media_Maratón_Entre_Montañas_(558).webp'; ?>" class="rounded img-fluid" alt="Imagen 6">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="rounded img-fluid" alt="Imagen 6">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(589).webp" class="rounded img-fluid" alt="Imagen 6">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(558).webp" class="rounded img-fluid" alt="Imagen 6">
                     </div>
                 </div>
             </div>

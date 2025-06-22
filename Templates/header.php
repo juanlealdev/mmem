@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
         <div class="container d-flex align-items-center">
             <a href="#" class="navbar-logo-container">
-                <img src="<?php echo $cdn . '/Images/logo/Logo_3.webp'; ?>" alt="Logo" class="navbar-logo">
+                <img src="<?= $cdn ?>/Images/logo/Logo_3.webp" alt="Logo" class="navbar-logo">
             </a>
             
             <div>
