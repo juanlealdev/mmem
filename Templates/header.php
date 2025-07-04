@@ -28,7 +28,7 @@
 
     <!-- Menú de navegación -->
     <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container d-flex align-items-center">
+    <div class="container-fluid navbar-container d-flex align-items-center justify-content-between">
             <a href="#" class="navbar-logo-container">
                 <img src="<?= $cdn ?>/Images/logo/Logo_3.webp" alt="Logo" class="navbar-logo">
             </a>

@@ -1,14 +1,17 @@
 /* Estilo general del Navbar */
 .navbar {
     background-color: #648d00;
-    /* Fondo verde oscuro */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0px 0px;
-    position: fixed;  /* 👈 Asegura que se quede arriba */
-    top: 45px;         /* 👈 Empuja hacia abajo para dejar espacio a la barra roja */
+    padding: 0px;
+    position: fixed;
+    top: 81px;
+    /* ⬅️ Justo después del contador */
     width: 100%;
-    z-index: 1030; 
-    /* Sombra suave */
+    z-index: 1030;
+    height: 95px;
+}
+
+.navbar-container {
+    padding: 40px 60px;
 }
 
 

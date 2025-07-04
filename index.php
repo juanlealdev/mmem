@@ -88,8 +88,8 @@ include_once('./Templates/header.php');
 
 
 
-    <section class="container section-inscribete my-5">
-        <div class="row g-4">
+    <section  class="container section-inscribete my-5">
+        <div id="section-inscribete" style="scroll-margin-top: 170px;"class="row g-4">
             <!-- Tarjeta 10K -->
             <div class="col-md-6">
                 <div class="card div_card_inscribete">
