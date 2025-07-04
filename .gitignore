@@ -1,4 +1,5 @@
 .DS_Store
-**/carrusel.php
-**/carrusel.css
+Templates/carrusel.php
+styles/carrusel.css
+
 
