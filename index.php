@@ -241,7 +241,9 @@ include_once('./Templates/header.php');
         </div>
     </section>
 
-    <section class="patrocinadores-carousel">
+    <?php
+/*
+<section class="patrocinadores-carousel">
   <h3>Nuestros Patrocinadores</h3>
   <div class="slider-wrapper">
     <div class="slider-track">
@@ -258,6 +260,8 @@ include_once('./Templates/header.php');
     </div>
   </div>
 </section>
+*/
+?>
 
     <section class="container-fluid my-5 d-flex gap-1 flex-column" id="section_8">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
