@@ -9,6 +9,7 @@
     --color-texto: #333;
 }
 
+
 /* ----- ESTILOS GENERALES ----- */
 body {
     background-color: var(--color-gris-fondo);
@@ -36,6 +37,16 @@ header a {
 header a:hover {
     color: var(--color-amarillo);
 }
+
+/*estilo header y contador*/
+.shared-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 60px; /* O el mismo que uses en navbar-container */
+    box-sizing: border-box;
+  }
+  
 
 /* ----- BOTONES ----- */
 .btn-primary {

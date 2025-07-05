@@ -17,7 +17,7 @@
     <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
 
     
-    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora ">
+    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora">
     <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
 
     <!-- Favicon -->
@@ -36,7 +36,7 @@
     <meta name="google-site-verification" content="TU_CÓDIGO_DE_VERIFICACIÓN_AQUÍ">
 
     <meta name="robots" content="index, follow">
-</head>Media Maratón Entre Montañas | Desafío Cocora</title>
+</head><title>Media Maratón Entre Montañas | Desafío Cocora</title>
 
     
     <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.">
@@ -45,7 +45,7 @@
     <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
 
     
-    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora ">
+    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora">
     <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
 
     <!-- Favicon -->
@@ -66,12 +66,12 @@
     <meta name="robots" content="index, follow">
 </head>
 
-<?php include_once('./Templates/alert.php'); ?>
+<?php include_once('./Templates/contador.php');?>
 <?php
 include_once('./Templates/header.php');
 ?>
 
-<section id="reglamento">
+<section id="reglamento" style="margin-top: 170px;">
     <h2>Reglamento Oficial</h2>
 
     <div class="reglamento-texto">

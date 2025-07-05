@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<?php $cdn = "https://cdn.mmem.com.co"; ?>
+<?php $cdn = "https://cdn.mmem.com.co" ?>
 
 <html lang="es">
 
@@ -28,7 +28,7 @@
 
     <!-- Menú de navegación -->
     <nav class="navbar navbar-expand-lg custom-navbar">
-    <div class="container-fluid navbar-container d-flex align-items-center justify-content-between">
+    <div class="container-fluid shared-container navbar-container d-flex align-items-center justify-content-between">
             <a href="#" class="navbar-logo-container">
                 <img src="<?= $cdn ?>/Images/logo/Logo_3.webp" alt="Logo" class="navbar-logo">
             </a>

@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.">
     <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
-    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora ">
+    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora">
     <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
 
     <!-- Favicon -->
@@ -29,6 +29,8 @@
 
     <meta name="robots" content="index, follow">
     <!-- Meta Pixel Code -->
+
+    <!-- Estilo para el fondo de .barra-alerta -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -41,19 +43,22 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '718973520528019');
 fbq('track', 'PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
+<noscript>
+    <img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
-/></noscript>
+/>
+</noscript>
 <!-- End Meta Pixel Code -->
+ 
 </head>
 
 <?php
-include_once('./Templates/alert.php')?>;
+include_once('./Templates/contador.php')?>
 
 
 <?php
 
-include_once('./Templates/header.php');
+include_once('./Templates/header.php')
 ?>
 
 
@@ -61,7 +66,7 @@ include_once('./Templates/header.php');
 <main class="site-main">
 
     <!-- Carrusel con Indicadores de Imágenes -->
-    <section class="carousel-section">
+    <section class="carousel-section" style="margin-top: 93px;">
         <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -165,7 +170,7 @@ include_once('./Templates/header.php');
 
     <section class="container my-5" id="section_6">
         <div class="row">
-            <div class="col ">
+            <div class="col">
 
                 <!-- Primer bloque: Recorrido 21K -->
                 <div class="img">
@@ -199,7 +204,7 @@ include_once('./Templates/header.php');
                 </div>
             </div>
             
-            <div class="col ">
+            <div class="col">
                 <!-- Primer bloque: Recorrido 21K -->
                 <div class="img">
                     <img 

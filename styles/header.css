@@ -6,8 +6,8 @@
     top: 81px;
     /* ⬅️ Justo después del contador */
     width: 100%;
-    z-index: 1030;
-    height: 95px;
+    z-index: 1050;
+    height: 90px;
 }
 
 .navbar-container {
@@ -128,14 +128,7 @@
 }
 
 @media (max-width: 992px) {
-
-    .btn-offer-mobile {
-        margin-right: 8px;
-        display: inline-block;
+    .navbar-container {
+      padding: 20px;
     }
-
-    .btn-offer {
-        display: none;
-    }
-
-}
+  }

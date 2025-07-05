@@ -15,7 +15,7 @@
     <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
 
     
-    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora ">
+    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora">
     <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
 
     <!-- Favicon -->
@@ -35,12 +35,12 @@
 
     <meta name="robots" content="index, follow">
 </head>
-<?php include_once('./Templates/alert.php'); ?>
+<?php include_once('./Templates/contador.php'); ?>
 <?php
 include_once('./Templates/header.php');
 ?>
 
-<section id="info-maraton">
+<section id="info-maraton" style="margin-top: 105px;">
     <div class="container">
         <h2>¡Bienvenidos a la M. M. Entre Montañas 2025!</h2>
         <p class="intro-text">
