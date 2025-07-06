@@ -9,6 +9,24 @@
     --color-texto: #333;
 }
 
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('https://cdn.mmem.com.co/fonts/AvenirLTStd-Book.woff2') format('woff2'),
+         url('https://cdn.mmem.com.co/fonts/AvenirLTStd-Book.woff') format('woff'),
+         url('https://cdn.mmem.com.co/fonts/AvenirLTStd-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  
+  @font-face {
+    font-family: 'Tallica';
+    src: url('https://cdn.mmem.com.co/fonts/Tallica_prueba-VF.woff2') format('woff2'),
+         url('https://cdn.mmem.com.co/fonts/Tallica-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 /* ----- ESTILOS GENERALES ----- */
 body {
     background-color: var(--color-gris-fondo);

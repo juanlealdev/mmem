@@ -1,20 +1,7 @@
 
-@font-face {
-  font-family: 'Avenir LT Std';
-  src: url('../fonts/AvenirLTStd-Book.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Tallica';
-  src: url('../fonts/Tallica-VF.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-.barra-alerta-fondo {
+/* Wrapper for alert bar */
+.alert-bar-wrapper {
+  padding: 10px,0;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,149 +11,181 @@
   overflow: hidden;
 }
 
-
-.barra-alerta-fondo::before {
-  content: "";
-  position: absolute;
-  top: -90px;
-  left: -50px;
-  width: 200%;
-  height: 200%;
-  background: url('https://cdn.mmem.com.co/Images/2025/palmeras_background.webp') center/cover no-repeat;
-  transform: rotate(-2deg);
-  transform-origin: center;
-  z-index: -1;
-  opacity: 0.80;
-  pointer-events: none;
-  filter: brightness(1.1) contrast(1.1);
-}
-
-
-
-/* Gradiente encima */
-.barra-alerta-gradiente {
+/* Gradient background (no image, no rgba) */
+.alert-bar-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(229, 139, 52, 0.85), rgba(247, 202, 70, 0.85));
+  height: 85px;
+  background: linear-gradient(to bottom, #e58b34, #f7ca46);
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: 1;
+  z-index: 1050;
 }
 
-
-.contenido-alerta {
+/* Content container */
+.alert-content-container {
   width: 100%;
   max-width: 1300px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 10px 60px; /* Uniforme con header */
   box-sizing: border-box;
   color: white;
 }
 
-
-
-.texto-alerta {
+/* Left text */
+.alert-text {
   font-weight: 750;
   max-width: 45%;
-  font-family: 'Avenir LT Std', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
-.texto-alerta p {
+.alert-text p {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.2;
   margin: 0;
 }
 
-.texto-alerta strong {
+.alert-text strong {
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 700;
 }
 
-.contenedor-contador {
+/* Countdown layout */
+.countdown-container {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
 }
 
-.texto-contador {
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 0;
-}
-
-.contador-alerta {
+.countdown {
   display: flex;
   gap: 10px;
   align-items: center;
   justify-content: center;
-  padding: 3px 6px;
 }
 
-.contador-alerta span#dias,
-.contador-alerta span#horas,
-.contador-alerta span#minutos,
-.contador-alerta span#segundos {
-  font-family: 'Tallica', sans-serif;
-  font-size: 16px;
-  letter-spacing: 0.7px;
-}
-
-.contador-alerta div {
+.countdown div {
   background-color: #648d00;
   color: #ffca01;
-  padding: 5px 10px;
   text-align: center;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 14px;
-  min-width: 50px;
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 0; se elimina para usar padding-top/bottom */
 }
 
-.contador-alerta .etiqueta {
-  display: block;
-  font-size: 10px;
+.countdown span#days,
+.countdown span#hours,
+.countdown span#minutes,
+.countdown span#seconds {
   font-family: 'Tallica', sans-serif;
-  letter-spacing: 0.7px;
+  font-size: 28px;
+  letter-spacing: 0.9px;
+  line-height: 1;
+  display: block;
+  /* --- CAMBIO CLAVE AQUÍ: Ajuste de margen para la separación --- */
+  margin-bottom: 2px; /* Ajusta este valor para la separación entre número y etiqueta */
 }
 
+.countdown .label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.7px;
+  line-height: 1;
+  /* Aseguramos que no tenga margen superior propio */
+  margin-top: 0px;
+}
 
-.btn-alerta {
+/* CTA button */
+.alert-button {
   background-color: transparent;
   color: white;
   border: 1px solid white;
-  padding: 4px 8px;
+  padding: 4px 12px;
   border-radius: 4px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: Avenir, sans-serif;
+  font-family: 'Avenir LT Std', sans-serif;
   transition: all 0.3s;
+  height: fit-content;
+  white-space: nowrap;
 }
 
-.btn-alerta:hover {
-  background-color: transparent;
-  color: white;
+.alert-button:hover {
   box-shadow: 0 0 5px white;
 }
 
+/* Responsive layout */
 @media (max-width: 992px) {
-  .contenido-alerta {
+  .alert-content-container {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    padding: 10px 20px;
+    height: auto;
   }
 
-  .texto-alerta {
+  .alert-text {
     max-width: 100%;
+  }
+
+  .alert-bar-wrapper,
+  .alert-bar-gradient {
+    height: auto;
+    position: relative;
+  }
+
+  .countdown-container {
+    align-items: center;
+  }
+
+  .countdown div {
+    width: 60px;
+    height: 45px;
+    /* --- CAMBIO CLAVE AQUÍ (responsive): Padding vertical ajustado para móvil --- */
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .countdown span#days,
+  .countdown span#hours,
+  .countdown span#minutes,
+  .countdown span#seconds {
+    font-size: 24px;
+    line-height: 1;
+    /* --- CAMBIO CLAVE AQUÍ (responsive): Margen de separación ajustado para móvil --- */
+    margin-bottom: 1px;
+  }
+
+  .countdown .label {
+    font-size: 9px;
+    line-height: 1;
+    margin-top: 0px;
+  }
+
+  .alert-text strong {
+    font-size: 20px;
+  }
+
+  .alert-text p {
+    font-size: 12px;
   }
 }
