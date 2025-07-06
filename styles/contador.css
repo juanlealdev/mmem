@@ -47,7 +47,7 @@
 
 .alert-text p {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2;
   margin: 0;
 }
@@ -79,13 +79,12 @@
   border-radius: 5px;
   font-weight: bold;
   box-sizing: border-box;
-  width: 60px;
-  height: 60px;
+  width: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding: 0; se elimina para usar padding-top/bottom */
+  padding: 8px 0;
 }
 
 .countdown span#days,
@@ -93,23 +92,19 @@
 .countdown span#minutes,
 .countdown span#seconds {
   font-family: 'Tallica', sans-serif;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 0.9px;
-  line-height: 1;
   display: block;
-  /* --- CAMBIO CLAVE AQUÍ: Ajuste de margen para la separación --- */
-  margin-bottom: 2px; /* Ajusta este valor para la separación entre número y etiqueta */
+  margin-bottom: 2px;
 }
 
 .countdown .label {
   display: block;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 10px;
+  font-weight: 400;
   font-family: 'Arial', sans-serif;
   letter-spacing: 0.7px;
   line-height: 1;
-  /* Aseguramos que no tenga margen superior propio */
-  margin-top: 0px;
 }
 
 /* CTA button */
@@ -117,19 +112,16 @@
   background-color: transparent;
   color: white;
   border: 1px solid white;
-  padding: 4px 12px;
+  padding: 8px 24px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
-  text-decoration: none;
   text-transform: uppercase;
-  font-family: 'Avenir LT Std', sans-serif;
   transition: all 0.3s;
-  height: fit-content;
-  white-space: nowrap;
 }
 
 .alert-button:hover {
+  color: white;
   box-shadow: 0 0 5px white;
 }
 
