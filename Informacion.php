@@ -26,6 +26,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel ="stylesheet" href="styles/informacion.css">
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
@@ -35,12 +36,11 @@
 
     <meta name="robots" content="index, follow">
 </head>
-<?php include_once('./Templates/contador.php'); ?>
 <?php
 include_once('./Templates/header.php');
 ?>
 
-<section id="info-maraton" style="margin-top: 105px;">
+<section id="info-maraton" style="margin-top: -70px;">
     <div class="container">
         <h2>¡Bienvenidos a la M. M. Entre Montañas 2025!</h2>
         <p class="intro-text">

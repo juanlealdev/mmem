@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
 }
-  
+
 @font-face {
     font-family: 'Tallica';
     src: url('https://cdn.mmem.com.co/fonts/Tallica_prueba-VF.woff2') format('woff2');
@@ -50,10 +50,11 @@ header a:hover {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 60px; /* O el mismo que uses en navbar-container */
+    padding: 0 60px;
+    /* O el mismo que uses en navbar-container */
     box-sizing: border-box;
-  }
-  
+}
+
 
 /* ----- BOTONES ----- */
 .btn-primary {
@@ -617,23 +618,24 @@ h3 {
     margin: 5px 0;
 }
 
+
+
+/* ------------------------------------- */
+/* TUS MEDIA QUERIES EXISTENTES EN MAIN.CSS */
+/* ------------------------------------- */
+
 @media (max-width: 1400px) {
     #section_6 .section_6_21k img {
         width: auto;
-        /* Define un ancho fijo */
         height: 200px;
-        /* Mantiene la proporción de la imagen */
     }
 
     #section_6 .section_6_10k img {
         width: 350px;
-        /* Define un ancho fijo */
         height: 230px;
-        /* Mantiene la proporción de la imagen */
     }
 
     #section_6 .texto {
-        /* Texto naranja */
         background-color: var(--color-verde-claro);
         border-radius: 5px;
         padding: 40px;
@@ -682,7 +684,6 @@ h3 {
     }
 
     #section_6 .texto {
-        /* Texto naranja */
         background-color: var(--color-verde-claro);
         border-radius: 5px;
         padding: 40px;
@@ -715,7 +716,6 @@ h3 {
 
     .carousel-item img {
         object-fit: contain;
-        /* Ajusta la imagen sin recortarla */
         width: 100%;
         margin-top: 60px;
         background-size: contain;
@@ -727,12 +727,268 @@ h3 {
 @media (max-width: 493px) {
     .carousel-item img {
         object-fit: contain;
-        /* Evita el recorte */
         object-position: center;
-        /* Centra la imagen */
         width: 100%;
         height: auto;
-        /* Permite que la altura se ajuste dinámicamente */
         margin-top: 60px;
+    }
+}
+
+/* ------------------------------------- */
+/* MEDIA QUERIES DEL HEADER (AÑADIDAS Y AJUSTADAS AQUÍ) */
+/* ------------------------------------- */
+
+/* Para pantallas de 992px o menos (Tabletas y móviles grandes) */
+@media (max-width: 992px) {
+
+    /* Contador */
+    .alert-content-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 10px 20px;
+        height: auto;
+    }
+
+    .alert-text {
+        max-width: 100%;
+    }
+
+    /* Aseguramos que la barra del contador tenga una altura mínima en móviles */
+    .alert-bar-wrapper {
+        height: auto;
+        /* Permite que el contenido determine la altura */
+        min-height: 85px;
+        /* Pero asegúrate de que no se haga demasiado pequeño */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1050;
+    }
+
+    .alert-bar-gradient {
+        height: 100%;
+        /* Ocupa el 100% de la altura de .alert-bar-wrapper */
+    }
+
+    .countdown-container {
+        align-items: center;
+    }
+
+    .countdown div {
+        width: 60px;
+        height: 45px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .countdown span#days,
+    .countdown span#hours,
+    .countdown span#minutes,
+    .countdown span#seconds {
+        font-size: 24px;
+        line-height: 1;
+        margin-bottom: 1px;
+    }
+
+    .countdown .label {
+        font-size: 9px;
+        line-height: 1;
+        margin-top: 0px;
+    }
+
+    .alert-text strong {
+        font-size: 20px;
+    }
+
+    .alert-text p {
+        font-size: 12px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+        height: auto;
+        /* Se ajusta a su contenido */
+        top: auto;
+        /* JS lo posicionará dinámicamente */
+        position: fixed;
+        /* Asegura que el navbar sea fijo */
+        width: 100%;
+        padding: 10px 20px;
+        z-index: 1040;
+    }
+
+    .navbar-container {
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo-container {
+        max-width: 150px;
+        height: 50px;
+    }
+
+    .btn-offer-mobile {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .btn-offer {
+        display: none;
+    }
+
+    /* Para el menú desplegable de Bootstrap en móvil */
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #648d00;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        /* Importante: Ajustar max-height para que quepa en el viewport debajo del contador y navbar */
+        /* calc(100vh - (altura contador + altura navbar)) */
+        max-height: calc(100vh - var(--fixed-header-height));
+        /* Usaremos una variable CSS si es posible, o JS */
+        overflow-y: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 0;
+        background-color: inherit;
+        width: 100%;
+    }
+
+    .dropdown-item {
+         /* ELIMINAR O AJUSTAR ESTAS PROPIEDADES PARA CENTRAR */
+         padding-left: 0; /* Eliminar el padding a la izquierda para que no empuje el texto */
+         text-align: center; /* Cambiar a center para alinear el texto al centro */
+         color: #ffca01;
+         display: block; /* Asegurarse de que sea un bloque para que text-align funcione correctamente */
+         padding: 10px 0;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #f18500;
+    }
+
+    /* Iconos Sociales */
+    .social-icons-fixed {
+        right: 10px;
+        bottom: 65px;
+        gap: 8px;
+        z-index: 990;
+    }
+
+    .social-icons-fixed .facebook,
+    .social-icons-fixed .instagram,
+    .social-icons-fixed .whatsapp {
+        font-size: 24px;
+        transition: color 0.3s ease;
+        display: inline-flex;
+        width: 24px;
+        height: 24px;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+        text-decoration: none;
+    }
+}
+
+/* Para pantallas de 480px o menos (Móviles muy pequeños) */
+@media (max-width: 480px) {
+
+    /* Contador */
+    .alert-content-container {
+        padding: 10px;
+    }
+
+    .alert-text strong {
+        font-size: 18px;
+    }
+
+    .alert-text p {
+        font-size: 11px;
+    }
+
+    .countdown div {
+        width: 50px;
+        height: 40px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .countdown span#days,
+    .countdown span#hours,
+    .countdown span#minutes,
+    .countdown span#seconds {
+        font-size: 20px;
+    }
+
+    .countdown .label {
+        font-size: 8px;
+    }
+
+    .alert-button {
+        padding: 6px 18px;
+        font-size: 12px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+        padding: 5px 15px;
+    }
+
+    .navbar-logo-container {
+        max-width: 120px;
+        height: 40px;
+    }
+
+    .btn-offer-mobile {
+        font-size: 0.6rem;
+        padding: 6px 12px;
+    }
+
+    .social-icons-fixed {
+        left: 5px; /* Margen izquierdo más pequeño */
+        bottom: 130px;
+        gap: 5px;
+        z-index: 990;
+    }
+    .social-icons-fixed .facebook,
+    .social-icons-fixed .instagram,
+    .social-icons-fixed .whatsapp {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
     }
 }

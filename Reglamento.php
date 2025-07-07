@@ -28,6 +28,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel ="stylesheet" href="styles/reglamento.css">
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
@@ -66,12 +67,11 @@
     <meta name="robots" content="index, follow">
 </head>
 
-<?php include_once('./Templates/contador.php');?>
 <?php
 include_once('./Templates/header.php');
 ?>
 
-<section id="reglamento" style="margin-top: 170px;">
+<section id="reglamento" style="margin-top: -15px;">
     <h2>Reglamento Oficial</h2>
 
     <div class="reglamento-texto">

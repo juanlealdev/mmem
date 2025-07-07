@@ -19,7 +19,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
-    <link rel ="stylesheet" href="styles/carrusel.css">
+    <link rel="stylesheet" href="./styles/Main.css">
+    <link rel="stylesheet" href="./styles/header.css">
+
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
@@ -52,8 +54,6 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
  
 </head>
 
-<?php
-include_once('./Templates/contador.php')?>
 
 
 <?php
@@ -61,12 +61,10 @@ include_once('./Templates/contador.php')?>
 include_once('./Templates/header.php')
 ?>
 
-
-
 <main class="site-main">
 
     <!-- Carrusel con Indicadores de Imágenes -->
-    <section class="carousel-section" style="margin-top: 93px;">
+    <section class="carousel-section" style="margin-top: -93px;">
         <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">

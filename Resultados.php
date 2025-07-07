@@ -26,6 +26,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel ="stylesheet" href="styles/resultados.css">
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
@@ -35,12 +36,12 @@
 
     <meta name="robots" content="index, follow">
 </head>
-<?php include_once('./Templates/contador.php'); ?>
+
 <?php
 include_once('./Templates/header.php');
 ?>
 
-<section id="resultados-maraton">
+<section id="resultados-maraton" style="margin-top: -93px;">
     <!-- <h2>M.M. Entre Montañas 2024</h2> -->
 
     <div class="container my-5">
