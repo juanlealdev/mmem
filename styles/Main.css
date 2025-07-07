@@ -939,8 +939,8 @@ h3 {
 
     .countdown div {
         width: 50px;
-        padding-top: 4px;
-        padding-bottom: 4px;
+        padding-top: 2px;
+        padding-bottom: 2px;
     }
 
     .countdown span#days,
