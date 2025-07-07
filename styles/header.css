@@ -7,8 +7,7 @@ position: fixed;
 top: 0;
 left: 0;
 width: 100%;
-z-index: 1050; /* Debe estar por encima del navbar */
-height: 85px; /* Altura fija para que el navbar pueda posicionarse debajo en escritorio */
+z-index: 1050; /* Debe estar por encima del navbar *//* Altura fija para que el navbar pueda posicionarse debajo en escritorio */
 overflow: hidden; /* Asegura que el contenido interno no se salga */
 }
 
@@ -42,7 +41,6 @@ font-family: 'Arial', sans-serif;
 .alert-text p {
 font-size: 14px;
 font-weight: 400;
-line-height: 1.2;
 margin: 0;
 }
 
@@ -89,7 +87,6 @@ font-family: 'Tallica', sans-serif;
 font-size: 26px;
 letter-spacing: 0.9px;
 display: block;
-line-height: 1;
 }
 
 .countdown .label {
@@ -98,7 +95,6 @@ font-size: 10px;
 font-weight: 400;
 font-family: 'Arial', sans-serif;
 letter-spacing: 0.7px;
-line-height: 1;
 margin-top: 0;
 }
 

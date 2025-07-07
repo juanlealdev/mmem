@@ -778,7 +778,6 @@ h3 {
 
     .countdown div {
         width: 60px;
-        height: 45px;
         padding-top: 6px;
         padding-bottom: 6px;
     }
@@ -787,19 +786,17 @@ h3 {
     .countdown span#hours,
     .countdown span#minutes,
     .countdown span#seconds {
-        font-size: 24px;
-        line-height: 1;
+        font-size: 28px;
         margin-bottom: 1px;
     }
 
     .countdown .label {
         font-size: 9px;
-        line-height: 1;
         margin-top: 0px;
     }
 
     .alert-text strong {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .alert-text p {
@@ -933,7 +930,7 @@ h3 {
     }
 
     .alert-text strong {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .alert-text p {
@@ -942,7 +939,6 @@ h3 {
 
     .countdown div {
         width: 50px;
-        height: 40px;
         padding-top: 4px;
         padding-bottom: 4px;
     }
@@ -955,7 +951,7 @@ h3 {
     }
 
     .countdown .label {
-        font-size: 8px;
+        font-size: 10px;
     }
 
     .alert-button {
