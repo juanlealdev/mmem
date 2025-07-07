@@ -1,33 +1,52 @@
-<!DOCTYPE html>
-<html lang="es">
+<?php $cdn = "https://cdn.mmem.com.co" ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de Navegación</title>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Media Maratón Entre Montañas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/Main.css">
-    <link rel="stylesheet" href="./styles/reglamento.css">
-    <link rel="stylesheet" href="./styles/informacion.css">
-    <link rel="stylesheet" href="./styles/resultados.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
 
-    <!-- Bootstrap JavaScript (necesario para el carrusel) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Incluir jQuery desde un CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-</head>
+<div class="alert-bar-wrapper">
+        <div class="alert-bar-gradient">
+            <div class="alert-content-container">
+                <div class="alert-text">
+                    <strong>¡LA CUENTA REGRESIVA HA COMENZADO!</strong>
+                    <p>No dejes pasar la oportunidad de vivir la Media Maratón Entre Montañas</p>
+                </div>
 
-<body>
+                <div class="countdown-container">
+                    <div class="countdown">
+                        <div>
+                            <span id="days">00</span>
+                            <span class="label">DÍAS</span>
+                        </div>
+                        <div>
+                            <span id="hours">00</span>
+                            <span class="label">HORAS</span>
+                        </div>
+                        <div>
+                            <span id="minutes">00</span>
+                            <span class="label">MIN</span>
+                        </div>
+                        <div>
+                            <span id="seconds">00</span>
+                            <span class="label">SEG</span>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- Menú de navegación -->
-    <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
-        <div class="container d-flex align-items-center">
+                <a href="index.php#section-inscribete" class="alert-button">INSCRÍBETE AHORA</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid shared-container navbar-container d-flex align-items-center justify-content-between">
             <a href="#" class="navbar-logo-container">
-                <img src="./Images/logo/Logo_3.png" alt="Logo" class="navbar-logo">
+                <img src="<?= $cdn ?>/Images/logo/Logo_3.webp" alt="Logo" class="navbar-logo">
             </a>
             
             <div>
@@ -75,43 +94,69 @@
         <a class="whatsapp" href="https://api.whatsapp.com/send/?phone=%2B573138157376&text&type=phone_number&app_absent=0" target="_blank"><i class="ri-whatsapp-fill"></i></a>
     </div>
 
-
-    <!-- Incluyendo Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
-        document.querySelectorAll('.nav_link_subMenu').forEach(botonSubMenu => {
-            botonSubMenu.addEventListener("click", function(event) {
-                event.preventDefault(); // Evita que el enlace recargue la página
-                let dropdownMenu = this.parentElement.querySelector('.dropdown-menu');
+        function updateCountdownAndHeaderPosition() {
+            const targetDate = new Date("2025-08-01T00:00:00");
+            const now = new Date();
+            const diff = targetDate - now;
 
-                if (dropdownMenu.style.display === 'block') {
-                    dropdownMenu.style.display = 'none';
+            const alertBar = document.querySelector('.alert-bar-wrapper');
+            const customNavbar = document.querySelector('.custom-navbar');
+            const body = document.body;
+
+            // --- Actualizar el contador ---
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+
+                document.getElementById("days").textContent = days.toString().padStart(2, "0");
+                document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+                document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+                document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+            } else {
+                // Si la fecha ya pasó, mostrar 00 en el contador (dado que siempre estará presente)
+                document.getElementById("days").textContent = "00";
+                document.getElementById("hours").textContent = "00";
+                document.getElementById("minutes").textContent = "00";
+                document.getElementById("seconds").textContent = "00";
+            }
+
+            // --- Ajustar el posicionamiento del header y el padding del body ---
+            const alertBarHeight = alertBar ? alertBar.getBoundingClientRect().height : 0;
+            const navbarHeight = customNavbar ? customNavbar.getBoundingClientRect().height : 0;
+
+            if (customNavbar) {
+                customNavbar.style.top = `${alertBarHeight}px`;
+            }
+
+            const totalFixedHeaderHeight = alertBarHeight + navbarHeight;
+            body.style.paddingTop = `${totalFixedHeaderHeight}px`;
+
+            const navbarCollapse = document.getElementById('navbarNav');
+            if (navbarCollapse) {
+                if (navbarCollapse.classList.contains('show')) {
+                    const remainingViewportHeight = window.innerHeight - totalFixedHeaderHeight;
+                    navbarCollapse.style.maxHeight = `${remainingViewportHeight}px`;
+                    navbarCollapse.style.overflowY = 'auto';
                 } else {
-                    // Oculta todos los otros menús antes de abrir el actual
-                    dropdownMenu.style.display = 'block';
+                    navbarCollapse.style.maxHeight = 'none';
+                    navbarCollapse.style.overflowY = 'visible';
                 }
-            });
-        });
+            }
+        }
 
+        updateCountdownAndHeaderPosition();
+        setInterval(updateCountdownAndHeaderPosition, 1000);
+        window.addEventListener('resize', updateCountdownAndHeaderPosition);
 
-        document.addEventListener("DOMContentLoaded", function() {
-            var navLinks = document.querySelectorAll(".btn_nav");
-            var navbarToggler = document.querySelector(".navbar-toggler");
-
-            navLinks.forEach(function(link) {
-                link.addEventListener("click", function() {
-                    var navbarCollapse = document.querySelector("#navbarNav");
-                    if (navbarCollapse.style.display === 'block') {
-                        navbarCollapse.style.display = 'none';
-                    } else {
-                        navbarCollapse.style.display = 'block';
-                    }
-                });
-            });
-        });
+        const navbarCollapseElement = document.getElementById('navbarNav');
+        if (navbarCollapseElement) {
+            navbarCollapseElement.addEventListener('shown.bs.collapse', updateCountdownAndHeaderPosition);
+            navbarCollapseElement.addEventListener('hidden.bs.collapse', updateCountdownAndHeaderPosition);
+        }
     </script>
-
-
-</body>
-
-</html>

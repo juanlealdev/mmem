@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 
-    <title>Resultados | Media Maratón Entre Montañas | Desafío Cocora</title>
+    <title>Resultados | Media Maratï¿½n Entre Montaï¿½as | Desafï¿½o Cocora</title>
      <link rel="icon" type="image/png" href="favicon.png">
     
-    <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.">
+    <meta name="description" content="Corre 100% sobre asfalto, entre las montaï¿½as del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaï¿½a, del mejor paisaje natural de Colombia, de las emblemï¿½ticas casas pintorescas de Salento, del aroma a cafï¿½ y dï¿½jate envolver por la magia del Quindï¿½o.">
 
     
-    <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
+    <meta name="keywords" content="Media Maratï¿½n, Carrera 10K, Quindï¿½o, Colombia, Valle del Cocora, Salento,">
 
     
-    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora ">
-    <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
+    <meta name="author" content="Media Maratï¿½n Entre Montaï¿½as | Desafï¿½o Cocora">
+    <meta name="copyright" content="ï¿½ 2025 MMEM | Desafï¿½o Cocora">
 
     <!-- Favicon -->
     <link rel="icon" href="https://tudominio.com/favicon.ico" type="image/x-icon">
@@ -26,6 +26,7 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel ="stylesheet" href="styles/resultados.css">
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
@@ -40,7 +41,7 @@
 include_once('./Templates/header.php');
 ?>
 
-<section id="resultados-maraton">
+<section id="resultados-maraton" style="margin-top: -93px;">
     <!-- <h2>M.M. Entre MontaÃ±as 2024</h2> -->
 
     <div class="container my-5">

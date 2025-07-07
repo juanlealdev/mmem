@@ -1,134 +1,238 @@
-/* Estilo general del Navbar */
-.navbar {
-    background-color: #648d00;
-    /* Fondo verde oscuro */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0px 0px;
-    /* Sombra suave */
+
+
+
+/* Estilos del Contador */
+.alert-bar-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1050; /* Debe estar por encima del navbar *//* Altura fija para que el navbar pueda posicionarse debajo en escritorio */
+overflow: hidden; /* Asegura que el contenido interno no se salga */
 }
 
+.alert-bar-gradient {
+width: 100%;
+height: 100%; /* Ocupa el 100% de la altura de .alert-bar-wrapper */
+background: linear-gradient(to bottom, #e58b34, #f7ca46);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.alert-content-container {
+width: 100%;
+max-width: 1300px;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 10px 60px;
+box-sizing: border-box;
+color: white;
+}
+
+.alert-text {
+font-weight: 750;
+max-width: 45%;
+font-family: 'Arial', sans-serif;
+}
+
+.alert-text p {
+font-size: 14px;
+font-weight: 400;
+margin: 0;
+}
+
+.alert-text strong {
+font-size: 24px;
+font-weight: 700;
+}
+
+.countdown-container {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: center;
+}
+
+.countdown {
+display: flex;
+gap: 10px;
+align-items: center;
+justify-content: center;
+}
+
+.countdown div {
+background-color: #648d00;
+color: #ffca01;
+text-align: center;
+border-radius: 5px;
+font-weight: bold;
+box-sizing: border-box;
+width: 70px; /* Ancho fijo para escritorio */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8px 0;
+}
+
+.countdown span#days,
+.countdown span#hours,
+.countdown span#minutes,
+.countdown span#seconds {
+font-family: 'Tallica', sans-serif;
+font-size: 26px;
+letter-spacing: 0.9px;
+display: block;
+}
+
+.countdown .label {
+display: block;
+font-size: 10px;
+font-weight: 400;
+font-family: 'Arial', sans-serif;
+letter-spacing: 0.7px;
+margin-top: 0;
+}
+
+.alert-button {
+background-color: transparent;
+color: white;
+border: 1px solid white;
+padding: 8px 24px;
+border-radius: 4px;
+font-size: 14px;
+font-weight: bold;
+text-transform: uppercase;
+transition: all 0.3s;
+text-decoration: none;
+}
+
+.alert-button:hover {
+color: white;
+box-shadow: 0 0 5px white;
+}
+
+/* Estilo general del Navbar */
+.custom-navbar {
+background-color: #648d00;
+padding: 0;
+position: fixed; /* Asegura que el navbar sea fijo */
+top: 85px; /* Valor inicial, JS lo ajustará */
+width: 100%;
+z-index: 1040; /* Ligeramente menor que el contador para que este quede encima */
+height: 90px; /* Altura fija para escritorio */
+}
+
+.navbar-container {
+padding: 40px 60px;
+}
 
 .navbar-logo-container {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    max-width: 200px;
-    /* Alto del navbar, ajusta según el tamaño de tu navbar */
+display: flex;
+align-items: center;
+height: 60px;
+max-width: 200px;
 }
 
 .navbar-logo {
-    width: auto;
-    /* Ajusta el ancho según lo necesites */
-    height: 100%;
-    /* Mantiene la proporción */
-    /* O el tamaño grande que quieras */
-    /* width: auto; */
-    margin-right: 15px;
-    position: relative;
-    padding: 8px 10px;
-
-    /* Ajusta para que la imagen se "desborde" sin aumentar el alto del navbar */
+width: auto;
+height: 100%;
+margin-right: 15px;
+position: relative;
+padding: 8px 10px;
 }
 
-/* Logo o marca del navbar */
 .navbar-brand {
-    font-family: 'Georgia', serif;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #ffca01;
-    /* Amarillo fuerte */
-    text-transform: uppercase;
-    transition: color 0.3s ease;
+font-family: 'Georgia', serif;
+font-size: 1.8rem;
+font-weight: bold;
+color: #ffca01;
+text-transform: uppercase;
+transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
-    color: #f18500;
-    /* Naranja quemado */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+color: #f18500;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 /* Enlaces del navbar */
 .nav-link {
-    font-family: 'Arial', sans-serif;
-    font-size: 1rem;
-    color: #ffca01;
-    /* Amarillo fuerte */
-    margin-right: 15px;
-    text-transform: capitalize;
-    transition: color 0.3s ease, transform 0.3s ease;
+font-family: 'Arial', sans-serif;
+font-size: 1rem;
+color: #ffca01;
+margin-right: 15px;
+text-transform: capitalize;
+transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #f18500;
-    /* Naranja quemado */
-    transform: scale(1.05);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* Botón destacado (Ejemplo de inscripción o acción principal) */
-.btn-primary {
-    background-color: #86af05;
-    /* Verde claro pasto */
-    border: none;
-    color: white;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-primary:hover {
-    background-color: #648d00;
-    /* Verde oscuro */
-    transform: translateY(-2px);
-}
-
-.btn-primary:active {
-    transform: translateY(1px);
-}
-
-/* No es estrictamente necesario, pero puede ayudar a darle un toque más suave */
-.navbar-collapse {
-    display: none;
-    transition: all 0.3s ease-in-out;
-}
-
-
-/* RESPONSIVE */
-/* Para pantallas menores a 768px */
-.imagen-responsive img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+color: #f18500;
+transform: scale(1.05);
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .btn-offer-mobile,
 .btn-offer {
-    background-color: black;
-    color: white;
-    font-weight: 800;
-    font-size: 0.75rem;
-    padding: 10px 24px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    margin: auto;
+background-color: black;
+color: white;
+font-weight: 800;
+font-size: 0.75rem;
+padding: 10px 24px;
+border-radius: 5px;
+text-transform: uppercase;
+margin: auto;
+text-decoration: none;
 }
 
 .btn-offer-mobile {
-    display: none;
+display: none;
 }
 
 .btn-offer {
-    display: inline-block;
+display: inline-block;
 }
 
-@media (max-width: 992px) {
+/* Social Icons Fixed */
+.social-icons-fixed {
+position: fixed;
+right: 20px;
+bottom: 45px;
+z-index: 1000;
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
 
-    .btn-offer-mobile {
-        margin-right: 8px;
-        display: inline-block;
-    }
 
-    .btn-offer {
-        display: none;
-    }
 
+.social-icons-fixed .facebook,
+.social-icons-fixed .instagram,
+.social-icons-fixed .whatsapp {
+font-size: 30px;
+transition: color 0.3s ease;
+display: inline-flex;
+width: 30px;
+height: 30px;
+align-items: center;
+justify-content: center;
+padding: 0;
+margin: 0;
+line-height: 1;
+text-decoration: none;
+}
+
+.social-icons-fixed .facebook:hover {
+color: #1877f2;
+}
+
+.social-icons-fixed .instagram:hover {
+color: #c13584;
+}
+
+.social-icons-fixed .whatsapp:hover {
+color: #25d366;
 }
