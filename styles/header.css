@@ -71,7 +71,6 @@ border-radius: 5px;
 font-weight: bold;
 box-sizing: border-box;
 width: 70px; /* Ancho fijo para escritorio */
-height: 60px; /* Alto fijo para escritorio */
 display: flex;
 flex-direction: column;
 justify-content: center;

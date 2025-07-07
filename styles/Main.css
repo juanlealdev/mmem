@@ -786,6 +786,7 @@ h3 {
     .countdown span#hours,
     .countdown span#minutes,
     .countdown span#seconds {
+        font-family: 'Tallica', sans-serif;
         font-size: 28px;
         margin-bottom: 1px;
     }
