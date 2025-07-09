@@ -26,6 +26,15 @@ body {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Avenir LT Std';
+    src: url('https://cdn.mmem.com.co/fonts/AvenirLTStd-Book.woff2') format('woff2'),
+        url('https://cdn.mmem.com.co/fonts/AvenirLTStd-Book.woff') format('woff'),
+        url('https://cdn.mmem.com.co/fonts/AvenirLTStd-Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* ----- ENCABEZADO / NAVBAR ----- */
 header {
     background-color: var(--color-verde-oscuro);
@@ -618,7 +627,87 @@ h3 {
     margin: 5px 0;
 }
 
+/*--------*/
 
+.cupos-section {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    background-image: url('https://cdn.mmem.com.co/Images/2025/background_barra_urgencia.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cupos-container {
+    width: 65%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-bar-container {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    padding: 8px;
+    background-color: transparent;
+    border-radius: 40px;
+    border: 1px solid white;
+    /* más grueso para parecer al Figma */
+    box-sizing: border-box;
+    overflow: hidden;
+    /* fuerza al fill a estar contenido sin padding */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.progress-fill {
+    background-color: #f5b000;
+    height: 98%;
+    width: 70%;
+    /* ajusta dinámicamente este valor */
+    border-radius: 40px;
+    /* solo esquinas izquierdas redondeadas */
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    font-weight: bold;
+    color: #91b706;
+    font-family: 'Arial', sans-serif;
+    z-index: 2;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.35),
+        0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.progress-label {
+    font-size: 22px;
+    font-weight: 300;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.progress-label .vendidos {
+    font-size: 22px;
+    color: #ffb700;
+    font-weight: 900;
+    font-family: 'Arial', sans-serif;
+}
+
+
+
+
+
+
+/* ----------------*/
 
 /* ------------------------------------- */
 /* TUS MEDIA QUERIES EXISTENTES EN MAIN.CSS */
@@ -644,6 +733,70 @@ h3 {
         flex-direction: column;
         gap: 10px;
     }
+
+       /* Contador */
+       .alert-content-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 10px 20px;
+        height: auto;
+    }
+
+    .alert-text {
+        max-width: 100%;
+    }
+
+    /* Aseguramos que la barra del contador tenga una altura mínima en móviles */
+    .alert-bar-wrapper {
+        height: auto;
+        /* Permite que el contenido determine la altura */
+        min-height: 85px;
+        /* Pero asegúrate de que no se haga demasiado pequeño */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1050;
+    }
+
+    .alert-bar-gradient {
+        height: 100%;
+        /* Ocupa el 100% de la altura de .alert-bar-wrapper */
+    }
+
+    .countdown-container {
+        align-items: center;
+    }
+
+    .countdown div {
+        width: 60px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .countdown span#days,
+    .countdown span#hours,
+    .countdown span#minutes,
+    .countdown span#seconds {
+        font-family: 'Tallica', sans-serif;
+        font-size: 28px;
+        margin-bottom: 1px;
+    }
+
+    .countdown .label {
+        font-size: 9px;
+        margin-top: 0px;
+    }
+
+    .alert-text strong {
+        font-size: 16px;
+    }
+
+    .alert-text p {
+        font-size: 12px;
+    }
+
 }
 
 /* ----- RESPONSIVIDAD ----- */
@@ -722,6 +875,75 @@ h3 {
         background-position: center;
         background-repeat: no-repeat;
     }
+
+    .cupos-section {
+        width: 100%;
+        padding: 25px 0;
+        display: flex;
+        justify-content: center;
+        background-image: url('https://cdn.mmem.com.co/Images/2025/background_barra_urgencia.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cupos-container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .progress-bar-container {
+        position: relative;
+        height: 32px;
+        padding: 7px;
+        background-color: transparent;
+        border-radius: 40px;
+        border: 1 solid white;
+        box-sizing: border-box;
+        overflow: hidden;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+
+    .progress-fill {
+        background-color: #f5b000;
+        height: 98%;
+        width: 70%;
+        border-radius: 40px;
+    }
+
+    .progress-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        font-weight: bold;
+        color: #91b706;
+        font-family: 'Arial', sans-serif;
+        z-index: 2;
+        text-shadow:
+            0 2px 4px rgba(0, 0, 0, 0.4),
+            0 4px 8px rgba(0, 0, 0, 0.35),
+            0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .progress-label {
+        font-size: 20px;
+        font-weight: 300;
+        color: white;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .progress-label .vendidos {
+        font-size: 20px;
+        color: #ffb700;
+        font-weight: 900;
+        font-family: 'Arial', sans-serif;
+    }
+
+    
 }
 
 @media (max-width: 493px) {
@@ -732,10 +954,143 @@ h3 {
         height: auto;
         margin-top: 60px;
     }
+
+    /* Contador */
+    .alert-content-container {
+        padding: 10px;
+    }
+
+    .alert-text strong {
+        font-size: 15px;
+    }
+
+    .alert-text p {
+        font-size: 11px;
+    }
+
+    .countdown div {
+        width: 50px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .countdown span#days,
+    .countdown span#hours,
+    .countdown span#minutes,
+    .countdown span#seconds {
+        font-size: 20px;
+    }
+
+    .countdown .label {
+        font-size: 10px;
+    }
+
+    .alert-button {
+        padding: 6px 18px;
+        font-size: 12px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+        padding: 5px 15px;
+    }
+
+    .navbar-logo-container {
+        max-width: 120px;
+        height: 40px;
+    }
+
+    .btn-offer-mobile {
+        font-size: 0.6rem;
+        padding: 6px 12px;
+    }
+
+    .social-icons-fixed {
+        left: 5px;
+        /* Margen izquierdo más pequeño */
+        bottom: 130px;
+        gap: 5px;
+        z-index: 990;
+    }
+
+    .social-icons-fixed .facebook,
+    .social-icons-fixed .instagram,
+    .social-icons-fixed .whatsapp {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .cupos-section {
+        width: 100%;
+        padding: 25px 0;
+        display: flex;
+        justify-content: center;
+        background-image: url('https://cdn.mmem.com.co/Images/2025/background_barra_urgencia.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cupos-container {
+        width: 96%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .progress-bar-container {
+        position: relative;
+        height: 28px;
+        padding: 6px;
+        background-color: transparent;
+        border-radius: 40px;
+        border: 1 solid white;
+        box-sizing: border-box;
+        overflow: hidden;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    }
+
+    .progress-fill {
+        background-color: #f5b000;
+        height: 98%;
+        width: 70%;
+        border-radius: 40px;
+    }
+
+    .progress-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 26px;
+        font-weight: bold;
+        color: #91b706;
+        font-family: 'Arial', sans-serif;
+        z-index: 2;
+        text-shadow:
+            0 2px 4px rgba(0, 0, 0, 0.4),
+            0 4px 8px rgba(0, 0, 0, 0.35),
+            0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .progress-label {
+        font-size: 17px;
+        font-weight: 300;
+        color: white;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .progress-label .vendidos {
+        font-size: 17px;
+        color: #ffb700;
+        font-weight: 900;
+        font-family: 'Arial', sans-serif;
+    }
 }
 
 /* ------------------------------------- */
-/* MEDIA QUERIES DEL HEADER (AÑADIDAS Y AJUSTADAS AQUÍ) */
+/* MEDIA QUERIES DEL HEADER  */
 /* ------------------------------------- */
 
 /* Para pantallas de 992px o menos (Tabletas y móviles grandes) */
@@ -884,12 +1239,15 @@ h3 {
     }
 
     .dropdown-item {
-         /* ELIMINAR O AJUSTAR ESTAS PROPIEDADES PARA CENTRAR */
-         padding-left: 0; /* Eliminar el padding a la izquierda para que no empuje el texto */
-         text-align: center; /* Cambiar a center para alinear el texto al centro */
-         color: #ffca01;
-         display: block; /* Asegurarse de que sea un bloque para que text-align funcione correctamente */
-         padding: 10px 0;
+        /* ELIMINAR O AJUSTAR ESTAS PROPIEDADES PARA CENTRAR */
+        padding-left: 0;
+        /* Eliminar el padding a la izquierda para que no empuje el texto */
+        text-align: center;
+        /* Cambiar a center para alinear el texto al centro */
+        color: #ffca01;
+        display: block;
+        /* Asegurarse de que sea un bloque para que text-align funcione correctamente */
+        padding: 10px 0;
     }
 
     .dropdown-item:hover {
@@ -919,73 +1277,5 @@ h3 {
         margin: 0;
         line-height: 1;
         text-decoration: none;
-    }
-}
-
-/* Para pantallas de 480px o menos (Móviles muy pequeños) */
-@media (max-width: 480px) {
-
-    /* Contador */
-    .alert-content-container {
-        padding: 10px;
-    }
-
-    .alert-text strong {
-        font-size: 15px;
-    }
-
-    .alert-text p {
-        font-size: 11px;
-    }
-
-    .countdown div {
-        width: 50px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-    }
-
-    .countdown span#days,
-    .countdown span#hours,
-    .countdown span#minutes,
-    .countdown span#seconds {
-        font-size: 20px;
-    }
-
-    .countdown .label {
-        font-size: 10px;
-    }
-
-    .alert-button {
-        padding: 6px 18px;
-        font-size: 12px;
-    }
-
-    /* Navbar */
-    .custom-navbar {
-        padding: 5px 15px;
-    }
-
-    .navbar-logo-container {
-        max-width: 120px;
-        height: 40px;
-    }
-
-    .btn-offer-mobile {
-        font-size: 0.6rem;
-        padding: 6px 12px;
-    }
-
-    .social-icons-fixed {
-        left: 5px; /* Margen izquierdo más pequeño */
-        bottom: 130px;
-        gap: 5px;
-        z-index: 990;
-    }
-    .social-icons-fixed .facebook,
-    .social-icons-fixed .instagram,
-    .social-icons-fixed .whatsapp {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
     }
 }

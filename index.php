@@ -89,6 +89,20 @@ include_once('./Templates/header.php')
         </div>
     </section>
 
+<!-- Sección de la barra de alerta -->
+    <section class="cupos-section">
+        <div class="cupos-container">
+            <div class="progress-bar-container">
+             <div class="progress-fill"></div>
+            <div class="progress-text">70%</div>
+        </div>
+        <div class="progress-label">
+            CUPOS <span class="vendidos">VENDIDOS</span>
+        </div>
+        </div>
+    </section>
+
+<!--  finish sección de la barra de alerta -->
 
 
 
