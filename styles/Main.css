@@ -702,9 +702,72 @@ h3 {
     font-family: 'Arial', sans-serif;
 }
 
+/* SECCION PATROCINADORES */
+.sponsor-carousel {
+    width: 100%;
+    background-image: url('https://cdn.mmem.com.co/Images/2025/horizontalSponsorsBackground%20.webp');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 80px 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
 
+.sponsor-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+}
 
+.slider-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
 
+.slider-track {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    width: max-content;
+    animation: scroll 240s linear infinite;
+}
+
+.logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-item img {
+    height: 55px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-item img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.slider-track:hover {
+    animation-play-state: paused;
+    cursor: grab;
+}
 
 
 /* ----------------*/
@@ -734,8 +797,8 @@ h3 {
         gap: 10px;
     }
 
-       /* Contador */
-       .alert-content-container {
+    /* Contador */
+    .alert-content-container {
         flex-direction: column;
         gap: 10px;
         text-align: center;
@@ -943,7 +1006,77 @@ h3 {
         font-family: 'Arial', sans-serif;
     }
 
-    
+    /* SECCION PATROCINADORES */
+    .sponsor-carousel {
+        width: 100%;
+        background-image: url('https://cdn.mmem.com.co/Images/2025/horizontalSponsorsBackground%20.webp');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 60px 5px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+
+    .sponsor-title {
+        font-family: 'Arial', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .slider-wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .slider-track {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        animation: scroll 240s linear infinite;
+    }
+
+    .logo-item {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-item img {
+        height: 55px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    .logo-item img:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .slider-track:hover {
+        animation-play-state: paused;
+        cursor: grab;
+    }
+
+
+    /* ----------------*/
+
+
 }
 
 @media (max-width: 493px) {
@@ -1087,6 +1220,76 @@ h3 {
         font-weight: 900;
         font-family: 'Arial', sans-serif;
     }
+
+    /* SECCION PATROCINADORES */
+    .sponsor-carousel {
+        width: 100%;
+        background-image: url('https://cdn.mmem.com.co/Images/2025/horizontalSponsorsBackground%20.webp');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 40px 5px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+
+    .sponsor-title {
+        font-family: 'Arial', sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .slider-wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .slider-track {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        animation: scroll 240s linear infinite;
+    }
+
+    .logo-item {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-item img {
+        height: 25px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    .logo-item img:hover {
+        transform: scale(1.1);
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .slider-track:hover {
+        animation-play-state: paused;
+        cursor: grab;
+    }
+
+
+    /* ----------------*/
 }
 
 /* ------------------------------------- */

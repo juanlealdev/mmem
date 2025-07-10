@@ -181,7 +181,7 @@ include_once('./Templates/header.php')
         </div>
     </section>
 
-    <section class="container my-5" id="section_6">
+    <section class="container my-3 my-md-5" id="section_6">
         <div class="row">
             <div class="col">
 
@@ -252,34 +252,44 @@ include_once('./Templates/header.php')
         </div>
     </section>
 
-    <section class="container my-5 text-center">
+
+    <section class="sponsor-carousel">
+  <h3 class="sponsor-title">Nuestros Patrocinadores</h3>
+  <div class="slider-wrapper">
+    <div class="slider-track">
+      <?php
+      $patrocinadores = [
+        'https://cdn.mmem.com.co/Images/2025/nexus.webp',
+        'https://cdn.mmem.com.co/Images/2025/healthySports.webp',
+        'https://cdn.mmem.com.co/Images/2025/imdera.webp',
+        'https://cdn.mmem.com.co/Images/2025/gatorade.webp',
+        'https://cdn.mmem.com.co/Images/2025/andiautos.webp',
+        'https://cdn.mmem.com.co/Images/2025/smartfit.webp',
+        'https://cdn.mmem.com.co/Images/2025/perea.webp',
+        'https://cdn.mmem.com.co/Images/2025/sura.webp',
+        'https://cdn.mmem.com.co/Images/2025/ocaso.webp'
+      ];
+
+      // Repetir para animación infinita
+      $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores,$patrocinadores, $patrocinadores);
+
+      foreach ($logos as $logo) {
+        echo "<div class='logo-item'><img src='$logo' alt='Patrocinador'></div>";
+      }
+      ?>
+    </div>
+  </div>
+</section>
+
+
+    <section class="container my-3 my-md-5 text-center">
         <div class="d-flex justify-content-center align-items-center gap-3">
             <span class="custom-text">PLANEA TU VIAJE</span>
             <button class="custom-button" id="bton_viaje">HAZ TU PLAN</button>
         </div>
     </section>
 
-    <?php
-/*
-<section class="patrocinadores-carousel">
-  <h3>Nuestros Patrocinadores</h3>
-  <div class="slider-wrapper">
-    <div class="slider-track">
-      <?php
-      $patrocinadores = ['Logo.png', 'Logo_2.png', 'Logo_3.png'];
-      $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores);
 
-      foreach ($logos as $logo) {
-        echo "<div class='logo-item'>
-                <img src='Images/logo/$logo' alt='Patrocinador'>
-              </div>";
-      }
-      ?>
-    </div>
-  </div>
-</section>
-*/
-?>
 
     <section class="container-fluid my-5 d-flex gap-1 flex-column" id="section_8">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
