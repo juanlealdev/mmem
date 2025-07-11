@@ -19,9 +19,9 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css?v=1.0">
-    <link rel="stylesheet" href="./styles/Main.css?v=1.0">
-    <link rel="stylesheet" href="./styles/header.css?v=1.0">
+    <link rel="stylesheet" href="styles.css?v=2025-07-11">
+    <link rel="stylesheet" href="./styles/Main.css?v=2025-07-11">
+    <link rel="stylesheet" href="./styles/header.css?v=2025-07-11">
 
 
     <!-- JavaScript -->
