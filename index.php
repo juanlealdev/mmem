@@ -62,6 +62,11 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
 include_once('./Templates/header.php')
 ?>
 
+<?php
+
+include_once('./Templates/redes_icons.php')
+?>
+
 <main class="site-main">
 
     <!-- Carrusel con Indicadores de Imágenes -->
@@ -298,8 +303,8 @@ include_once('./Templates/header.php')
   ];
 
   const slider = document.getElementById("testimonial-slider");
+  const wrapper = document.querySelector(".testimonial-image-wrapper");
 
-  // Duplicamos última y primera para efecto infinito
   const images = [testimonialImages[testimonialImages.length - 1], ...testimonialImages, testimonialImages[0]];
 
   images.forEach(src => {
@@ -312,23 +317,31 @@ include_once('./Templates/header.php')
   const total = testimonialImages.length;
   let isTransitioning = false;
   let autoSlideInterval = null;
+  let autoPaused = false;
+
+  // Obtiene el ancho actual del contenedor
+  function getSlideWidth() {
+    return wrapper.clientWidth;
+  }
 
   function moveSlider() {
-    if (slider) {
-      slider.style.transition = "transform 0.5s ease-in-out";
-      slider.style.transform = `translateX(-${currentIndex * 400}px)`;
-    }
+    if (!slider) return;
+    const width = getSlideWidth();
+    slider.style.transition = "transform 0.5s ease-in-out";
+    slider.style.transform = `translateX(-${currentIndex * width}px)`;
   }
 
   function resetSlider(index) {
+    const width = getSlideWidth();
     slider.style.transition = "none";
-    slider.style.transform = `translateX(-${index * 400}px)`;
+    slider.style.transform = `translateX(-${index * width}px)`;
     currentIndex = index;
   }
 
   function nextTestimonial() {
     if (isTransitioning) return;
     stopAutoSlide();
+    autoPaused = true;
     isTransitioning = true;
     currentIndex++;
     moveSlider();
@@ -337,6 +350,7 @@ include_once('./Templates/header.php')
   function prevTestimonial() {
     if (isTransitioning) return;
     stopAutoSlide();
+    autoPaused = true;
     isTransitioning = true;
     currentIndex--;
     moveSlider();
@@ -344,17 +358,17 @@ include_once('./Templates/header.php')
 
   slider.addEventListener("transitionend", () => {
     isTransitioning = false;
-    if (currentIndex === total + 1) {
-      resetSlider(1);
-    } else if (currentIndex === 0) {
-      resetSlider(total);
-    }
+    if (currentIndex === total + 1) resetSlider(1);
+    else if (currentIndex === 0) resetSlider(total);
   });
 
   function startAutoSlide() {
+    if (autoPaused) return;
+    stopAutoSlide();
     autoSlideInterval = setInterval(() => {
-      nextTestimonial();
-    }, 5000);
+      currentIndex++;
+      moveSlider();
+    }, 7000);
   }
 
   function stopAutoSlide() {
@@ -362,15 +376,25 @@ include_once('./Templates/header.php')
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    resetSlider(1); // Posicionar en la primera real
+    resetSlider(1);
     startAutoSlide();
 
     document.addEventListener("click", (e) => {
       const isArrow = e.target.classList.contains("arrow");
-      if (!isArrow) startAutoSlide();
+      if (!isArrow) {
+        autoPaused = false;
+        startAutoSlide();
+      }
     });
   });
+
+  // Vuelve a calcular el ancho del slide al redimensionar pantalla
+  window.addEventListener("resize", () => {
+    resetSlider(currentIndex); // Ajusta la posición con el nuevo ancho
+  });
 </script>
+
+
 
 
 

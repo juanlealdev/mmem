@@ -40,6 +40,10 @@
 <?php
 include_once('./Templates/header.php');
 ?>
+<?php
+
+include_once('./Templates/redes_icons.php')
+?>
 
 <section id="resultados-maraton" style="margin-top: -93px;">
     <!-- <h2>M.M. Entre Montañas 2024</h2> -->

@@ -70,6 +70,10 @@
 <?php
 include_once('./Templates/header.php');
 ?>
+<?php
+
+include_once('./Templates/redes_icons.php')
+?>
 
 <section id="reglamento" style="margin-top: -15px;">
     <h2>Reglamento Oficial</h2>

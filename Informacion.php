@@ -39,6 +39,10 @@
 <?php
 include_once('./Templates/header.php');
 ?>
+<?php
+
+include_once('./Templates/redes_icons.php')
+?>
 
 <section id="info-maraton" style="margin-top: -70px;">
     <div class="container">

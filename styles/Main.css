@@ -1353,8 +1353,8 @@ h3 {
 
     .sponsor-title {
         font-family: 'Arial', sans-serif;
-        font-size: 18px;
-        font-weight: bold;
+        font-size: 20px;
+        font-weight: 700;
         color: #fff;
         text-align: center;
         margin-bottom: 20px;
@@ -1372,8 +1372,8 @@ h3 {
     .slider-track {
         display: flex;
         align-items: center;
-        gap: 45px;
-        animation: scroll 180s linear infinite;
+        gap: 60px;
+        animation: scroll 90s linear infinite;
     }
 
     .logo-item {
@@ -1384,7 +1384,7 @@ h3 {
     }
 
     .logo-item img {
-        height: 30px;
+        height: 35px;
         object-fit: contain;
         transition: transform 0.3s ease;
     }
@@ -1399,7 +1399,7 @@ h3 {
         }
 
         100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
         }
     }
 
@@ -1407,6 +1407,110 @@ h3 {
         animation-play-state: paused;
         cursor: grab;
     }
+
+    /* SECCIÓN TESTIMONIOS COMPLETA */
+
+    .testimonial-section {
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        padding: 20px 20px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+
+    .testimonial-frame {
+        padding: 5px 15px;
+        padding: 30px 30px;
+    }
+
+    .testimonial-title {
+        font-size: 20px;
+        text-align: left;
+
+    }
+
+    .testimonial-body {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .testimonial-carousel {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .testimonial-image-wrapper {
+        width: 250px;
+        height: 120px;
+    }
+
+    .testimonial-slider img {
+        width: 250px;
+        height: 120px;
+    }
+
+    .arrow {
+        font-size: 26px;
+    }
+
+    .testimonial-logo {
+        width: 80px;
+        bottom: 10px;
+        right: 15px;
+    }
+
+    /* ICONS REDES SOCIALES*/
+
+    /* Contenedor fijo de iconos sociales */
+.social-icons-fixed {
+    pointer-events: none;
+    position: fixed;
+    bottom: 250px !important;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+}
+
+/* Enlaces individuales de cada red */
+.social-icons-fixed .facebook,
+.social-icons-fixed .instagram,
+.social-icons-fixed .whatsapp {
+    pointer-events: auto;
+    font-size: 30px;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    text-decoration: none;
+}
+
+/* Hover effects personalizados */
+.social-icons-fixed .facebook:hover {
+    color: #1877f2;
+}
+
+.social-icons-fixed .instagram:hover {
+    color: #c13584;
+}
+
+.social-icons-fixed .whatsapp:hover {
+    color: #25d366;
+}
+
 
 
     /* ----------------*/
@@ -1581,7 +1685,7 @@ h3 {
     /* Iconos Sociales */
     .social-icons-fixed {
         right: 10px;
-        bottom: 75px;
+        bottom: 100px;
         gap: 8px;
         z-index: 1500;
     }
@@ -1601,4 +1705,39 @@ h3 {
         line-height: 1;
         text-decoration: none;
     }
+
+    .testimonial-frame {
+        padding: 30px 30px;
+      }
+    
+      .testimonial-body {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 60px;
+      }
+    
+      .testimonial-carousel {
+        flex-direction: row;
+        gap: 10px;
+      }
+    
+      .testimonial-image-wrapper {
+        width: 300px;
+        height: 140px;
+      }
+    
+      .testimonial-slider img {
+        width: 300px;
+        height: 140px;
+      }
+    
+      .arrow {
+        font-size: 30px;
+      }
+    
+      .testimonial-logo {
+        width: 100px;
+        bottom: 15px;
+        right: 20px;
+      }
 }
