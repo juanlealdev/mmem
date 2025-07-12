@@ -252,6 +252,127 @@ include_once('./Templates/header.php')
         </div>
     </section>
 
+   <!-- Testimonial Section -->
+
+<!-- Sección de testimonios -->
+<section class="testimonial-section">
+  <div class="testimonial-frame">
+    <h2 class="testimonial-title">Testimonio <strong>MMEM</strong></h2>
+    
+    <div class="testimonial-body">
+      <!-- Contenedor de VIDEOS -->
+      <!-- <div class="testimonial-videos">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Testimonio 1"
+          frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Testimonio 2"
+          frameborder="0" allowfullscreen></iframe>
+    </div> -->
+
+
+      <!-- Contenedor de IMÁGENES (Carrusel) -->
+      <div class="testimonial-carousel">
+        <div class="arrow left" onclick="prevTestimonial()">&#8249;</div>
+        <div class="testimonial-image-wrapper">
+        <div class="testimonial-slider" id="testimonial-slider">
+        <!-- Imágenes insertadas dinámicamente desde JS -->
+        </div>
+        </div>
+        <div class="arrow right" onclick="nextTestimonial()">&#8250;</div>
+        </div>
+
+        <!-- Logo -->
+        <img class="testimonial-logo" src="https://cdn.mmem.com.co/Images/2025/mmem_logo.svg" alt="MMEM Logo" />
+    </div>
+</section>
+
+
+<script>
+  const testimonialImages = [
+    "https://cdn.mmem.com.co/Images/2025/t2%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t1%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t4%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t5%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t6%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t7%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t8%402x.webp"
+  ];
+
+  const slider = document.getElementById("testimonial-slider");
+
+  // Duplicamos última y primera para efecto infinito
+  const images = [testimonialImages[testimonialImages.length - 1], ...testimonialImages, testimonialImages[0]];
+
+  images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    slider.appendChild(img);
+  });
+
+  let currentIndex = 1;
+  const total = testimonialImages.length;
+  let isTransitioning = false;
+  let autoSlideInterval = null;
+
+  function moveSlider() {
+    if (slider) {
+      slider.style.transition = "transform 0.5s ease-in-out";
+      slider.style.transform = `translateX(-${currentIndex * 400}px)`;
+    }
+  }
+
+  function resetSlider(index) {
+    slider.style.transition = "none";
+    slider.style.transform = `translateX(-${index * 400}px)`;
+    currentIndex = index;
+  }
+
+  function nextTestimonial() {
+    if (isTransitioning) return;
+    stopAutoSlide();
+    isTransitioning = true;
+    currentIndex++;
+    moveSlider();
+  }
+
+  function prevTestimonial() {
+    if (isTransitioning) return;
+    stopAutoSlide();
+    isTransitioning = true;
+    currentIndex--;
+    moveSlider();
+  }
+
+  slider.addEventListener("transitionend", () => {
+    isTransitioning = false;
+    if (currentIndex === total + 1) {
+      resetSlider(1);
+    } else if (currentIndex === 0) {
+      resetSlider(total);
+    }
+  });
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      nextTestimonial();
+    }, 5000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    resetSlider(1); // Posicionar en la primera real
+    startAutoSlide();
+
+    document.addEventListener("click", (e) => {
+      const isArrow = e.target.classList.contains("arrow");
+      if (!isArrow) startAutoSlide();
+    });
+  });
+</script>
+
+
 
     <section class="sponsor-carousel">
   <h3 class="sponsor-title">Nuestros Patrocinadores</h3>
@@ -271,7 +392,7 @@ include_once('./Templates/header.php')
       ];
 
       // Repetir para animación infinita
-      $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores,$patrocinadores, $patrocinadores);
+      $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
 
       foreach ($logos as $logo) {
         echo "<div class='logo-item'><img src='$logo' alt='Patrocinador'></div>";
@@ -279,7 +400,7 @@ include_once('./Templates/header.php')
       ?>
     </div>
   </div>
-</section>
+    </section>
 
 
     <section class="container my-3 my-md-5 text-center">

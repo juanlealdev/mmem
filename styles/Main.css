@@ -735,9 +735,9 @@ h3 {
 .slider-track {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 60px;
     width: max-content;
-    animation: scroll 240s linear infinite;
+    animation: scroll 80s linear infinite;
 }
 
 .logo-item {
@@ -763,7 +763,7 @@ h3 {
     }
 
     100% {
-        transform: translateX(-70%);
+        transform: translateX(-40%);
     }
 }
 
@@ -772,8 +772,118 @@ h3 {
     cursor: grab;
 }
 
-
 /* ----------------*/
+
+/* SECCIÓN TESTIMONIOS */
+
+/* SECCIÓN TESTIMONIOS COMPLETA */
+
+.testimonial-section {
+    width: 100%;
+    background-image: url('https://cdn.mmem.com.co/Images/2025/countdown-bg%20(1).webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 70px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-frame {
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 70px 30px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    color: white;
+}
+
+.testimonial-title {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 40px;
+}
+
+.testimonial-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 85px;
+    gap: 50px;
+    flex-wrap: nowrap;
+}
+
+.testimonial-videos {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.testimonial-videos iframe {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.testimonial-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial-image-wrapper {
+    width: 400px;
+    height: 160px;
+    overflow: hidden;
+}
+
+.testimonial-image-wrapper img {
+    width: 400px;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: fit-content;
+}
+
+.testimonial-slider img {
+    width: 400px;
+    height: 160px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.arrow {
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.testimonial-logo {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    width: 120px;
+}
+
+
+/* ----- MEDIA QUERIES ----- */
+
+
+
+
+
 
 /* ------------------------------------- */
 /* TUS MEDIA QUERIES EXISTENTES EN MAIN.CSS */
@@ -862,6 +972,8 @@ h3 {
     .alert-text p {
         font-size: 12px;
     }
+
+
 
 }
 
@@ -1044,7 +1156,7 @@ h3 {
         display: flex;
         align-items: center;
         gap: 55px;
-        animation: scroll 240s linear infinite;
+        animation: scroll 180s linear infinite;
     }
 
     .logo-item {
@@ -1261,7 +1373,7 @@ h3 {
         display: flex;
         align-items: center;
         gap: 45px;
-        animation: scroll 240s linear infinite;
+        animation: scroll 180s linear infinite;
     }
 
     .logo-item {
