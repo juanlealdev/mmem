@@ -56,7 +56,7 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2025-07-13">
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>

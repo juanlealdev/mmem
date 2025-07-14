@@ -737,7 +737,7 @@ h3 {
     align-items: center;
     gap: 60px;
     width: max-content;
-    animation: scroll 80s linear infinite;
+    animation: scroll 90s linear infinite;
 }
 
 .logo-item {
@@ -769,7 +769,7 @@ h3 {
 
 .slider-track:hover {
     animation-play-state: paused;
-    cursor: grab;
+    cursor: default;
 }
 
 /* ----------------*/
@@ -793,7 +793,7 @@ h3 {
 .testimonial-frame {
     border: 2px solid white;
     border-radius: 30px;
-    padding: 70px 30px;
+    padding: 25px 30px;
     max-width: 1200px;
     width: 100%;
     box-sizing: border-box;
@@ -823,11 +823,10 @@ h3 {
     gap: 20px;
 }
 
-.testimonial-videos iframe {
-    width: 250px;
-    height: 250px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+.testimonial-videos video {
+    width: 100%;
+    height: 330px;
+    border-radius: 20px;
 }
 
 .testimonial-carousel {
@@ -877,6 +876,29 @@ h3 {
     width: 120px;
 }
 
+/* seccion video 1*/
+
+.video-shirt-container {
+    width: 100%;
+    max-width: 1000px;
+    max-height: 800px;
+    margin: 0 auto;
+    padding: 20px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* previene scroll si el video excede */
+}
+
+.video-shirt-container video {
+    width: 100%;
+    max-height: 950px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
 
 /* ----- MEDIA QUERIES ----- */
 
@@ -1156,7 +1178,7 @@ h3 {
         display: flex;
         align-items: center;
         gap: 55px;
-        animation: scroll 180s linear infinite;
+        animation: scroll 90s linear infinite;
     }
 
     .logo-item {
@@ -1384,7 +1406,7 @@ h3 {
     }
 
     .logo-item img {
-        height: 35px;
+        height: 45px;
         object-fit: contain;
         transition: transform 0.3s ease;
     }
@@ -1438,6 +1460,18 @@ h3 {
         margin-bottom: 40px;
     }
 
+    .testimonial-videos {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .testimonial-videos video {
+        width: 120%;
+        height: 350px;
+        border-radius: 20px;
+    }
+
     .testimonial-carousel {
         flex-direction: row;
         gap: 5px;
@@ -1466,50 +1500,50 @@ h3 {
     /* ICONS REDES SOCIALES*/
 
     /* Contenedor fijo de iconos sociales */
-.social-icons-fixed {
-    pointer-events: none;
-    position: fixed;
-    bottom: 250px !important;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-height: 100vh;
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-}
+    .social-icons-fixed {
+        pointer-events: none;
+        position: fixed;
+        bottom: 250px !important;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-height: 100vh;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+    }
 
-/* Enlaces individuales de cada red */
-.social-icons-fixed .facebook,
-.social-icons-fixed .instagram,
-.social-icons-fixed .whatsapp {
-    pointer-events: auto;
-    font-size: 30px;
-    transition: color 0.3s ease;
-    display: inline-flex;
-    width: 30px;
-    height: 30px;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    line-height: 1;
-    text-decoration: none;
-}
+    /* Enlaces individuales de cada red */
+    .social-icons-fixed .facebook,
+    .social-icons-fixed .instagram,
+    .social-icons-fixed .whatsapp {
+        pointer-events: auto;
+        font-size: 30px;
+        transition: color 0.3s ease;
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+        text-decoration: none;
+    }
 
-/* Hover effects personalizados */
-.social-icons-fixed .facebook:hover {
-    color: #1877f2;
-}
+    /* Hover effects personalizados */
+    .social-icons-fixed .facebook:hover {
+        color: #1877f2;
+    }
 
-.social-icons-fixed .instagram:hover {
-    color: #c13584;
-}
+    .social-icons-fixed .instagram:hover {
+        color: #c13584;
+    }
 
-.social-icons-fixed .whatsapp:hover {
-    color: #25d366;
-}
+    .social-icons-fixed .whatsapp:hover {
+        color: #25d366;
+    }
 
 
 
@@ -1708,36 +1742,50 @@ h3 {
 
     .testimonial-frame {
         padding: 30px 30px;
-      }
-    
-      .testimonial-body {
+    }
+
+    .testimonial-body {
         flex-direction: column;
         gap: 30px;
         margin-bottom: 60px;
-      }
-    
-      .testimonial-carousel {
+    }
+
+    .testimonial-videos {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .testimonial-videos video {
+        width: 110%;
+        max-height: 340px;
+        aspect-ratio: 9 / 16;
+        object-fit: cover;
+
+    }
+
+    .testimonial-carousel {
         flex-direction: row;
         gap: 10px;
-      }
-    
-      .testimonial-image-wrapper {
+    }
+
+    .testimonial-image-wrapper {
         width: 300px;
         height: 140px;
-      }
-    
-      .testimonial-slider img {
+    }
+
+    .testimonial-slider img {
         width: 300px;
         height: 140px;
-      }
-    
-      .arrow {
+    }
+
+    .arrow {
         font-size: 30px;
-      }
-    
-      .testimonial-logo {
+    }
+
+    .testimonial-logo {
         width: 100px;
         bottom: 15px;
         right: 20px;
-      }
+    }
 }

@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Media Maratón Entre Montañas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/header.css?v=1.0">
-    <link rel="stylesheet" href="./styles/Main.css?v=1.0">
+    <link rel="stylesheet" href="./styles/header.css?v=2025-07-12">
+    <link rel="stylesheet" href="./styles/Main.css?v=2025-07-12">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
 
@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <a href="index.php#section-inscribete" class="alert-button">INSCRÍBETE AHORA</a>
+                <a href="https://www.biciq.com/info-event/merch-media-maraton-entre-montanas-bd515789" target="_blank" rel="noopener noreferrer" class="alert-button">Tienda Merch</a>
             </div>
         </div>
     </div>

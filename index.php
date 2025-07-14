@@ -19,9 +19,9 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css?v=2025-07-11">
-    <link rel="stylesheet" href="./styles/Main.css?v=2025-07-11">
-    <link rel="stylesheet" href="./styles/header.css?v=2025-07-11">
+    <link rel="stylesheet" href="styles.css?v=2025-07-13">
+    <link rel="stylesheet" href="./styles/Main.css?v=2025-07-13">
+    <link rel="stylesheet" href="./styles/header.css?v=2025-07-13">
 
 
     <!-- JavaScript -->
@@ -109,6 +109,10 @@ include_once('./Templates/redes_icons.php')
 
 <!--  finish sección de la barra de alerta -->
 
+<!-- Sección video -->
+<section class="video-shirt-container">
+  <video src="https://cdn.mmem.com.co/videos/MMEM_lanzamiento_camiseta.mp4" controls playsinline muted autoplay loop></video>
+</section>
 
 
     <section  class="container section-inscribete my-5">
@@ -266,12 +270,10 @@ include_once('./Templates/redes_icons.php')
     
     <div class="testimonial-body">
       <!-- Contenedor de VIDEOS -->
-      <!-- <div class="testimonial-videos">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Testimonio 1"
-          frameborder="0" allowfullscreen></iframe>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Testimonio 2"
-          frameborder="0" allowfullscreen></iframe>
-    </div> -->
+      <div class="testimonial-videos">
+        <video src="https://cdn.mmem.com.co/videos/lv_0_20250522122720.mp4" title="Testimonio 1" controls playsinline></video>
+        <video src="https://cdn.mmem.com.co/videos/lv_0_20250709181342.mp4" title="Testimonio 2" controls playsinline></video>
+    </div>
 
 
       <!-- Contenedor de IMÁGENES (Carrusel) -->
