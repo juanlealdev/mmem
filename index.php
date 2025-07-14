@@ -19,9 +19,9 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css?v=2025-07-11">
-    <link rel="stylesheet" href="./styles/Main.css?v=2025-07-11">
-    <link rel="stylesheet" href="./styles/header.css?v=2025-07-11">
+    <link rel="stylesheet" href="styles.css?v=2025-07-13">
+    <link rel="stylesheet" href="./styles/Main.css?v=2025-07-13">
+    <link rel="stylesheet" href="./styles/header.css?v=2025-07-13">
 
 
     <!-- JavaScript -->
@@ -60,6 +60,11 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
 <?php
 
 include_once('./Templates/header.php')
+?>
+
+<?php
+
+include_once('./Templates/redes_icons.php')
 ?>
 
 <main class="site-main">
@@ -104,6 +109,10 @@ include_once('./Templates/header.php')
 
 <!--  finish sección de la barra de alerta -->
 
+<!-- Sección video -->
+<section class="video-shirt-container">
+  <video src="https://cdn.mmem.com.co/videos/MMEM_lanzamiento_camiseta.mp4" controls playsinline muted autoplay loop></video>
+</section>
 
 
     <section  class="container section-inscribete my-5">
@@ -252,6 +261,144 @@ include_once('./Templates/header.php')
         </div>
     </section>
 
+   <!-- Testimonial Section -->
+
+<!-- Sección de testimonios -->
+<section class="testimonial-section">
+  <div class="testimonial-frame">
+    <h2 class="testimonial-title">Testimonio <strong>MMEM</strong></h2>
+    
+    <div class="testimonial-body">
+      <!-- Contenedor de VIDEOS -->
+      <div class="testimonial-videos">
+        <video src="https://cdn.mmem.com.co/videos/lv_0_20250522122720.mp4" title="Testimonio 1" controls playsinline></video>
+        <video src="https://cdn.mmem.com.co/videos/lv_0_20250709181342.mp4" title="Testimonio 2" controls playsinline></video>
+    </div>
+
+
+      <!-- Contenedor de IMÁGENES (Carrusel) -->
+      <div class="testimonial-carousel">
+        <div class="arrow left" onclick="prevTestimonial()">&#8249;</div>
+        <div class="testimonial-image-wrapper">
+        <div class="testimonial-slider" id="testimonial-slider">
+        <!-- Imágenes insertadas dinámicamente desde JS -->
+        </div>
+        </div>
+        <div class="arrow right" onclick="nextTestimonial()">&#8250;</div>
+        </div>
+
+        <!-- Logo -->
+        <img class="testimonial-logo" src="https://cdn.mmem.com.co/Images/2025/mmem_logo.svg" alt="MMEM Logo" />
+    </div>
+</section>
+
+
+<script>
+  const testimonialImages = [
+    "https://cdn.mmem.com.co/Images/2025/t2%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t1%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t4%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t5%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t6%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t7%402x.webp",
+    "https://cdn.mmem.com.co/Images/2025/t8%402x.webp"
+  ];
+
+  const slider = document.getElementById("testimonial-slider");
+  const wrapper = document.querySelector(".testimonial-image-wrapper");
+
+  const images = [testimonialImages[testimonialImages.length - 1], ...testimonialImages, testimonialImages[0]];
+
+  images.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    slider.appendChild(img);
+  });
+
+  let currentIndex = 1;
+  const total = testimonialImages.length;
+  let isTransitioning = false;
+  let autoSlideInterval = null;
+  let autoPaused = false;
+
+  // Obtiene el ancho actual del contenedor
+  function getSlideWidth() {
+    return wrapper.clientWidth;
+  }
+
+  function moveSlider() {
+    if (!slider) return;
+    const width = getSlideWidth();
+    slider.style.transition = "transform 0.5s ease-in-out";
+    slider.style.transform = `translateX(-${currentIndex * width}px)`;
+  }
+
+  function resetSlider(index) {
+    const width = getSlideWidth();
+    slider.style.transition = "none";
+    slider.style.transform = `translateX(-${index * width}px)`;
+    currentIndex = index;
+  }
+
+  function nextTestimonial() {
+    if (isTransitioning) return;
+    stopAutoSlide();
+    autoPaused = true;
+    isTransitioning = true;
+    currentIndex++;
+    moveSlider();
+  }
+
+  function prevTestimonial() {
+    if (isTransitioning) return;
+    stopAutoSlide();
+    autoPaused = true;
+    isTransitioning = true;
+    currentIndex--;
+    moveSlider();
+  }
+
+  slider.addEventListener("transitionend", () => {
+    isTransitioning = false;
+    if (currentIndex === total + 1) resetSlider(1);
+    else if (currentIndex === 0) resetSlider(total);
+  });
+
+  function startAutoSlide() {
+    if (autoPaused) return;
+    stopAutoSlide();
+    autoSlideInterval = setInterval(() => {
+      currentIndex++;
+      moveSlider();
+    }, 7000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    resetSlider(1);
+    startAutoSlide();
+
+    document.addEventListener("click", (e) => {
+      const isArrow = e.target.classList.contains("arrow");
+      if (!isArrow) {
+        autoPaused = false;
+        startAutoSlide();
+      }
+    });
+  });
+
+  // Vuelve a calcular el ancho del slide al redimensionar pantalla
+  window.addEventListener("resize", () => {
+    resetSlider(currentIndex); // Ajusta la posición con el nuevo ancho
+  });
+</script>
+
+
+
+
 
     <section class="sponsor-carousel">
   <h3 class="sponsor-title">Nuestros Patrocinadores</h3>
@@ -271,7 +418,7 @@ include_once('./Templates/header.php')
       ];
 
       // Repetir para animación infinita
-      $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores,$patrocinadores, $patrocinadores);
+      $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
 
       foreach ($logos as $logo) {
         echo "<div class='logo-item'><img src='$logo' alt='Patrocinador'></div>";
@@ -279,7 +426,7 @@ include_once('./Templates/header.php')
       ?>
     </div>
   </div>
-</section>
+    </section>
 
 
     <section class="container my-3 my-md-5 text-center">

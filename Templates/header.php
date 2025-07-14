@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Media Maratón Entre Montañas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/header.css?v=1.0">
-    <link rel="stylesheet" href="./styles/Main.css?v=1.0">
+    <link rel="stylesheet" href="./styles/header.css?v=2025-07-12">
+    <link rel="stylesheet" href="./styles/Main.css?v=2025-07-12">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
 
@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <a href="index.php#section-inscribete" class="alert-button">INSCRÍBETE AHORA</a>
+                <a href="https://www.biciq.com/info-event/merch-media-maraton-entre-montanas-bd515789" target="_blank" rel="noopener noreferrer" class="alert-button">Tienda Merch</a>
             </div>
         </div>
     </div>
@@ -87,12 +87,6 @@
             <a class="btn-offer" href="https://www.biciq.com/info-event/black-days-entre-montanas-24bbc6b4" target="_blank">Black days entre montañas</a>
         </div>
     </nav>
-
-    <div class="social-icons-fixed">
-        <a class="facebook" href="https://www.facebook.com/share/1A1NqDNfWm/" target="_blank"><i class="ri-facebook-circle-fill"></i></a>
-        <a class="instagram" href="https://www.instagram.com/mmentremontanas?igsh=MTNxY2U4dm5tdjBqNA==" target="_blank"><i class="ri-instagram-fill"></i></a>
-        <a class="whatsapp" href="https://api.whatsapp.com/send/?phone=%2B573138157376&text&type=phone_number&app_absent=0" target="_blank"><i class="ri-whatsapp-fill"></i></a>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

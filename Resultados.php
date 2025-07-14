@@ -25,8 +25,8 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel ="stylesheet" href="styles/resultados.css">
+    <link rel="stylesheet" href="styles.css?v=2025-07-13">
+    <link rel ="stylesheet" href="styles/resultados.css?v=2025-07-13">
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
@@ -39,6 +39,10 @@
 
 <?php
 include_once('./Templates/header.php');
+?>
+<?php
+
+include_once('./Templates/redes_icons.php')
 ?>
 
 <section id="resultados-maraton" style="margin-top: -93px;">
