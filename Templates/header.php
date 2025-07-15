@@ -4,10 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Media Maratón Entre Montañas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/header.css?v=2025-07-12">
-    <link rel="stylesheet" href="./styles/Main.css?v=2025-07-12">
+    <link rel="stylesheet" href="./styles/header.css?ver=140725">
+    <link rel="stylesheet" href="./styles/Main.css?ver=140725">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
 
 <div class="alert-bar-wrapper">
         <div class="alert-bar-gradient">

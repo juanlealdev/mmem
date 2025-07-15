@@ -32,7 +32,7 @@
     <script src="script.js" defer></script>
 
    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="<meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />">
+    <meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />
 
     <meta name="robots" content="index, follow">
     <!-- Meta Pixel Code -->

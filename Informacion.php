@@ -32,16 +32,13 @@
     <script src="script.js" defer></script>
 
    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="<meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />">
+    <meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />
 
     <meta name="robots" content="index, follow">
 </head>
 <?php
-include_once('./Templates/header.php');
-?>
-<?php
-
-include_once('./Templates/redes_icons.php')
+    include_once('./Templates/header.php');
+    include_once('./Templates/redes_icons.php');
 ?>
 
 <section id="info-maraton" style="margin-top: -70px;">

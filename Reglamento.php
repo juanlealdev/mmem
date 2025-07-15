@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-
     <title>Reglamento | Media Maratón Entre Montañas | Desafío Cocora</title>
     <link rel="icon" type="image/png" href="favicon.png">
 
@@ -62,17 +60,14 @@
     <script src="script.js" defer></script>
 
     <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="<meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />">
+    <meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />
 
     <meta name="robots" content="index, follow">
 </head>
 
 <?php
-include_once('./Templates/header.php');
-?>
-<?php
-
-include_once('./Templates/redes_icons.php')
+    include_once('./Templates/header.php');
+    include_once('./Templates/redes_icons.php');
 ?>
 
 <section id="reglamento" style="margin-top: -15px;">

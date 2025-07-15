@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="es">
 
+<?php 
+    $cdn = "https://cdn.mmem.com.co"; 
+    $patrocinadores = [
+        $cdn .'/Images/2025/nexus.webp',
+        $cdn .'/Images/2025/healthySports.webp',
+        $cdn .'/Images/2025/imdera.webp',
+        $cdn .'/Images/2025/gatorade.webp',
+        $cdn .'/Images/2025/andiautos.webp',
+        $cdn .'/Images/2025/smartfit.webp',
+        $cdn .'/Images/2025/perea.webp',
+        $cdn .'/Images/2025/sura.webp',
+        $cdn .'/Images/2025/ocaso.webp'
+    ];
+    // Logos para animación infinita
+    $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Media Maratón Entre Montañas | Desafío Cocora</title>
-    <link rel="preconnect" href="https://cdn.mmem.com.co"/>
+    <link rel="preconnect" href="<?= $cdn ?>"/>
     <link rel="icon" type="image/png" href="favicon.png">
     <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.">
     <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
@@ -19,17 +36,15 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styles.css?v=2025-07-13">
-    <link rel="stylesheet" href="./styles/Main.css?v=2025-07-13">
-    <link rel="stylesheet" href="./styles/header.css?v=2025-07-13">
+    <link rel="stylesheet" href="./styles/Main.css?ver=140725">
+    <link rel="stylesheet" href="./styles/header.css?ver=140725">
 
 
     <!-- JavaScript -->
     <script src="script.js" defer></script>
 
    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="<meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />">
-
+    <meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />
     <meta name="robots" content="index, follow">
     <!-- Meta Pixel Code -->
 
@@ -55,16 +70,9 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
  
 </head>
 
-
-
 <?php
-
-include_once('./Templates/header.php')
-?>
-
-<?php
-
-include_once('./Templates/redes_icons.php')
+    include_once('./Templates/header.php');
+    include_once('./Templates/redes_icons.php');
 ?>
 
 <main class="site-main">
@@ -111,7 +119,7 @@ include_once('./Templates/redes_icons.php')
 
 <!-- Sección video -->
 <section class="video-shirt-container">
-  <video src="https://cdn.mmem.com.co/videos/MMEM_lanzamiento_camiseta.mp4" controls playsinline muted autoplay loop></video>
+  <video src="<?= $cdn ?>/videos/MMEM_lanzamiento_camiseta.mp4" controls playsinline muted autoplay loop></video>
 </section>
 
 
@@ -266,15 +274,14 @@ include_once('./Templates/redes_icons.php')
 <!-- Sección de testimonios -->
 <section class="testimonial-section">
   <div class="testimonial-frame">
-    <h2 class="testimonial-title">Testimonio <strong>MMEM</strong></h2>
+    <h2 class="testimonial-title">Testimonios <strong>MMEM</strong></h2>
     
     <div class="testimonial-body">
       <!-- Contenedor de VIDEOS -->
       <div class="testimonial-videos">
-        <video src="https://cdn.mmem.com.co/videos/lv_0_20250522122720.mp4" title="Testimonio 1" controls playsinline></video>
-        <video src="https://cdn.mmem.com.co/videos/lv_0_20250709181342.mp4" title="Testimonio 2" controls playsinline></video>
+        <video class="testimonial-1" src="<?= $cdn ?>/videos/lv_0_20250522122720.mp4" title="Testimonio 1" controls playsinline></video>
+        <video class="testimonial-2" src="<?= $cdn ?>/videos/lv_0_20250709181342.mp4" title="Testimonio 2" controls playsinline></video>
     </div>
-
 
       <!-- Contenedor de IMÁGENES (Carrusel) -->
       <div class="testimonial-carousel">
@@ -288,20 +295,19 @@ include_once('./Templates/redes_icons.php')
         </div>
 
         <!-- Logo -->
-        <img class="testimonial-logo" src="https://cdn.mmem.com.co/Images/2025/mmem_logo.svg" alt="MMEM Logo" />
+        <img class="testimonial-logo" src="<?= $cdn ?>/Images/2025/mmem_logo.svg" alt="MMEM Logo" />
     </div>
 </section>
 
-
 <script>
   const testimonialImages = [
-    "https://cdn.mmem.com.co/Images/2025/t2%402x.webp",
-    "https://cdn.mmem.com.co/Images/2025/t1%402x.webp",
-    "https://cdn.mmem.com.co/Images/2025/t4%402x.webp",
-    "https://cdn.mmem.com.co/Images/2025/t5%402x.webp",
-    "https://cdn.mmem.com.co/Images/2025/t6%402x.webp",
-    "https://cdn.mmem.com.co/Images/2025/t7%402x.webp",
-    "https://cdn.mmem.com.co/Images/2025/t8%402x.webp"
+    "<?= $cdn ?>/Images/2025/t2%402x.webp",
+    "<?= $cdn ?>/Images/2025/t1%402x.webp",
+    "<?= $cdn ?>/Images/2025/t4%402x.webp",
+    "<?= $cdn ?>/Images/2025/t5%402x.webp",
+    "<?= $cdn ?>/Images/2025/t6%402x.webp",
+    "<?= $cdn ?>/Images/2025/t7%402x.webp",
+    "<?= $cdn ?>/Images/2025/t8%402x.webp"
   ];
 
   const slider = document.getElementById("testimonial-slider");
@@ -396,33 +402,14 @@ include_once('./Templates/redes_icons.php')
   });
 </script>
 
-
-
-
-
-    <section class="sponsor-carousel">
+<section class="sponsor-carousel">
   <h3 class="sponsor-title">Nuestros Patrocinadores</h3>
   <div class="slider-wrapper">
     <div class="slider-track">
       <?php
-      $patrocinadores = [
-        'https://cdn.mmem.com.co/Images/2025/nexus.webp',
-        'https://cdn.mmem.com.co/Images/2025/healthySports.webp',
-        'https://cdn.mmem.com.co/Images/2025/imdera.webp',
-        'https://cdn.mmem.com.co/Images/2025/gatorade.webp',
-        'https://cdn.mmem.com.co/Images/2025/andiautos.webp',
-        'https://cdn.mmem.com.co/Images/2025/smartfit.webp',
-        'https://cdn.mmem.com.co/Images/2025/perea.webp',
-        'https://cdn.mmem.com.co/Images/2025/sura.webp',
-        'https://cdn.mmem.com.co/Images/2025/ocaso.webp'
-      ];
-
-      // Repetir para animación infinita
-      $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
-
-      foreach ($logos as $logo) {
-        echo "<div class='logo-item'><img src='$logo' alt='Patrocinador'></div>";
-      }
+        foreach ($logos as $logo) {
+            echo "<div class='logo-item'><img src='$logo' alt='Patrocinador'></div>";
+        }
       ?>
     </div>
   </div>
@@ -435,8 +422,6 @@ include_once('./Templates/redes_icons.php')
             <button class="custom-button" id="bton_viaje">HAZ TU PLAN</button>
         </div>
     </section>
-
-
 
     <section class="container-fluid my-5 d-flex gap-1 flex-column" id="section_8">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
