@@ -201,3 +201,235 @@
 .btn-offer {
     display: inline-block;
 }
+
+@media(max-width: 493px) {
+
+    /* Contador */
+    .alert-content-container {
+        padding: 10px;
+    }
+
+    .alert-text strong {
+        font-size: 15px;
+    }
+
+    .alert-text p {
+        font-size: 11px;
+    }
+
+    .countdown div {
+        width: 50px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    .countdown span#days,
+    .countdown span#hours,
+    .countdown span#minutes,
+    .countdown span#seconds {
+        font-size: 20px;
+    }
+
+    .countdown .label {
+        font-size: 10px;
+    }
+
+    .alert-button {
+        padding: 6px 18px;
+        font-size: 12px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+        height: auto;
+        /* Se ajusta a su contenido */
+        top: auto;
+        /* JS lo posicionará dinámicamente */
+        position: fixed;
+        /* Asegura que el navbar sea fijo */
+        width: 100%;
+
+        z-index: 1040;
+    }
+
+    .navbar-container {
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo-container {
+        max-width: 150px;
+        height: 50px;
+    }
+
+    .btn-offer-mobile {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .btn-offer {
+        display: none;
+    }
+}
+
+@media(max-width: 992px) {
+
+    /* Contador */
+    .alert-content-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 10px 20px;
+        height: auto;
+    }
+
+    .alert-text {
+        max-width: 100%;
+    }
+
+    /* Aseguramos que la barra del contador tenga una altura mínima en móviles */
+    .alert-bar-wrapper {
+        height: auto;
+        /* Permite que el contenido determine la altura */
+        min-height: 85px;
+        /* Pero asegúrate de que no se haga demasiado pequeño */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1050;
+    }
+
+    .alert-bar-gradient {
+        height: 100%;
+        /* Ocupa el 100% de la altura de .alert-bar-wrapper */
+    }
+
+    .countdown-container {
+        align-items: center;
+    }
+
+    .countdown div {
+        width: 60px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .countdown span#days,
+    .countdown span#hours,
+    .countdown span#minutes,
+    .countdown span#seconds {
+        font-family: 'Tallica', sans-serif;
+        font-size: 28px;
+        margin-bottom: 1px;
+    }
+
+    .countdown .label {
+        font-size: 9px;
+        margin-top: 0px;
+    }
+
+    .alert-text strong {
+        font-size: 16px;
+    }
+
+    .alert-text p {
+        font-size: 12px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+        height: auto;
+        /* Se ajusta a su contenido */
+        top: auto;
+        /* JS lo posicionará dinámicamente */
+        position: fixed;
+        /* Asegura que el navbar sea fijo */
+        width: 100%;
+
+        z-index: 1040;
+    }
+
+    .navbar-container {
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo-container {
+        max-width: 150px;
+        height: 50px;
+    }
+
+    .btn-offer-mobile {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .btn-offer {
+        display: none;
+    }
+
+    /* Para el menú desplegable de Bootstrap en móvil */
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #648d00;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        /* Importante: Ajustar max-height para que quepa en el viewport debajo del contador y navbar */
+        /* calc(100vh - (altura contador + altura navbar)) */
+        max-height: calc(100vh - var(--fixed-header-height));
+        /* Usaremos una variable CSS si es posible, o JS */
+        overflow-y: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 0;
+        background-color: inherit;
+        width: 100%;
+    }
+
+    .dropdown-item {
+        /* ELIMINAR O AJUSTAR ESTAS PROPIEDADES PARA CENTRAR */
+        padding-left: 0;
+        /* Eliminar el padding a la izquierda para que no empuje el texto */
+        text-align: center;
+        /* Cambiar a center para alinear el texto al centro */
+        color: #ffca01;
+        display: block;
+        /* Asegurarse de que sea un bloque para que text-align funcione correctamente */
+        padding: 10px 0;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #f18500;
+    }
+}

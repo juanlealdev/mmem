@@ -4,15 +4,15 @@
 <?php 
     $cdn = "https://cdn.mmem.com.co"; 
     $patrocinadores = [
-        $cdn .'/Images/2025/nexus.webp',
-        $cdn .'/Images/2025/healthySports.webp',
-        $cdn .'/Images/2025/imdera.webp',
-        $cdn .'/Images/2025/gatorade.webp',
-        $cdn .'/Images/2025/andiautos.webp',
-        $cdn .'/Images/2025/smartfit.webp',
-        $cdn .'/Images/2025/perea.webp',
-        $cdn .'/Images/2025/sura.webp',
-        $cdn .'/Images/2025/ocaso.webp'
+        [ 'src' => $cdn .'/Images/2025/nexus.webp',         'alt' => 'Nexus' ],
+        [ 'src' => $cdn .'/Images/2025/healthySports.webp', 'alt' => 'Healthy Sports' ],
+        [ 'src' => $cdn .'/Images/2025/imdera.webp',        'alt' => 'IMDERA' ],
+        [ 'src' => $cdn .'/Images/2025/gatorade.webp',      'alt' => 'Gatorade' ],
+        [ 'src' => $cdn .'/Images/2025/andiautos.webp',     'alt' => 'Andiautos' ],
+        [ 'src' => $cdn .'/Images/2025/smartfit.webp',      'alt' => 'Smart Fit' ],
+        [ 'src' => $cdn .'/Images/2025/perea.webp',         'alt' => 'Consejal Perea' ],
+        [ 'src' => $cdn .'/Images/2025/sura.webp',          'alt' => 'Sura' ],
+        [ 'src' => $cdn .'/Images/2025/ocaso.webp',         'alt' => 'Ocaso' ]
     ];
     // Logos para animación infinita
     $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
@@ -36,8 +36,8 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./styles/Main.css?ver=140725">
-    <link rel="stylesheet" href="./styles/header.css?ver=140725">
+    <link rel="stylesheet" href="./styles/Main.css?version=2025-07-15">
+    <link rel="stylesheet" href="./styles/header.css?version=2025-07-15">
 
 
     <!-- JavaScript -->
@@ -222,14 +222,14 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                     <div class="section">
                         <img 
                             src="<?= $cdn ?>/Images/2025/MMEM_21k.webp" 
-                            alt="Palmas de cera en el Valle de Cocora" 
+                            alt="Corredores participando en la carrera 21K de Entre Montañas" 
                             loading="lazy"
                             width="570" 
                             height="400"
                         >
                     </div>
                     <div class="section_6_link">
-                        <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=467843139351314432" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
+                        <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=466450603311333376" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
                     </div>
                 </div>
             </div>
@@ -262,7 +262,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                         >
                     </div>
                     <div class="section_6_link">
-                        <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=466450603311333376" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
+                        <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=467843139351314432" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
                     </div>
                 </div>
             </div>
@@ -301,23 +301,28 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
 
 <script>
   const testimonialImages = [
-    "<?= $cdn ?>/Images/2025/t2%402x.webp",
-    "<?= $cdn ?>/Images/2025/t1%402x.webp",
-    "<?= $cdn ?>/Images/2025/t4%402x.webp",
-    "<?= $cdn ?>/Images/2025/t5%402x.webp",
-    "<?= $cdn ?>/Images/2025/t6%402x.webp",
-    "<?= $cdn ?>/Images/2025/t7%402x.webp",
-    "<?= $cdn ?>/Images/2025/t8%402x.webp"
+    { url: "<?= $cdn ?>/Images/2025/t2%402x.webp", alt: "Testimonio 1" },
+    { url: "<?= $cdn ?>/Images/2025/t1%402x.webp", alt: "Testimonio 2" },
+    { url: "<?= $cdn ?>/Images/2025/t4%402x.webp", alt: "Testimonio 3" },
+    { url: "<?= $cdn ?>/Images/2025/t5%402x.webp", alt: "Testimonio 4" },
+    { url: "<?= $cdn ?>/Images/2025/t6%402x.webp", alt: "Testimonio 5" },
+    { url: "<?= $cdn ?>/Images/2025/t7%402x.webp", alt: "Testimonio 6" },
+    { url: "<?= $cdn ?>/Images/2025/t8%402x.webp", alt: "Testimonio 7" }
   ];
 
   const slider = document.getElementById("testimonial-slider");
   const wrapper = document.querySelector(".testimonial-image-wrapper");
 
-  const images = [testimonialImages[testimonialImages.length - 1], ...testimonialImages, testimonialImages[0]];
+  const images = [
+    testimonialImages[testimonialImages.length - 1],
+    ...testimonialImages,
+    testimonialImages[0]
+  ];
 
-  images.forEach(src => {
+  images.forEach(({ url, alt }) => {
     const img = document.createElement("img");
-    img.src = src;
+    img.src = url;
+    img.alt = alt;
     slider.appendChild(img);
   });
 
@@ -327,7 +332,6 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
   let autoSlideInterval = null;
   let autoPaused = false;
 
-  // Obtiene el ancho actual del contenedor
   function getSlideWidth() {
     return wrapper.clientWidth;
   }
@@ -396,24 +400,24 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
     });
   });
 
-  // Vuelve a calcular el ancho del slide al redimensionar pantalla
   window.addEventListener("resize", () => {
-    resetSlider(currentIndex); // Ajusta la posición con el nuevo ancho
+    resetSlider(currentIndex);
   });
 </script>
+
 
 <section class="sponsor-carousel">
   <h3 class="sponsor-title">Nuestros Patrocinadores</h3>
   <div class="slider-wrapper">
     <div class="slider-track">
-      <?php
-        foreach ($logos as $logo) {
-            echo "<div class='logo-item'><img src='$logo' alt='Patrocinador'></div>";
-        }
-      ?>
+      <?php foreach ($logos as $patrocinador): ?>
+        <div class="logo-item">
+          <img src="<?= $patrocinador['src'] ?>" alt="<?= htmlspecialchars($patrocinador['alt']) ?>">
+        </div>
+      <?php endforeach; ?>
     </div>
   </div>
-    </section>
+</section>
 
 
     <section class="container my-3 my-md-5 text-center">
@@ -430,9 +434,9 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(226).webp" class="rounded img-fluid" alt="Imagen 4" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(283).webp" class="rounded img-fluid" alt="Imagen 5" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(280).webp" class="rounded img-fluid" alt="Imagen 6" loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(226).webp" class="rounded img-fluid" alt="Corredores en la línea de salida de la Media Maratón Entre Montañas" loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(283).webp" class="rounded img-fluid" alt="Participantes esperando el inicio de la Media Maratón Entre Montañas" loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(280).webp" class="rounded img-fluid" alt="Corredora concentrada durante la Media Maratón Entre Montañas con dorsal 0308" loading="lazy">
                     </div>
                 </div>
 
@@ -448,9 +452,9 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                 <!-- Slide 3 (Solo 2 imágenes) -->
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(270).webp" class="rounded img-fluid" alt="Imagen 4" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(7).webp" class="rounded img-fluid" alt="Imagen 5" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(130).webp" class="rounded img-fluid" alt="Imagen 3" loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(270).webp" class="rounded img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(7).webp" class="rounded img-fluid" alt="Corredora feliz cruza la meta de la Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(130).webp" class="rounded img-fluid" alt="Corredor en la salida de la Media Maratón Entre Montañas." loading="lazy">
                     </div>
                 </div>
             </div>
@@ -470,27 +474,27 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                 <!-- Slide 1 -->
                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(602).webp" class="rounded img-fluid" alt="Imagen 1" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(1).webp" class="rounded img-fluid" alt="Imagen 2" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(289).webp" class="rounded img-fluid" alt="Imagen 3" loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(602).webp" class="rounded img-fluid" alt="Media Maratón Entre Montañas: podio de ganadores." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(1).webp" class="rounded img-fluid" alt="Grupo de participantes en Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(289).webp" class="rounded img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas." loading="lazy">
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(80).webp" alt="Imagen 4" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(257).webp" class="rounded img-fluid" alt="Imagen 6" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(252).webp" class="rounded img-fluid" alt="Imagen 6" loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(80).webp" alt="Corredor en la Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(257).webp" class="rounded img-fluid" alt="Corredora con dorsal 0332 en la salida de la Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(252).webp" class="rounded img-fluid" alt="Corredores en la salida de la Media Maratón Entre Montañas." loading="lazy">
                     </div>
                 </div>
 
                 <!-- Slide 3 (Solo 2 imágenes) -->
                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="rounded img-fluid" alt="Imagen 6" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(589).webp" class="rounded img-fluid" alt="Imagen 6" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(558).webp" class="rounded img-fluid" alt="Imagen 6" loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="rounded img-fluid" alt="Entrega premio, ganadores Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(589).webp" class="rounded img-fluid" alt="Entrega premio, ganadoras Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(558).webp" class="rounded img-fluid" alt="Entrega premio, ganadora Media Maratón Entre Montañas." loading="lazy">
                     </div>
                 </div>
             </div>
