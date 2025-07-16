@@ -1,75 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Reglamento | Media Maratón Entre Montañas | Desafío Cocora</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    
-    <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.">
-
-    
-    <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
-
-    
-    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora">
-    <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://tudominio.com/favicon.ico" type="image/x-icon">
-
-    <!-- Canonical para evitar contenido duplicado -->
-    <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
-
-    <!-- CSS -->
-    <link rel ="stylesheet" href="styles/reglamento.css?version=2025-07-15">
-
-    <!-- JavaScript -->
-    <script src="script.js" defer></script>
-
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="TU_CÓDIGO_DE_VERIFICACIÓN_AQUÍ">
-
-    <meta name="robots" content="index, follow">
-</head><title>Media Maratón Entre Montañas | Desafío Cocora</title>
-
-    
-    <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.">
-
-    
-    <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
-
-    
-    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora">
-    <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://tudominio.com/favicon.ico" type="image/x-icon">
-
-    <!-- Canonical para evitar contenido duplicado -->
-    <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css?version=2025-07-15">
-
-    <!-- JavaScript -->
-    <script src="script.js" defer></script>
-
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />
-
-    <meta name="robots" content="index, follow">
-</head>
-
 <?php
+
+$pageTile = "Reglamento | Media Maratón Entre Montañas | Desafío Cocora";
     include_once('./Templates/header.php');
     include_once('./Templates/redes_icons.php');
 ?>
 
-<section id="reglamento" style="margin-top: -15px;">
+<section id="reglamento">
     <h2>Reglamento Oficial</h2>
 
     <div class="reglamento-texto">
@@ -360,3 +296,6 @@
         </b>
     </div>
 </footer>
+
+</body>
+</html>

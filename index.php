@@ -1,83 +1,27 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<?php 
-    $cdn = "https://cdn.mmem.com.co"; 
-    $patrocinadores = [
-        [ 'src' => $cdn .'/Images/2025/nexus.webp',         'alt' => 'Nexus' ],
-        [ 'src' => $cdn .'/Images/2025/healthySports.webp', 'alt' => 'Healthy Sports' ],
-        [ 'src' => $cdn .'/Images/2025/imdera.webp',        'alt' => 'IMDERA' ],
-        [ 'src' => $cdn .'/Images/2025/gatorade.webp',      'alt' => 'Gatorade' ],
-        [ 'src' => $cdn .'/Images/2025/andiautos.webp',     'alt' => 'Andiautos' ],
-        [ 'src' => $cdn .'/Images/2025/smartfit.webp',      'alt' => 'Smart Fit' ],
-        [ 'src' => $cdn .'/Images/2025/perea.webp',         'alt' => 'Consejal Perea' ],
-        [ 'src' => $cdn .'/Images/2025/sura.webp',          'alt' => 'Sura' ],
-        [ 'src' => $cdn .'/Images/2025/ocaso.webp',         'alt' => 'Ocaso' ]
-    ];
-    // Logos para animación infinita
-    $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
-?>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Maratón Entre Montañas | Desafío Cocora</title>
-    <link rel="preconnect" href="<?= $cdn ?>"/>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.">
-    <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
-    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora">
-    <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://tudominio.com/favicon.ico" type="image/x-icon">
-
-    <!-- Canonical para evitar contenido duplicado -->
-    <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./styles/Main.css?version=2025-07-15">
-    <link rel="stylesheet" href="./styles/header.css?version=2025-07-15">
-
-
-    <!-- JavaScript -->
-    <script src="script.js" defer></script>
-
-   <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />
-    <meta name="robots" content="index, follow">
-    <!-- Meta Pixel Code -->
-
-    <!-- Estilo para el fondo de .barra-alerta -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '718973520528019');
-fbq('track', 'PageView');
-</script>
-<noscript>
-    <img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
-/>
-</noscript>
-<!-- End Meta Pixel Code -->
- 
-</head>
-
 <?php
+    $cdn = "https://cdn.mmem.com.co";
+    $pageTile = "Media Maratón Entre Montañas | Desafío Cocora";
+
     include_once('./Templates/header.php');
-    include_once('./Templates/redes_icons.php');
+    include_once('./Templates/redes_icons.php'); // Asegúrate de que este archivo no imprima HTML antes de <body>
+    
+    // Tus definiciones de $patrocinadores y $logos
+    $patrocinadores = [
+        [ 'src' => $cdn .'/Images/2025/nexus.webp',           'alt' => 'Nexus' ],
+        [ 'src' => $cdn .'/Images/2025/healthySports.webp', 'alt' => 'Healthy Sports' ],
+        [ 'src' => $cdn .'/Images/2025/imdera.webp',          'alt' => 'IMDERA' ],
+        [ 'src' => $cdn .'/Images/2025/gatorade.webp',        'alt' => 'Gatorade' ],
+        [ 'src' => $cdn .'/Images/2025/andiautos.webp',       'alt' => 'Andiautos' ],
+        [ 'src' => $cdn .'/Images/2025/smartfit.webp',        'alt' => 'Smart Fit' ],
+        [ 'src' => $cdn .'/Images/2025/perea.webp',           'alt' => 'Consejal Perea' ],
+        [ 'src' => $cdn .'/Images/2025/sura.webp',            'alt' => 'Sura' ],
+        [ 'src' => $cdn .'/Images/2025/ocaso.webp',           'alt' => 'Ocaso' ]
+    ];
+    $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
 ?>
 
 <main class="site-main">
 
-    <!-- Carrusel con Indicadores de Imágenes -->
     <section class="carousel-section" style="margin-top: -93px;">
         <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
@@ -87,9 +31,6 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                 <div class="carousel-item">
                     <img src="<?= $cdn ?>/Images/2025/BANNER_MMEM_2.webp" alt="Corredores saltando con texto: 10K y 21K - 14 de septiembre.">
                 </div>
-                <!-- <div class="carousel-item">
-                    <img src="./Images/portada1-1-1019x1024.png" alt="">
-                </div> -->
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -102,22 +43,18 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
         </div>
     </section>
 
-<!-- Sección de la barra de alerta -->
     <section class="cupos-section">
         <div class="cupos-container">
             <div class="progress-bar-container">
-             <div class="progress-fill"></div>
-            <div class="progress-text">70%</div>
-        </div>
-        <div class="progress-label">
-            CUPOS <span class="vendidos">VENDIDOS</span>
-        </div>
+                <div class="progress-fill"></div>
+                <div class="progress-text">70%</div>
+            </div>
+            <div class="progress-label">
+                CUPOS <span class="vendidos">VENDIDOS</span>
+            </div>
         </div>
     </section>
 
-<!--  finish sección de la barra de alerta -->
-
-<!-- Sección video -->
 <section class="video-shirt-container">
   <video src="<?= $cdn ?>/videos/MMEM_lanzamiento_camiseta.mp4" controls playsinline muted autoplay loop></video>
 </section>
@@ -125,23 +62,21 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
 
     <section  class="container section-inscribete my-5">
         <div id="section-inscribete" style="scroll-margin-top: 170px;"class="row g-4">
-            <!-- Tarjeta 10K -->
-            <div class="col-md-6">
+                            <div class="col-md-6">
                 <div class="card div_card_inscribete">
                     <h5 class="card-title">INSCRIPCIONES 10K</h5>
                     <a class="btn btn-register" href="https://biciq.com/info-event/10k-media-maraton-entre-montanas-950d9e9f" target="_blank">INSCRÍBETE AHORA</a>
                 </div>
             </div>
 
-            <!-- Tarjeta 21K -->
-            <div class="col-md-6">
+                            <div class="col-md-6">
                 <div class="card div_card_inscribete">
                     <h5 class="card-title">INSCRIPCIONES 21K</h5>
                     <a class="btn btn-register" href="https://biciq.com/info-event/7b307c0e-9d2c-4243-9959-79f3652328d9" target="_blank">INSCRÍBETE AHORA</a>
                 </div>
             </div>
         </div>
-     </section>    
+     </section>      
 
     <section class="container">
         <div class="row justify-content-center">
@@ -163,12 +98,10 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
         </div>
     </section>
 
-    <!-- Sección principal más compacta -->
-    <section class="container py-3" id="section_4">
+        <section class="container py-3" id="section_4">
         <div class="row text-center justify-content-center g-4">
-            
-            <!-- Ítem 1 -->
-            <div class="col-md-3 info-item">
+                 
+                            <div class="col-md-3 info-item">
                 <div class="info-icon">
                     <img src="<?= $cdn ?>/Images/Icon/icono-fecha.svg" alt="Icono de calendario" loading="lazy" style="width: 80px; height: 80px;">
                 </div>
@@ -176,8 +109,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                 <div class="info-description" style="font-size: 14px;">SEPTIEMBRE 14/2025</div>
             </div>
 
-            <!-- Ítem 2 -->
-            <div class="col-md-3 info-item">
+                            <div class="col-md-3 info-item">
                 <div class="info-icon">
                     <img src="<?= $cdn ?>/Images/Icon/ico-recorrido.webp" alt="Icono de mapa con marcador" loading="lazy" style="width: 80px; height: 80px;">
                 </div>
@@ -185,8 +117,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                 <div class="info-description" style="font-size: 14px;">21 K y 10 K</div>
             </div>
 
-            <!-- Ítem 3 -->
-            <div class="col-md-3 info-item">
+                            <div class="col-md-3 info-item">
                 <div class="info-icon">
                     <img src="<?= $cdn ?>/Images/Icon/icono-zona.svg" alt="Icono de ubicación" loading="lazy" style="width: 80px; height: 80px;">
                 </div>
@@ -201,9 +132,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
     <section class="container my-3 my-md-5" id="section_6">
         <div class="row">
             <div class="col">
-
-                <!-- Primer bloque: Recorrido 21K -->
-                <div class="img">
+                                <div class="img">
                     <img 
                         src="<?= $cdn ?>/Images/2025/MMEM_recorrido21k.webp" 
                         class="rounded img-fluid" 
@@ -218,8 +147,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                             ⛰️ La MM Entre Montañas te espera el 14 de septiembre en el Valle de Cócora. Disfruta de una carrera de 21 km sobre asfalto con vistas espectaculares de la Cordillera Central. Esta ruta inicia en la Plaza de Bolívar Salento, pasa por la calle real de Salento y alcanza su punto de retorno a los 10k en el emblemático restaurante Donde JuanB, encontraras la meta en la Plaza de Bolívar Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
                         </p>
                     </div>
-                    <!-- <div class="nubes"></div> -->
-                    <div class="section">
+                                                <div class="section">
                         <img 
                             src="<?= $cdn ?>/Images/2025/MMEM_21k.webp" 
                             alt="Corredores participando en la carrera 21K de Entre Montañas" 
@@ -233,10 +161,9 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                     </div>
                 </div>
             </div>
-            
+             
             <div class="col">
-                <!-- Primer bloque: Recorrido 21K -->
-                <div class="img">
+                                <div class="img">
                     <img 
                         src="<?= $cdn ?>/Images/2025/MMEM_recorrido10k.webp" 
                         class="rounded img-fluid" 
@@ -251,8 +178,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                             ¡Domina los 10K en el corazón del Quindío! ⛰️ La MM Entre Montañas te invita a poner a prueba tus límites el 14 de septiembre en el Valle de Cocora. Disfruta de un desafiante recorrido de 10 km sobre asfalto con vistas panorámicas de la Cordillera Central. Esta ruta inicia en la Plaza de Bolívar Salento, pasa por la calle real de Salento y alcanza su punto de retorno a los 5k, encontraras la meta en la Plaza de Bolívar Salento. Vive la emoción de la competencia, respira aire puro y descubre la magia del Quindío. "¿Eres un #runner de corazón? ¡Demuéstralo! Inscripciones abiertas para los más locos por correr."
                         </p>
                     </div>
-                    <!-- <div class="nubes"></div> -->
-                    <div class="section">
+                                                <div class="section">
                         <img 
                             src="<?= $cdn ?>/Images/2025/MMEM_10k.webp" 
                             alt="Corredores participando en la carrera 10K de Entre Montañas" 
@@ -269,37 +195,31 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
         </div>
     </section>
 
-   <!-- Testimonial Section -->
-
-<!-- Sección de testimonios -->
-<section class="testimonial-section">
+    <section class="testimonial-section">
   <div class="testimonial-frame">
     <h2 class="testimonial-title">Testimonios <strong>MMEM</strong></h2>
-    
+      
     <div class="testimonial-body">
-      <!-- Contenedor de VIDEOS -->
-      <div class="testimonial-videos">
+            <div class="testimonial-videos">
         <video class="testimonial-1" src="<?= $cdn ?>/videos/lv_0_20250522122720.mp4" title="Testimonio 1" controls playsinline></video>
         <video class="testimonial-2" src="<?= $cdn ?>/videos/lv_0_20250709181342.mp4" title="Testimonio 2" controls playsinline></video>
     </div>
 
-      <!-- Contenedor de IMÁGENES (Carrusel) -->
-      <div class="testimonial-carousel">
+            <div class="testimonial-carousel">
         <div class="arrow left" onclick="prevTestimonial()">&#8249;</div>
         <div class="testimonial-image-wrapper">
         <div class="testimonial-slider" id="testimonial-slider">
-        <!-- Imágenes insertadas dinámicamente desde JS -->
-        </div>
+                </div>
         </div>
         <div class="arrow right" onclick="nextTestimonial()">&#8250;</div>
         </div>
 
-        <!-- Logo -->
-        <img class="testimonial-logo" src="<?= $cdn ?>/Images/2025/mmem_logo.svg" alt="MMEM Logo" />
+                <img class="testimonial-logo" src="<?= $cdn ?>/Images/2025/mmem_logo.svg" alt="MMEM Logo" />
     </div>
 </section>
 
 <script>
+  // Este script de testimonial no debería ir en el head, está bien aquí o en un archivo JS separado.
   const testimonialImages = [
     { url: "<?= $cdn ?>/Images/2025/t2%402x.webp", alt: "Testimonio 1" },
     { url: "<?= $cdn ?>/Images/2025/t1%402x.webp", alt: "Testimonio 2" },
@@ -431,8 +351,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
 
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
+                                <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(226).webp" class="rounded img-fluid" alt="Corredores en la línea de salida de la Media Maratón Entre Montañas" loading="lazy">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(283).webp" class="rounded img-fluid" alt="Participantes esperando el inicio de la Media Maratón Entre Montañas" loading="lazy">
@@ -440,8 +359,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
-                <div class="carousel-item">
+                                <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(234).webp" class="rounded img-fluid" alt="Imagen 4" loading="lazy">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(233).webp" class="rounded img-fluid" alt="Imagen 5" loading="lazy">
@@ -449,8 +367,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                     </div>
                 </div>
 
-                <!-- Slide 3 (Solo 2 imágenes) -->
-                <div class="carousel-item">
+                                <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(270).webp" class="rounded img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas." loading="lazy">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(7).webp" class="rounded img-fluid" alt="Corredora feliz cruza la meta de la Media Maratón Entre Montañas." loading="lazy">
@@ -459,8 +376,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                 </div>
             </div>
 
-            <!-- Controles de navegación -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
@@ -471,8 +387,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
         <div id="carouselExample_2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
 
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
+                                <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
                         <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(602).webp" class="rounded img-fluid" alt="Media Maratón Entre Montañas: podio de ganadores." loading="lazy">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(1).webp" class="rounded img-fluid" alt="Grupo de participantes en Media Maratón Entre Montañas." loading="lazy">
@@ -480,8 +395,7 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
-                <div class="carousel-item">
+                                <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(80).webp" alt="Corredor en la Media Maratón Entre Montañas." loading="lazy">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(257).webp" class="rounded img-fluid" alt="Corredora con dorsal 0332 en la salida de la Media Maratón Entre Montañas." loading="lazy">
@@ -489,18 +403,16 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
                     </div>
                 </div>
 
-                <!-- Slide 3 (Solo 2 imágenes) -->
-                <div class="carousel-item">
+                                <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="rounded img-fluid" alt="Entrega premio, ganadores Media Maratón Entre Montañas." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(589).webp" class="rounded img-fluid" alt="Entrega premio, ganadoras Media Maratón Entre Montañas." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(558).webp" class="rounded img-fluid" alt="Entrega premio, ganadora Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="rounded img-fluid" alt="Corredora cruza la meta de la Media Maratón Entre Montañas con los brazos en alto." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(145).webp" class="rounded img-fluid" alt="Corredora sonriente en la Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(229).webp" class="rounded img-fluid" alt="Corredores en la Media Maratón Entre Montañas con el dorsal 0308." loading="lazy">
                     </div>
                 </div>
             </div>
 
-            <!-- Controles de navegación -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample_2" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample_2" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample_2" data-bs-slide="next">
@@ -508,98 +420,8 @@ src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
             </button>
         </div>
     </section>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let carousels = document.querySelectorAll(".carousel");
-
-        <div class="carousel-item">
-
-            <div class="d-flex justify-content-center gap-2">
-
-                <img src="./Images/2025/MMEM (80).jpg" alt="Imagen 4">
-
-                <img src="./Images/2025/MMEM (257).jpg" class="rounded img-fluid" alt="Imagen 6">
-                <img src="./Images/2025/MMEM (252).jpg" class="rounded img-fluid" alt="Imagen 6">
-
-            </div>
-
-        </div>
-
-        <!-- Slide 3 (Solo 2 imágenes) -->
-
-        <div class="carousel-item">
-
-            <div class="d-flex justify-content-center gap-2">
-
-
-                <img src="./Images/2025/Media Maratón Entre Montañas (596).jpg" class="rounded img-fluid" alt="Imagen 6">
-                <img src="./Images/2025/Media Maratón Entre Montañas (589).jpg" class="rounded img-fluid" alt="Imagen 6">
-                <img src="./Images/2025/Media Maratón Entre Montañas (558).jpg" class="rounded img-fluid" alt="Imagen 6">
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- Controles de navegación -->
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample_2" data-bs-slide="prev">
-
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-
-    </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample_2" data-bs-slide="next">
-
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-
-    </button>
-
-</div>
-
-</section>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    let carousels = document.querySelectorAll(".carousel");
-
-    carousels.forEach(carousel => {
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        carousel.addEventListener("touchstart", function(event) {
-            touchStartX = event.changedTouches[0].screenX;
-        });
-
-        carousel.addEventListener("touchend", function(event) {
-            touchEndX = event.changedTouches[0].screenX;
-            if (touchStartX - touchEndX > 50) {
-                // Deslizamiento hacia la izquierda -> Avanza una imagen
-                let nextButton = carousel.querySelector(".carousel-control-next");
-                if (nextButton) nextButton.click();
-            } else if (touchEndX - touchStartX > 50) {
-                // Deslizamiento hacia la derecha -> Retrocede una imagen
-                let prevButton = carousel.querySelector(".carousel-control-prev");
-                if (prevButton) prevButton.click();
-            }
-        });
-    });
-});
-</script>
-
-
-
 </main>
 
-<!-- Footer -->
-<footer class="text-center text-white py-3 footer_marathon">
-    <div class="container">
-        <p class="mb-1"><i class="ri-whatsapp-fill"></i> Whatsapp: 3138157376</p>
-        <p class="mb-1"><i class="ri-mail-fill"></i> Correo: mediamaratonentremontanas@gmail.com</p>
-        <p class="mb-0"><i class="ri-time-fill"></i> Horario de atención: 8 am a 12 m y de 2 pm a 6 pm de lunes a viernes</p>
-        <b>
-            <p>Armenia-Quindío</p>
-        </b>
-    </div>
-</footer>
+<?php include_once('./Templates/footer.php'); ?>
+</body>
+</html>

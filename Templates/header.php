@@ -1,14 +1,65 @@
-<?php $cdn = "https://cdn.mmem.com.co" ?>
+<?php
 
-<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Media Maratón Entre Montañas</title>
+    $cdn = "https://cdn.mmem.com.co";
+
+    // Define a default title if $pageTitle is not set
+    if (!isset($pageTitle)) {
+        $pageTitle = "Media Maratón Entre Montañas | Desafío Cocora"; // Default title
+    }
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title><?= htmlspecialchars($pageTitle) ?></title>
+
+    <link rel="preconnect" href="<?= $cdn ?>"/>
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, del aroma a café y déjate envolver por la magia del Quindío.">
+    <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
+    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora">
+    <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
+
+    <link rel="icon" href="https://tudominio.com/favicon.ico" type="image/x-icon">
+
+    <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/header.css?version=2025-07-15">
-    <link rel="stylesheet" href="./styles/Main.css?version=2025-07-155">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/header.css?ve=1455786401">
+    <link rel="stylesheet" href="./styles/Main.css?ve=1455786401">
+    <link rel ="stylesheet" href="styles/informacion.css?ve=1455786401">
+    <link rel ="stylesheet" href="styles/reglamento.css?ve=1455786401">
+    <link rel ="stylesheet" href="styles/resultados.css?ve=1455786401">
 
-<div class="alert-bar-wrapper">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    
+
+    <meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />
+    <meta name="robots" content="index, follow">
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '718973520528019');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=718973520528019&ev=PageView&noscript=1"
+    />
+    </noscript>
+</head>
+<body>
+    <div class="alert-bar-wrapper">
         <div class="alert-bar-gradient">
             <div class="alert-content-container">
                 <div class="alert-text">
@@ -86,11 +137,11 @@
             <a class="btn-offer" href="https://www.biciq.com/info-event/black-days-entre-montanas-24bbc6b4" target="_blank">Black days entre montañas</a>
         </div>
     </nav>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script src="script.js" defer></script>
     <script>
+        // Tu script de JavaScript existente para el contador y el posicionamiento
         function updateCountdownAndHeaderPosition() {
             const targetDate = new Date("2025-08-01T00:00:00");
             const now = new Date();

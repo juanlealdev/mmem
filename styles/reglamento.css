@@ -182,6 +182,7 @@
     #reglamento {
         width: 95%;
         padding: 20px;
+        margin-top: 10px;
     }
 
     #reglamento h2 {
@@ -207,6 +208,7 @@
     #reglamento {
         width: 98%;
         padding: 15px;
+        margin-top: 10px;
     }
 
     #reglamento h2 {
@@ -230,7 +232,7 @@
 
 @media (max-width: 480px) {
     #reglamento {
-        margin-top: 60px;
+        margin-top: 15px;
         width: 100%;
         padding: 10px;
         border-radius: 0;
