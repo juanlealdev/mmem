@@ -1,6 +1,6 @@
 <?php
 
-$pageTile = "Reglamento | Media Maratón Entre Montañas | Desafío Cocora";
+$pageTitle = "Reglamento | Media Maratón Entre Montañas | Desafío Cocora";
     include_once('./Templates/header.php');
     include_once('./Templates/redes_icons.php');
 ?>

@@ -1,5 +1,5 @@
 <?php
-    $pageTile = "Resultados | Media Marat�n Entre Monta�as | Desaf�o Cocora";
+    $pageTitle = "Resultados | Media Maraton Entre Montañas | Desafío Cocora";
     include_once('./Templates/header.php');
     include_once('./Templates/redes_icons.php');
 ?>

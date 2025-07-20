@@ -1,6 +1,6 @@
 <?php
     $cdn = "https://cdn.mmem.com.co";
-    $pageTile = "Media Maratón Entre Montañas | Desafío Cocora";
+    $pageTitle = "Media Maratón Entre Montañas | Desafío Cocora";
 
     include_once('./Templates/header.php');
     include_once('./Templates/redes_icons.php'); // Asegúrate de que este archivo no imprima HTML antes de <body>
@@ -353,25 +353,25 @@
 
                                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(226).webp" class="rounded img-fluid" alt="Corredores en la línea de salida de la Media Maratón Entre Montañas" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(283).webp" class="rounded img-fluid" alt="Participantes esperando el inicio de la Media Maratón Entre Montañas" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(280).webp" class="rounded img-fluid" alt="Corredora concentrada durante la Media Maratón Entre Montañas con dorsal 0308" loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(226).webp" class="rounded img-fluid" alt="Corredores en la línea de salida de la Media Maratón Entre Montañas">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(283).webp" class="rounded img-fluid" alt="Participantes esperando el inicio de la Media Maratón Entre Montañas">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(280).webp" class="rounded img-fluid" alt="Corredora concentrada durante la Media Maratón Entre Montañas con dorsal 0308">
                     </div>
                 </div>
 
                                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(234).webp" class="rounded img-fluid" alt="Imagen 4" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(233).webp" class="rounded img-fluid" alt="Imagen 5" loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(232).webp" class="rounded img-fluid" alt="Imagen 6" loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(234).webp" class="rounded img-fluid" alt="Imagen 4">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(233).webp" class="rounded img-fluid" alt="Imagen 5">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(232).webp" class="rounded img-fluid" alt="Imagen 6">
                     </div>
                 </div>
 
                                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(270).webp" class="rounded img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(7).webp" class="rounded img-fluid" alt="Corredora feliz cruza la meta de la Media Maratón Entre Montañas." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(130).webp" class="rounded img-fluid" alt="Corredor en la salida de la Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(270).webp" class="rounded img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(7).webp" class="rounded img-fluid" alt="Corredora feliz cruza la meta de la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(130).webp" class="rounded img-fluid" alt="Corredor en la salida de la Media Maratón Entre Montañas.">
                     </div>
                 </div>
             </div>
@@ -389,25 +389,25 @@
 
                                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(602).webp" class="rounded img-fluid" alt="Media Maratón Entre Montañas: podio de ganadores." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(1).webp" class="rounded img-fluid" alt="Grupo de participantes en Media Maratón Entre Montañas." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(289).webp" class="rounded img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(602).webp" class="rounded img-fluid" alt="Media Maratón Entre Montañas: podio de ganadores.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(1).webp" class="rounded img-fluid" alt="Grupo de participantes en Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(289).webp" class="rounded img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas.">
                     </div>
                 </div>
 
                                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(80).webp" alt="Corredor en la Media Maratón Entre Montañas." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(257).webp" class="rounded img-fluid" alt="Corredora con dorsal 0332 en la salida de la Media Maratón Entre Montañas." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(252).webp" class="rounded img-fluid" alt="Corredores en la salida de la Media Maratón Entre Montañas." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(80).webp" alt="Corredor en la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(257).webp" class="rounded img-fluid" alt="Corredora con dorsal 0332 en la salida de la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(252).webp" class="rounded img-fluid" alt="Corredores en la salida de la Media Maratón Entre Montañas.">
                     </div>
                 </div>
 
                                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="rounded img-fluid" alt="Corredora cruza la meta de la Media Maratón Entre Montañas con los brazos en alto." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(145).webp" class="rounded img-fluid" alt="Corredora sonriente en la Media Maratón Entre Montañas." loading="lazy">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(229).webp" class="rounded img-fluid" alt="Corredores en la Media Maratón Entre Montañas con el dorsal 0308." loading="lazy">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="rounded img-fluid" alt="Corredora cruza la meta de la Media Maratón Entre Montañas con los brazos en alto.">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(589).webp" class="rounded img-fluid" alt="Corredora sonriente en la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(558).webp" class="rounded img-fluid" alt="Corredores en la Media Maratón Entre Montañas con el dorsal 0308.">
                     </div>
                 </div>
             </div>
