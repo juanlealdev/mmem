@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Arma tu plan</title>
+<style>
+  body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #ffffff;
+    background: #a0a60f;
+    padding: 15px 0;
+    font-size: 24px;
+  }
+
+  #content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .section {
+    margin-bottom: 60px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    background-color: #a0a60f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  .plan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .plan-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .plan-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .plan-card h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #333;
+    text-align: center;
+  }
+
+  .plan-card p {
+    font-size: 13px;
+    margin: 3px 0;
+    text-align: center;
+    color: #555;
+  }
+
+  @media (max-width: 768px) {
+    .section-header {
+      font-size: 18px;
+      padding: 8px 16px;
+    }
+
+    .plan-card {
+      padding: 8px;
+    }
+  }
+</style>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="plan-title">ARMA TU PLAN</h1>
+      <div id="plan-content"></div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const planData = {
+          destacados: [
+            {
+              image: "salento_cocora.jpg",
+              title: "Salento y el Valle de Cocora",
+              description: "2 Noches / 3 Días - 10K / 21K",
+              extra: "Desde: $470.268",
+              contact: "+57 322 536 0715"
+            },
+            {
+              image: "parque_arrieros.jpg",
+              title: "Parque Los Arrieros",
+              description: "Parque temático con cultura cafetera. Todos los días de 9:00am a 5:00pm.",
+              extra: "Montenegro - Quindío",
+              contact: "+57 311 344 9491"
+            },
+            {
+              image: "finca_ocaso.jpg",
+              title: "Finca El Ocaso",
+              description: "Recorrido caficultor con cata de café. Todos los días de 10:00am a 3:00pm.",
+              extra: "Duración: 1h 20min",
+              contact: "+57 313 425 3849"
+            }
+          ],
+          hoteles: [
+            {
+              image: "salento_real.jpg",
+              title: "Hotel Salento Real",
+              description: "27% de descuento. Código: PLANCOFFEE",
+              contact: "+57 316 629 4142"
+            },
+            {
+              image: "viajero.jpg",
+              title: "Viajero Hostels",
+              description: "XX% de descuento. Código: QUINDIOX",
+              contact: "+57 313 428 2446"
+            },
+            {
+              image: "casa_laurita.jpg",
+              title: "Hotel La Casa de Laurita",
+              description: "10% de descuento. Código: COFFEE10",
+              contact: "+57 313 383 2286"
+            },
+            {
+              image: "coffee_tree.jpg",
+              title: "Hotel Coffee Tree",
+              description: "15% de descuento. Código: COFFEE",
+              contact: "+57 318 890 4099"
+            }
+          ],
+          restaurantes: [
+            {
+              image: "villa_nueva.jpg",
+              title: "Recinto Gastronómico Villa Nueva",
+              description: "Cra. 6 #2-2, Salento"
+            },
+            {
+              image: "donde_laurita.jpg",
+              title: "Restaurante Donde Laurita",
+              description: "Cra 5 #3-15, Salento - Cocora"
+            },
+            {
+              image: "gata_carola.jpg",
+              title: "Restaurante La Gata Carola",
+              description: "Cra. 6 #6-25, Salento",
+              contact: "+57 321 759 5489"
+            },
+            {
+              image: "donde_juanb.jpg",
+              title: "Restaurante Donde JuanB",
+              description: "Valle de Cocora",
+              contact: "+57 310 469 1693 / +57 314 824 8243"
+            }
+          ],
+          otrasActividades: [
+            {
+              image: "ascamusa.jpg",
+              title: "Cabalgata Ascamusa",
+              description: "15% de descuento",
+              contact: "+57 322 933 4424 / +57 312 226 5527"
+            },
+            {
+              image: "cootracocora.jpg",
+              title: "Cootracocora",
+              description: "Transporte turístico desde Salento",
+              extra: "Plaza Bolívar, Salento",
+              contact: "+57 310 427 2444"
+            },
+            {
+              image: "morrogacho.jpg",
+              title: "Caminata Morrogacho",
+              description: "Reservas: @morrogachoexperience",
+              contact: "+57 310 842 6568"
+            }
+          ]
+        };
+
+        const contentDiv = document.getElementById("plan-content");
+
+        const createSection = (title, items) => {
+          const section = document.createElement("div");
+          section.className = "plan-section";
+
+          const heading = document.createElement("h2");
+          heading.textContent = title;
+          section.appendChild(heading);
+
+          const grid = document.createElement("div");
+          grid.className = "plan-grid";
+
+          items.forEach((item) => {
+            const card = document.createElement("div");
+            card.className = "plan-card";
+
+         card.innerHTML = `
+  <h3>${item.title}</h3>
+  <img src="${item.image}" alt="${item.title}" />
+  <p>${item.description}</p>
+  ${item.extra ? `<p>${item.extra}</p>` : ""}
+  ${item.contact ? `<p>Contacto: ${item.contact}</p>` : ""}
+`;
+
+            grid.appendChild(card);
+          });
+
+          section.appendChild(grid);
+          return section;
+        };
+
+        contentDiv.appendChild(createSection("Destacados", planData.destacados));
+        contentDiv.appendChild(createSection("Hoteles", planData.hoteles));
+        contentDiv.appendChild(createSection("Restaurantes", planData.restaurantes));
+        contentDiv.appendChild(createSection("Otras Actividades", planData.otrasActividades));
+      });
+    </script>
+  </body>
+</html>

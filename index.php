@@ -8,7 +8,7 @@
     // Tus definiciones de $patrocinadores y $logos
     $patrocinadores = [
         [ 'src' => $cdn .'/Images/2025/nexus.webp',           'alt' => 'Nexus' ],
-        [ 'src' => $cdn .'/Images/2025/healthySports.webp', 'alt' => 'Healthy Sports' ],
+        // [ 'src' => $cdn .'/Images/2025/healthySports.webp', 'alt' => 'Healthy Sports' ],
         [ 'src' => $cdn .'/Images/2025/imdera.webp',          'alt' => 'IMDERA' ],
         [ 'src' => $cdn .'/Images/2025/gatorade.webp',        'alt' => 'Gatorade' ],
         [ 'src' => $cdn .'/Images/2025/andiautos.webp',       'alt' => 'Andiautos' ],
@@ -22,7 +22,7 @@
 
 <main class="site-main">
 
-    <section class="carousel-section" style="margin-top: -93px;">
+    <section class="carousel-section" style="margin-top: -90px;">
         <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -43,7 +43,20 @@
         </div>
     </section>
 
-    <section class="cupos-section">
+    <section class="sponsor-carousel">
+  <!-- <h3 class="sponsor-title">Nuestros Patrocinadores</h3> -->
+  <div class="slider-wrapper">
+    <div class="slider-track">
+      <?php foreach ($logos as $patrocinador): ?>
+        <div class="logo-item">
+          <img src="<?= $patrocinador['src'] ?>" alt="<?= htmlspecialchars($patrocinador['alt']) ?>">
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+    <!-- <section class="cupos-section">
         <div class="cupos-container">
             <div class="progress-bar-container">
                 <div class="progress-fill"></div>
@@ -53,7 +66,7 @@
                 CUPOS <span class="vendidos">VENDIDOS</span>
             </div>
         </div>
-    </section>
+    </section> -->
 
 <section class="video-shirt-container">
   <video src="<?= $cdn ?>/videos/MMEM_lanzamiento_camiseta.mp4" controls playsinline muted autoplay loop></video>
@@ -326,26 +339,189 @@
 </script>
 
 
-<section class="sponsor-carousel">
-  <h3 class="sponsor-title">Nuestros Patrocinadores</h3>
-  <div class="slider-wrapper">
-    <div class="slider-track">
-      <?php foreach ($logos as $patrocinador): ?>
-        <div class="logo-item">
-          <img src="<?= $patrocinador['src'] ?>" alt="<?= htmlspecialchars($patrocinador['alt']) ?>">
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
+<div class="plan-container">
+  <h1 class="plan-title">ARMA TU PLAN</h1>
+  <div id="plan-content"></div>
+</div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const planData = {
+      destacados: [
+        {
+          image: "<?= $cdn ?>/Images/2025/MMEM_TheCoffee.webp",
+          title: "",
+          description: "",
+          extra: "",
+          contact: ""
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/PARQUE_LOS_ARRIEROS.webp",
+          title: "Parque Los Arrieros",
+          description: `Parque temático del Quindío cortesía MMEM.\nReclama tu pase con tu kit.\n@parquelosarrieros`,
+          extra: `Horarios: 9:00am a 5:00pm. Todos los días.\nUbicación: km 3 vía Montenegro - Quimbaya\nVereda Santana - Quindío`,
+          contact: "+57 311 344 8451"
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/OCASO.webp",
+          title: "Finca El Ocaso",
+          description: `Recorrido caficultor cortesía MMEM. Reclama tu pase con tu kit.\n@fincaelocasosalento`,
+          extra: `Horarios: 10:00 am a 12:00 m | 2:00 pm a 3:00 pm\nDías: Todos los días\nDuración: 1h:30`,
+          contact: "+57 313 425 3669"
+        }
+      ],
+      hoteles: [
+        {
+          image: "<?= $cdn ?>/Images/2025/HOTEL_SALENTO_REAL.webp",
+          title: "Hotel Salento Real",
+          description: "27% de descuento, código: MMEM27\n@hotelsalentoreal\nwww.hotelsalentoreal.com",
+          contact: "+57 316 629 6142"
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/VIAJEROS_HOSTELS.webp",
+          title: "Viajero Hostels",
+          description: "Pregunta por tu descuento\n@viajerohostels\nwww.viajerohostels.com",
+          contact: "+57 313 428 3448"
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/CASA_DE%20_LAURITA.webp",
+          title: "Hotel La Casa de Laurita",
+          description: "10% de descuento\n@hotellacasadelaurita",
+          contact: "+57 313 383 3294"
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/HOTEL_CAFFEE_%20TREE.webp",
+          title: "Hotel Coffee Tree Boutique Hostel",
+          description: "15% de descuento\n@coffeetreesalento\nwww.coffeetreebh.com",
+          contact: "+57 318 890 6999"
+        }
+      ],
+      restaurantes: [
+        {
+          image: "<?= $cdn ?>/Images/2025/RECINTO.webp",
+          title: "Recinto Gastronómico y Artesanal Villa Nueva de Salento",
+          description: "Ubicación: cra 7a # 6-2 esquina plaza principal Salento"
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/RESTAURANTE_%20DONDE_LAURITA.webp",
+          title: "Restaurante Donde Laurita",
+          description: "Ubicación: Sede parque - cll 5#5-34, Salento, Quindío / Sede Campestre - KM2 Vía Salento - Cocora"
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/GATA_CAROLA.webp",
+          title: "Restaurante La Gata Carola",
+          description: "Ubicación: Cl. 4 #5-25, Salento, Quindío",
+          contact: "+57 321 759 5489"
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/DONDE_JUAN%20B.webp",
+          title: "Restaurante Donde JuanB",
+          description: "Ubicación: Valle de Cocora",
+          contact: "+57 310 227-5091 | +57 314 827-8213"
+        }
+      ],
+      otrasActividades: [
+        {
+          image: "<?= $cdn ?>/Images/2025/ASCAMUSA.webp",
+          title: "Cabalgata Ascamusa",
+          description: "15% de descuento\n@cabalgatasvalledeCocora",
+          contact: "+57 322 933 4342 | +57 312 226 5527"
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/COOTRACOCORA.webp",
+          title: "Cootracocora",
+          description: "Transporte público de Salento. Rutas turísticas\nwww.cootracocora.com.co",
+          extra: "Ubicación: plaza de Bolívar Salento",
+          contact: "+57 310 437 2944"
+        },
+        {
+          image: "<?= $cdn ?>/Images/2025/MORROGACHO.webp",
+          title: "Caminata Morrogacho",
+          description: "@expedicionmorrogacho",
+          contact: "+57 310 842 558"
+        }
+      ]
+    };
 
-    <section class="container my-3 my-md-5 text-center">
-        <div class="d-flex justify-content-center align-items-center gap-3">
-            <span class="custom-text">PLANEA TU VIAJE</span>
-            <button class="custom-button" id="bton_viaje">HAZ TU PLAN</button>
-        </div>
-    </section>
+    const contentDiv = document.getElementById("plan-content");
+    const highlightKeywords = (text) => {
+        if (!text) return "";
+
+        return text
+        .split("\n")
+        .map(line => {
+        let processedLine = line;
+
+        // Regla 1: Resalta las palabras clave al inicio de la línea
+         processedLine = processedLine.replace(
+         /^(Ubicación|Horarios|Duración|Contacto):/i,
+        '<span style="color: #F7CA46; font-weight: bold;">$&</span>'
+        );
+
+         // Regla 2: Resalta las @menciones en cualquier parte de la línea
+         processedLine = processedLine.replace(
+        /(@[\w.-]+)/g,
+        '<span style="color: #F7CA46; font-weight: bold;">$1</span>'
+        );
+
+        // Regla 3: Resalta los enlaces (http, https, www)
+        processedLine = processedLine.replace(
+        /(https?:\/\/\S+|www\.\S+)/g,
+        '<span style="color: #F7CA46; font-weight: bold;">$1</span>'
+        );
+
+      return processedLine;
+    })
+    .join("<br>");
+};
+
+    const createSection = (title, items) => {
+      const section = document.createElement("div");
+      section.className = "plan-section";
+
+      const heading = document.createElement("h2");
+      heading.textContent = title;
+      section.appendChild(heading);
+
+      const grid = document.createElement("div");
+      grid.className = "plan-grid";
+
+      items.forEach((item) => {
+        const card = document.createElement("div");
+        card.className = "plan-card";
+
+        // Tarjeta especial sin contenido textual
+        if (!item.title && !item.description && !item.extra && !item.contact) {
+          card.innerHTML = `<img src="${item.image}" alt="Promo" style="width:100%; height:100%; object-fit:cover; border-radius:0;">`;
+        } else {
+            card.innerHTML = `
+            <img src="${item.image}" alt="${item.title}" />
+            <div class="card-content">
+            <h3>${item.title}</h3>
+            <div>
+            ${item.description ? `<p>${highlightKeywords(item.description)}</p>` : ""}
+            ${item.extra ? `<p>${highlightKeywords(item.extra)}</p>` : ""}
+            </div>
+            <div>
+            ${item.contact ? `<p><span style="color: #F7CA46; font-weight: bold;">Contacto:</span> ${item.contact}</p>` : ""}
+            </div>
+            </div>
+            `;
+        }
+
+        grid.appendChild(card);
+      });
+
+      section.appendChild(grid);
+      return section;
+    };
+
+    contentDiv.appendChild(createSection("Destacados", planData.destacados));
+    contentDiv.appendChild(createSection("Hoteles", planData.hoteles));
+    contentDiv.appendChild(createSection("Restaurantes", planData.restaurantes));
+    contentDiv.appendChild(createSection("Otras Actividades", planData.otrasActividades));
+  });
+</script>
 
     <section class="container-fluid my-5 d-flex gap-1 flex-column" id="section_8">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
