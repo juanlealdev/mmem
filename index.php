@@ -376,7 +376,7 @@
         {
           image: "<?= $cdn ?>/Images/2025/HOTEL_SALENTO_REAL.webp",
           title: "Hotel Salento Real",
-          description: "27% de descuento, código: MMEM27\n@hotelsalentoreal\nwww.hotelsalentoreal.com",
+          description: "27% de descuento, código: MMEM27\n@hsalentoreal\nwww.hotelsalentoreal.com",
           contact: "+57 316 629 6142"
         },
         {
@@ -388,13 +388,13 @@
         {
           image: "<?= $cdn ?>/Images/2025/CASA_DE%20_LAURITA.webp",
           title: "Hotel La Casa de Laurita",
-          description: "10% de descuento\n@hotellacasadelaurita",
+          description: "10% de descuento\n@hotelacasadelaurita",
           contact: "+57 313 383 3294"
         },
         {
           image: "<?= $cdn ?>/Images/2025/HOTEL_CAFFEE_%20TREE.webp",
           title: "Hotel Coffee Tree Boutique Hostel",
-          description: "15% de descuento\n@coffeetreesalento\nwww.coffeetreebh.com",
+          description: "15% de descuento\n@coffeetreebhsalento\nwww.coffeetreebh.com",
           contact: "+57 318 890 6999"
         }
       ],
@@ -418,7 +418,7 @@
         {
           image: "<?= $cdn ?>/Images/2025/DONDE_JUAN%20B.webp",
           title: "Restaurante Donde JuanB",
-          description: "Ubicación: Valle de Cocora",
+          description: "Ubicación: Valle de Cocora\nhttps://www.valledelcocora.com.co",
           contact: "+57 310 227-5091 | +57 314 827-8213"
         }
       ],
@@ -426,8 +426,8 @@
         {
           image: "<?= $cdn ?>/Images/2025/ASCAMUSA.webp",
           title: "Cabalgata Ascamusa",
-          description: "15% de descuento\n@cabalgatasvalledeCocora",
-          contact: "+57 322 933 4342 | +57 312 226 5527"
+          description: "15% de descuento",
+          contact: "+57 322 933 4342 | +57 312 226 5527 | +57 3122156116"
         },
         {
           image: "<?= $cdn ?>/Images/2025/COOTRACOCORA.webp",
@@ -446,35 +446,51 @@
     };
 
     const contentDiv = document.getElementById("plan-content");
+  
+    /* Función para resaltar palabras clave y enlaces */
     const highlightKeywords = (text) => {
-        if (!text) return "";
+    if (!text) return "";
 
-        return text
-        .split("\n")
-        .map(line => {
-        let processedLine = line;
+    const instagramUrls = {
+        "@parquelosarrieros": "https://www.instagram.com/parquelosarrieros/",
+        "@fincaelocasosalento": "https://www.instagram.com/fincaelocasosalento/",
+        "@hsalentoreal": "https://www.instagram.com/hsalentoreal/",
+        "@viajerohostels": "https://www.instagram.com/viajerohostels/",
+        "@hotelacasadelaurita": "https://www.instagram.com/hotelacasadelaurita/",
+        "@coffeetreebhsalento": "https://www.instagram.com/coffeetreebhsalento/",
+        "@expedicionmorrogacho": "https://www.instagram.com/expedicionmorrogacho/"
+    };
 
-        // Regla 1: Resalta las palabras clave al inicio de la línea
-         processedLine = processedLine.replace(
-         /^(Ubicación|Horarios|Duración|Contacto):/i,
-        '<span style="color: #F7CA46; font-weight: bold;">$&</span>'
-        );
+    // @coffeetreebhsalento
+    
+    const linkStyle = "color: #F7CA46; font-weight: bold; text-decoration: underline;";
 
-         // Regla 2: Resalta las @menciones en cualquier parte de la línea
-         processedLine = processedLine.replace(
-        /(@[\w.-]+)/g,
-        '<span style="color: #F7CA46; font-weight: bold;">$1</span>'
-        );
+    // Regex que captura los 3 tipos de elementos en grupos separados
+    const regex = /^(Ubicación:|Horarios:|Duración:|Contacto:)|(@[\w.-]+)|(https?:\/\/\S+|www\.\S+)/gim;
 
-        // Regla 3: Resalta los enlaces (http, https, www)
-        processedLine = processedLine.replace(
-        /(https?:\/\/\S+|www\.\S+)/g,
-        '<span style="color: #F7CA46; font-weight: bold;">$1</span>'
-        );
+    const highlightedText = text.replace(regex, (match, keyword, mention, link) => {
+        // Grupo 1: Si es una palabra clave (Ubicación, etc.)
+        if (keyword) {
+            return `<span style="color: #F7CA46; font-weight: bold;">${keyword}</span>`;
+        }
+        // Grupo 2: Si es una @mención
+        if (mention) {
+            const url = instagramUrls[mention.toLowerCase()];
+            if (url) {
+                return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="${linkStyle}">${mention}</a>`;
+            }
+            return `<span style="color: #F7CA46; font-weight: bold;">${mention}</span>`;
+        }
+        // Grupo 3: Si es un enlace (http o www)
+        if (link) {
+            const url = link.startsWith('www.') ? `https://${link}` : link;
+            return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="${linkStyle}">${link}</a>`;
+        }
+        return match; // Fallback por si acaso
+    });
 
-      return processedLine;
-    })
-    .join("<br>");
+    // Finalmente, convierte los saltos de línea a <br>
+    return highlightedText.replace(/\n/g, "<br>");
 };
 
     const createSection = (title, items) => {
@@ -492,7 +508,6 @@
         const card = document.createElement("div");
         card.className = "plan-card";
 
-        // Tarjeta especial sin contenido textual
         if (!item.title && !item.description && !item.extra && !item.contact) {
           card.innerHTML = `<img src="${item.image}" alt="Promo" style="width:100%; height:100%; object-fit:cover; border-radius:0;">`;
         } else {
@@ -510,10 +525,8 @@
             </div>
             `;
         }
-
         grid.appendChild(card);
       });
-
       section.appendChild(grid);
       return section;
     };
@@ -525,31 +538,31 @@
   });
 </script>
 
-    <section class="container-fluid my-5 d-flex gap-1 flex-column" id="section_8">
+    <section class="container-fluid py-5 d-flex gap-1 flex-column" id="section_8">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
 
                                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(226).webp" class="rounded img-fluid" alt="Corredores en la línea de salida de la Media Maratón Entre Montañas">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(283).webp" class="rounded img-fluid" alt="Participantes esperando el inicio de la Media Maratón Entre Montañas">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(280).webp" class="rounded img-fluid" alt="Corredora concentrada durante la Media Maratón Entre Montañas con dorsal 0308">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(226).webp" class="img-fluid" alt="Corredores en la línea de salida de la Media Maratón Entre Montañas">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(283).webp" class="img-fluid" alt="Participantes esperando el inicio de la Media Maratón Entre Montañas">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(280).webp" class="img-fluid" alt="Corredora concentrada durante la Media Maratón Entre Montañas con dorsal 0308">
                     </div>
                 </div>
 
                                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(234).webp" class="rounded img-fluid" alt="Imagen 4">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(233).webp" class="rounded img-fluid" alt="Imagen 5">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(232).webp" class="rounded img-fluid" alt="Imagen 6">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(234).webp" class="img-fluid" alt="Imagen 4">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(233).webp" class="img-fluid" alt="Imagen 5">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(232).webp" class="img-fluid" alt="Imagen 6">
                     </div>
                 </div>
 
                                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(270).webp" class="rounded img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(7).webp" class="rounded img-fluid" alt="Corredora feliz cruza la meta de la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(130).webp" class="rounded img-fluid" alt="Corredor en la salida de la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(270).webp" class="img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(7).webp" class="img-fluid" alt="Corredora feliz cruza la meta de la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(130).webp" class="img-fluid" alt="Corredor en la salida de la Media Maratón Entre Montañas.">
                     </div>
                 </div>
             </div>
@@ -567,25 +580,25 @@
 
                                 <div class="carousel-item active">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(602).webp" class="rounded img-fluid" alt="Media Maratón Entre Montañas: podio de ganadores.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(1).webp" class="rounded img-fluid" alt="Grupo de participantes en Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(289).webp" class="rounded img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(602).webp" class="img-fluid" alt="Media Maratón Entre Montañas: podio de ganadores.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(1).webp" class="img-fluid" alt="Grupo de participantes en Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(289).webp" class="img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas.">
                     </div>
                 </div>
 
                                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
                         <img src="<?= $cdn ?>/Images/2025/MMEM_(80).webp" alt="Corredor en la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(257).webp" class="rounded img-fluid" alt="Corredora con dorsal 0332 en la salida de la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(252).webp" class="rounded img-fluid" alt="Corredores en la salida de la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(257).webp" class="img-fluid" alt="Corredora con dorsal 0332 en la salida de la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/MMEM_(252).webp" class="img-fluid" alt="Corredores en la salida de la Media Maratón Entre Montañas.">
                     </div>
                 </div>
 
                                 <div class="carousel-item">
                     <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="rounded img-fluid" alt="Corredora cruza la meta de la Media Maratón Entre Montañas con los brazos en alto.">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(589).webp" class="rounded img-fluid" alt="Corredora sonriente en la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(558).webp" class="rounded img-fluid" alt="Corredores en la Media Maratón Entre Montañas con el dorsal 0308.">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="img-fluid" alt="Corredora cruza la meta de la Media Maratón Entre Montañas con los brazos en alto.">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(589).webp" class="img-fluid" alt="Corredora sonriente en la Media Maratón Entre Montañas.">
+                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(558).webp" class="img-fluid" alt="Corredores en la Media Maratón Entre Montañas con el dorsal 0308.">
                     </div>
                 </div>
             </div>

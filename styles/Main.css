@@ -510,7 +510,6 @@ h3 {
 /* ----- SECCIÓN CARRUSEL GALERÍA ----- */
 #section_8 {
     background: linear-gradient(135deg, var(--color-verde-oscuro), #ffca01);
-    border-radius: 10px;
     padding: 10px;
 }
 
@@ -535,8 +534,6 @@ h3 {
     height: 300px;
     /* Mantener altura uniforme */
     object-fit: cover;
-    /* Ajusta la imagen sin deformarla */
-    border-radius: 10px;
     /* Opcional */
     margin: auto;
     /* Centrar imágenes */
