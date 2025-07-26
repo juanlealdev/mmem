@@ -732,7 +732,7 @@ h3 {
     border: 2px solid white;
     border-radius: 30px;
     padding: 25px 30px;
-    max-width: 1200px;
+    max-width: 1294px;
     width: 100%;
     box-sizing: border-box;
     position: relative;
@@ -854,9 +854,17 @@ h3 {
 
 .plan-container {
     background: linear-gradient(to left, #F1961E, #8DA21C);
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
-    padding: 80px 65px;
+    padding: 80px 0;
+    box-sizing: border-box;
+}
+
+.plan-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* opcional para separación lateral */
     box-sizing: border-box;
 }
 

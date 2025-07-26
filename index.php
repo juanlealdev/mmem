@@ -340,8 +340,10 @@
 
 
 <div class="plan-container">
-  <h1 class="plan-title">ARMA TU PLAN</h1>
-  <div id="plan-content"></div>
+  <div class="container">
+    <h1 class="plan-title">ARMA TU PLAN</h1>
+    <div id="plan-content"></div>
+  </div>
 </div>
 
 <script>
