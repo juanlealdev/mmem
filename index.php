@@ -7,15 +7,19 @@
     
     // Tus definiciones de $patrocinadores y $logos
     $patrocinadores = [
-        [ 'src' => $cdn .'/Images/2025/nexus.webp',           'alt' => 'Nexus' ],
+        [ 'src' => $cdn .'/Images/2025/nexus.webp', 'alt' => 'Nexus', 'format' => 'horizontal' ],
         // [ 'src' => $cdn .'/Images/2025/healthySports.webp', 'alt' => 'Healthy Sports' ],
-        [ 'src' => $cdn .'/Images/2025/imdera.webp',          'alt' => 'IMDERA' ],
-        [ 'src' => $cdn .'/Images/2025/gatorade.webp',        'alt' => 'Gatorade' ],
-        [ 'src' => $cdn .'/Images/2025/andiautos.webp',       'alt' => 'Andiautos' ],
-        [ 'src' => $cdn .'/Images/2025/smartfit.webp',        'alt' => 'Smart Fit' ],
-        [ 'src' => $cdn .'/Images/2025/perea.webp',           'alt' => 'Consejal Perea' ],
-        [ 'src' => $cdn .'/Images/2025/sura.webp',            'alt' => 'Sura' ],
-        [ 'src' => $cdn .'/Images/2025/ocaso.webp',           'alt' => 'Ocaso' ]
+        [ 'src' => $cdn .'/Images/2025/imdera.webp', 'alt' => 'IMDERA', 'format' => 'horizontal' ],
+        [ 'src' => $cdn .'/Images/2025/los-arrieros.webp', 'alt' => 'Parque Los Arrieros', 'format' => 'vertical' ],
+        [ 'src' => $cdn .'/Images/2025/gatorade.webp', 'alt' => 'Gatorade', 'format' => 'vertical' ],
+        [ 'src' => $cdn .'/Images/2025/andiautos.webp', 'alt' => 'Andiautos', 'format' => 'horizontal' ],
+        [ 'src' => $cdn .'/Images/2025/smartfit.webp', 'alt' => 'Smart Fit', 'format' => 'horizontal' ],
+        [ 'src' => $cdn .'/Images/2025/santa-barbara.webp', 'alt' => 'Industrias Santa Barbara', 'format' => 'horizontal' ],
+        [ 'src' => $cdn .'/Images/2025/perea.webp', 'alt' => 'Consejal Perea', 'format' => 'horizontal' ],
+        [ 'src' => $cdn .'/Images/2025/sura.webp', 'alt' => 'Sura', 'format' => 'horizontal' ],
+        [ 'src' => $cdn .'/Images/2025/ocaso.webp', 'alt' => 'Ocaso', 'format' => 'vertical' ],
+        [ 'src' => $cdn .'/Images/2025/la-montaña.svg', 'alt' => 'La Montaña Agromercados', 'format' => 'horizontal' ],
+        [ 'src' => $cdn .'/Images/2025/pc.webp', 'alt' => 'Producto Colombia', 'format' => 'vertical' ],
     ];
     $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
 ?>
@@ -48,7 +52,7 @@
   <div class="slider-wrapper">
     <div class="slider-track">
       <?php foreach ($logos as $patrocinador): ?>
-        <div class="logo-item">
+        <div class="logo-item <?= $patrocinador['format'] ?>">
           <img src="<?= $patrocinador['src'] ?>" alt="<?= htmlspecialchars($patrocinador['alt']) ?>">
         </div>
       <?php endforeach; ?>

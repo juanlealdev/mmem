@@ -671,7 +671,7 @@ h3 {
 .slider-track {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 100px;
     width: max-content;
     animation: scroll 90s linear infinite;
 }
@@ -684,9 +684,13 @@ h3 {
 }
 
 .logo-item img {
-    height: 55px;
+    height: 64px;
     object-fit: contain;
     transition: transform 0.3s ease;
+}
+
+.vertical img {
+    height: 74px !important;
 }
 
 .logo-item img:hover {
@@ -1147,7 +1151,7 @@ h3 {
     .slider-track {
         display: flex;
         align-items: center;
-        gap: 55px;
+        gap: 100px;
         animation: scroll 90s linear infinite;
     }
 
@@ -1159,9 +1163,13 @@ h3 {
     }
 
     .logo-item img {
-        height: 55px;
+        height: 64px;
         object-fit: contain;
         transition: transform 0.3s ease;
+    }
+
+    .vertical img {
+        height: 74px !important;
     }
 
     .logo-item img:hover {
@@ -1344,6 +1352,10 @@ h3 {
         height: 45px;
         object-fit: contain;
         transition: transform 0.3s ease;
+    }
+
+    .vertical img {
+        height: 64px !important;
     }
 
     .logo-item img:hover {
