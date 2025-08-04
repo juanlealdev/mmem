@@ -377,6 +377,22 @@ a:hover {
     /* Morado al pasar el mouse */
 }
 
+.route-21k {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 16px;
+}
+
+.route-21k > h3 {
+    margin: 0px;
+}
+
+.route-21k > span {
+    color: #ffca01;
+    font-size: 14px;
+}
+
 
 
 .social-icons-fixed a:hover {
@@ -538,7 +554,6 @@ h3 {
     margin: auto;
     /* Centrar imágenes */
 }
-
 
 
 

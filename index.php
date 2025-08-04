@@ -14,6 +14,7 @@
         [ 'src' => $cdn .'/Images/2025/gatorade.webp', 'alt' => 'Gatorade', 'format' => 'vertical' ],
         [ 'src' => $cdn .'/Images/2025/andiautos.webp', 'alt' => 'Andiautos', 'format' => 'horizontal' ],
         [ 'src' => $cdn .'/Images/2025/smartfit.webp', 'alt' => 'Smart Fit', 'format' => 'horizontal' ],
+        [ 'src' => $cdn .'/Images/2025/rivera-cp.webp', 'alt' => 'Rivera Coffee Park', 'format' => 'vertical' ],
         [ 'src' => $cdn .'/Images/2025/santa-barbara.webp', 'alt' => 'Industrias Santa Barbara', 'format' => 'horizontal' ],
         [ 'src' => $cdn .'/Images/2025/perea.webp', 'alt' => 'Consejal Perea', 'format' => 'horizontal' ],
         [ 'src' => $cdn .'/Images/2025/sura.webp', 'alt' => 'Sura', 'format' => 'horizontal' ],
@@ -159,9 +160,12 @@
                 </div>
                 <div class="texto">
                     <div>
-                        <h3 class="fw-bold">Recorrido 21K</h3>
+                        <div class="route-21k">
+                          <h3 class="fw-bold">Recorrido 21K</h3>
+                          <span>Distancia Oficial 22K</span>
+                        </div>
                         <p>
-                            ⛰️ La MM Entre Montañas te espera el 14 de septiembre en el Valle de Cócora. Disfruta de una carrera de 21 km sobre asfalto con vistas espectaculares de la Cordillera Central. Esta ruta inicia en la Plaza de Bolívar Salento, pasa por la calle real de Salento y alcanza su punto de retorno a los 10k en el emblemático restaurante Donde JuanB, encontraras la meta en la Plaza de Bolívar Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
+                            ⛰️ La MM Entre Montañas te espera el 14 de septiembre en el Valle de Cócora. Disfruta de una carrera de 21 km sobre asfalto con vistas espectaculares de la Cordillera Central. Esta ruta inicia en la Plaza de Bolívar Salento, pasa por la calle real de Salento y alcanza su punto de retorno a los 11k en el emblemático restaurante Donde JuanB, encontraras la meta en la Plaza de Bolívar Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
                         </p>
                     </div>
                                                 <div class="section">

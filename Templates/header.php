@@ -29,11 +29,11 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/header.css?v=01082025">
-    <link rel="stylesheet" href="./styles/Main.css?v=01082025">
-    <link rel ="stylesheet" href="styles/informacion.css?v=01082025">
-    <link rel ="stylesheet" href="styles/reglamento.css?v=01082025">
-    <link rel ="stylesheet" href="styles/resultados.css?v=01082025">
+    <link rel="stylesheet" href="./styles/header.css?version=04082025">
+    <link rel="stylesheet" href="./styles/Main.css?version=04082025">
+    <link rel ="stylesheet" href="styles/informacion.css?version=04082025">
+    <link rel ="stylesheet" href="styles/reglamento.css?version=04082025">
+    <link rel ="stylesheet" href="styles/resultados.css?version=04082025">
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     
