@@ -144,7 +144,7 @@
     <script>
         // Tu script de JavaScript existente para el contador y el posicionamiento
         function updateCountdownAndHeaderPosition() {
-            const targetDate = new Date("2025-08-02T00:00:00");
+            const targetDate = new Date("2025-09-15T00:00:00");
             const now = new Date();
             const diff = targetDate - now;
 
