@@ -39,7 +39,18 @@
     
 
     <meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:standard">
+
+    <!-- JSON-LD to indicate image to Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Media Maratón Entre Montañas",
+      "url": "https://mediamaratonentremontanas.com.co/",
+      "image": "https://cdn.mmem.com.co/Images/2025/MMEM_10k.webp"
+    }
+    </script>
 
     <script>
     !function(f,b,e,v,n,t,s)
