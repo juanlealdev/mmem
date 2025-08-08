@@ -1,7 +1,7 @@
 
 <?php
 
-    $cdn = "https://cdn.mmem.com.co";
+    $cdn = "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev";
 
     // Define a default title if $pageTitle is not set
     if (!isset($pageTitle)) {
@@ -29,11 +29,11 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/header.css?version=04082025">
-    <link rel="stylesheet" href="./styles/Main.css?version=04082025">
-    <link rel ="stylesheet" href="styles/informacion.css?version=04082025">
-    <link rel ="stylesheet" href="styles/reglamento.css?version=04082025">
-    <link rel ="stylesheet" href="styles/resultados.css?version=04082025">
+    <link rel="stylesheet" href="./styles/header.css?v=08082025">
+    <link rel="stylesheet" href="./styles/Main.css?v=08082025">
+    <link rel ="stylesheet" href="styles/informacion.css?v=08082025">
+    <link rel ="stylesheet" href="styles/reglamento.css?v=08082025">
+    <link rel ="stylesheet" href="styles/resultados.css?v=08082025">
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     
@@ -48,7 +48,7 @@
       "@type": "WebSite",
       "name": "Media Maratón Entre Montañas",
       "url": "https://mediamaratonentremontanas.com.co/",
-      "image": "https://cdn.mmem.com.co/Images/2025/MMEM_10k.webp"
+      "image": "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/MMEM_10k.webp"
     }
     </script>
 
