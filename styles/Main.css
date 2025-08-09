@@ -21,16 +21,16 @@ body {
 
 @font-face {
     font-family: 'Tallica';
-    src: url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/fonts/Tallica_prueba-VF.woff2') format('woff2');
+    src: url('https://dev.mmem.com.co/fonts/Tallica_prueba-VF.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Avenir LT Std';
-    src: url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/fonts/AvenirLTStd-Book.woff2') format('woff2'),
-        url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/fonts/AvenirLTStd-Book.woff') format('woff'),
-        url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/fonts/AvenirLTStd-Book.otf') format('opentype');
+    src: url('https://dev.mmem.com.co/fonts/AvenirLTStd-Book.woff2') format('woff2'),
+        url('https://dev.mmem.com.co/fonts/AvenirLTStd-Book.woff') format('woff'),
+        url('https://dev.mmem.com.co/fonts/AvenirLTStd-Book.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -585,7 +585,7 @@ h3 {
     padding: 20px 0;
     display: flex;
     justify-content: center;
-    background-image: url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/background_barra_urgencia.webp');
+    background-image: url('https://dev.mmem.com.co/Images/2025/background_barra_urgencia.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -656,7 +656,7 @@ h3 {
 /* SECCION PATROCINADORES */
 .sponsor-carousel {
     width: 100%;
-    background-image: url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/horizontalSponsorsBackground%20.webp');
+    background-image: url('https://dev.mmem.com.co/Images/2025/horizontalSponsorsBackground%20.webp');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -734,7 +734,7 @@ h3 {
 
 .testimonial-section {
     width: 100%;
-    background-image: url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/countdown-bg%20(1).webp');
+    background-image: url('https://dev.mmem.com.co/Images/2025/countdown-bg%20(1).webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -788,11 +788,11 @@ h3 {
 }
 
 .testimonial-1 {
-    background-image: url(https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/thumbnail-testimonial-1.webp);
+    background-image: url(https://dev.mmem.com.co/Images/2025/thumbnail-testimonial-1.webp);
 }
 
 .testimonial-2 {
-    background-image: url(https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/thumbnail-testimonial-2.webp);
+    background-image: url(https://dev.mmem.com.co/Images/2025/thumbnail-testimonial-2.webp);
 }
 
 .testimonial-carousel {
@@ -1070,7 +1070,7 @@ h3 {
         padding: 25px 0;
         display: flex;
         justify-content: center;
-        background-image: url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/background_barra_urgencia.webp');
+        background-image: url('https://dev.mmem.com.co/Images/2025/background_barra_urgencia.webp');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -1135,7 +1135,7 @@ h3 {
     /* SECCION PATROCINADORES */
     .sponsor-carousel {
         width: 100%;
-        background-image: url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/horizontalSponsorsBackground%20.webp');
+        background-image: url('https://dev.mmem.com.co/Images/2025/horizontalSponsorsBackground%20.webp');
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
@@ -1256,7 +1256,7 @@ h3 {
         padding: 25px 0;
         display: flex;
         justify-content: center;
-        background-image: url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/background_barra_urgencia.webp');
+        background-image: url('https://dev.mmem.com.co/Images/2025/background_barra_urgencia.webp');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -1321,7 +1321,7 @@ h3 {
     /* SECCION PATROCINADORES */
     .sponsor-carousel {
         width: 100%;
-        background-image: url('https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2025/horizontalSponsorsBackground%20.webp');
+        background-image: url('https://dev.mmem.com.co/Images/2025/horizontalSponsorsBackground%20.webp');
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
