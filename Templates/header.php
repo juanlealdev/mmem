@@ -27,11 +27,11 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/header.css?version=09082025">
-    <link rel="stylesheet" href="./styles/Main.css?version=09082025">
-    <link rel ="stylesheet" href="styles/informacion.css?version=09082025">
-    <link rel ="stylesheet" href="styles/reglamento.css?version=09082025">
-    <link rel ="stylesheet" href="styles/resultados.css?version=09082025">
+    <link rel="stylesheet" href="./styles/header.css?v=12082025">
+    <link rel="stylesheet" href="./styles/Main.css?v=12082025">
+    <link rel ="stylesheet" href="styles/informacion.css?v=12082025">
+    <link rel ="stylesheet" href="styles/reglamento.css?v=12082025">
+    <link rel ="stylesheet" href="styles/resultados.css?v=12082025">
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     
@@ -110,7 +110,7 @@
             </a>
             
             <div>
-                <a class="btn-offer-mobile" href="https://www.biciq.com/info-event/black-days-entre-montanas-24bbc6b4" target="_blank">Black days</a>
+                <!-- <a class="btn-offer-mobile" href="https://www.biciq.com/info-event/black-days-entre-montanas-24bbc6b4" target="_blank">Black days</a> -->
             
                 <button class="navbar-toggler btn_navbar btn_nav" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -144,7 +144,7 @@
                 </ul>
                 
             </div>
-            <a class="btn-offer" href="https://www.biciq.com/info-event/black-days-entre-montanas-24bbc6b4" target="_blank">Black days entre montañas</a>
+            <!-- <a class="btn-offer" href="https://www.biciq.com/info-event/black-days-entre-montanas-24bbc6b4" target="_blank">Black days entre montañas</a> -->
         </div>
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
