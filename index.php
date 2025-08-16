@@ -16,6 +16,7 @@
         [ 'src' => $cdn .'/Images/2025/smartfit.webp', 'alt' => 'Smart Fit', 'format' => 'horizontal' ],
         [ 'src' => $cdn .'/Images/2025/rivera-cp.webp', 'alt' => 'Rivera Coffee Park', 'format' => 'vertical' ],
         [ 'src' => $cdn .'/Images/2025/santa-barbara.webp', 'alt' => 'Industrias Santa Barbara', 'format' => 'horizontal' ],
+        [ 'src' => $cdn .'/Images/2025/4-elementos.webp', 'alt' => '4 Elementos café artesanal', 'format' => 'vertical' ],
         [ 'src' => $cdn .'/Images/2025/perea.webp', 'alt' => 'Consejal Perea', 'format' => 'horizontal' ],
         [ 'src' => $cdn .'/Images/2025/sura.webp', 'alt' => 'Sura', 'format' => 'horizontal' ],
         [ 'src' => $cdn .'/Images/2025/ocaso.webp', 'alt' => 'Ocaso', 'format' => 'vertical' ],
