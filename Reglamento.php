@@ -45,12 +45,12 @@ $pageTitle = "Reglamento | Media Maratón Entre Montañas | Desafío Cocora";
             <tr>
                 <td>21K</td>
                 <td>Master A</td>
-                <td>40 a 59 años</td>
+                <td>40 a 49 años</td>
             </tr>
             <tr>
                 <td>21K</td>
                 <td>Master B</td>
-                <td>60 + años</td>
+                <td>50+ años</td>
             </tr>
             <tr>
                 <td>10K</td>
@@ -60,12 +60,12 @@ $pageTitle = "Reglamento | Media Maratón Entre Montañas | Desafío Cocora";
             <tr>
                 <td>10K</td>
                 <td>Master A</td>
-                <td>40 a 59 años</td>
+                <td>40 a 49 años</td>
             </tr>
             <tr>
                 <td>10K</td>
                 <td>Master B</td>
-                <td>60 + años</td>
+                <td>50+ años</td>
             </tr>
         </table>
 
