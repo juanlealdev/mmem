@@ -98,7 +98,7 @@
                     </div>
                 </div>
 
-                <a href="https://www.biciq.com/info-event/merch-media-maraton-entre-montanas-bd515789" target="_blank" rel="noopener noreferrer" class="alert-button">Tienda Merch</a>
+                <a href="https://wa.me/573138157376" target="_blank" rel="noopener noreferrer" class="alert-button">Tienda Merch</a>
             </div>
         </div>
     </div>
