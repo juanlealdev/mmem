@@ -26,8 +26,9 @@ $pageTitle = "Reglamento | Media Maratón Entre Montañas | Desafío Cocora";
 
         <h3>ARTÍCULO 4: Horario y Tiempo Límite</h3>
         <ul>
-            <li><strong>21K</strong>: Salida a las 5:30 a.m. | Tiempo límite: 3 horas 30 minutos</li>
-            <li><strong>10K</strong>: Salida a las 5:45 a.m. | Tiempo límite: 2 horas 30 minutos</li>
+            <li><strong>Hora de concentración 10K y 21K</strong>: 5:00 a.m. <a href="https://maps.app.goo.gl/CseVDUpKQVa3a31J6" target="_blank">Plaza de Bolívar de Salento</a></li>
+            <li><strong>21K</strong>: Salida a las 5:45 a.m. | Tiempo límite: 3 horas</li>
+            <li><strong>10K</strong>: Salida a las 6:00 a.m. | Tiempo límite: 2 horas 30 minutos</li>
         </ul>
 
         <h3>ARTÍCULO 5: Categorías</h3>
