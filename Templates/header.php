@@ -27,11 +27,11 @@
     <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/header.css?version=16082025">
-    <link rel="stylesheet" href="./styles/Main.css?version=16082025">
-    <link rel ="stylesheet" href="styles/informacion.css?version=16082025">
-    <link rel ="stylesheet" href="styles/reglamento.css?version=16082025">
-    <link rel ="stylesheet" href="styles/resultados.css?version=16082025">
+    <link rel="stylesheet" href="./styles/header.css?v=17082025">
+    <link rel="stylesheet" href="./styles/Main.css?v=17082025">
+    <link rel ="stylesheet" href="styles/informacion.css?v=17082025">
+    <link rel ="stylesheet" href="styles/reglamento.css?v=17082025">
+    <link rel ="stylesheet" href="styles/resultados.css?v=17082025">
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     
@@ -153,7 +153,7 @@
     <script>
         // Tu script de JavaScript existente para el contador y el posicionamiento
         function updateCountdownAndHeaderPosition() {
-            const targetDate = new Date("2025-09-15T00:00:00");
+            const targetDate = new Date("2025-09-14T00:00:00");
             const now = new Date();
             const diff = targetDate - now;
 
