@@ -1,49 +1,183 @@
-/* Estilo general del Navbar */
-.navbar {
-    background-color: #648d00;
-    /* Fondo verde oscuro */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0px 0px;
-    /* Sombra suave */
+@font-face {
+    font-family: 'Tallica';
+    src: url('../public/fonts/Tallica_prueba-VF.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
 }
 
+/* Contenedor compartido para contador y navbar */
+.header-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top, #010e45, #1b6aa5);
+}
+
+/* Estilos del Contador */
+.alert-bar-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.alert-bar-gradient {
+    width: 100%;
+    height: 100%;
+    /* Ocupa el 100% de la altura de .alert-bar-wrapper */
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-content-container {
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 60px 0 60px;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.9);;
+}
+
+.alert-text {
+    font-weight: 700;
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: 28px;
+    letter-spacing: 3px;
+    word-spacing: 4px;
+    text-align: center;
+    margin: 0;
+    font-family: 'Tallica', 'Arial', sans-serif;
+}
+
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.countdown {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown div {
+    background-color: #1b6aa5;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    box-sizing: border-box;
+    width: 70px;
+    /* Ancho fijo para escritorio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.countdown span#days,
+.countdown span#hours,
+.countdown span#minutes,
+.countdown span#seconds {
+    font-family: 'Tallica', sans-serif;
+    font-size: 24px;
+    line-height: 40px;
+    display: block;
+}
+
+.countdown .label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.7px;
+    margin-top: 0;
+}
+
+.alert-button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+
+.alert-button:hover {
+    background: #010e45;
+    color: #1b6aa5;
+    border: 2px solid #010e45;
+}
+
+/* Estilo general del Navbar */
+.custom-navbar {
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    height: 70px;
+    /* Altura fija para escritorio */
+}
+
+.navbar-container {
+    padding: 40px 60px;
+}
 
 .navbar-logo-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 60px;
+    justify-content: center;
+    height: 40px;
     max-width: 200px;
-    /* Alto del navbar, ajusta según el tamaño de tu navbar */
+}
+
+.navbar-logo-container-date {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #fbb601;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
 }
 
 .navbar-logo {
     width: auto;
-    /* Ajusta el ancho según lo necesites */
     height: 100%;
-    /* Mantiene la proporción */
-    /* O el tamaño grande que quieras */
-    /* width: auto; */
-    margin-right: 15px;
     position: relative;
-    padding: 8px 10px;
-
-    /* Ajusta para que la imagen se "desborde" sin aumentar el alto del navbar */
 }
 
-/* Logo o marca del navbar */
 .navbar-brand {
     font-family: 'Georgia', serif;
     font-size: 1.8rem;
     font-weight: bold;
-    color: #ffca01;
-    /* Amarillo fuerte */
+    color: #fbb601;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
     color: #f18500;
-    /* Naranja quemado */
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -51,8 +185,7 @@
 .nav-link {
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
-    color: #ffca01;
-    /* Amarillo fuerte */
+    color: #fbb601;
     margin-right: 15px;
     text-transform: capitalize;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -60,44 +193,8 @@
 
 .nav-link:hover {
     color: #f18500;
-    /* Naranja quemado */
     transform: scale(1.05);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-/* Botón destacado (Ejemplo de inscripción o acción principal) */
-.btn-primary {
-    background-color: #86af05;
-    /* Verde claro pasto */
-    border: none;
-    color: white;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-primary:hover {
-    background-color: #648d00;
-    /* Verde oscuro */
-    transform: translateY(-2px);
-}
-
-.btn-primary:active {
-    transform: translateY(1px);
-}
-
-/* No es estrictamente necesario, pero puede ayudar a darle un toque más suave */
-.navbar-collapse {
-    display: none;
-    transition: all 0.3s ease-in-out;
-}
-
-
-/* RESPONSIVE */
-/* Para pantallas menores a 768px */
-.imagen-responsive img {
-    max-width: 100%;
-    height: auto;
-    display: block;
 }
 
 .btn-offer-mobile,
@@ -110,6 +207,7 @@
     border-radius: 5px;
     text-transform: uppercase;
     margin: auto;
+    text-decoration: none;
 }
 
 .btn-offer-mobile {
@@ -120,11 +218,233 @@
     display: inline-block;
 }
 
-@media (max-width: 992px) {
+.last-nav-link {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+.navbar button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 1px;
+}
+
+.navbar button:focus,
+.navbar button:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+@media(max-width: 992px) {
+
+    /* Contador */
+    .alert-content-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 10px 20px;
+        height: auto;
+    }
+
+
+    /* Aseguramos que la barra del contador tenga una altura mínima en móviles */
+    .alert-bar-wrapper {
+        height: auto;
+        /* Permite que el contenido determine la altura */
+        min-height: 85px;
+        /* Pero asegúrate de que no se haga demasiado pequeño */
+        width: 100%;
+    }
+
+    .alert-bar-gradient {
+        height: 100%;
+        /* Ocupa el 100% de la altura de .alert-bar-wrapper */
+    }
+
+    .countdown-container {
+        align-items: center;
+    }
+
+    .countdown div {
+        width: 60px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .countdown span#days,
+    .countdown span#hours,
+    .countdown span#minutes,
+    .countdown span#seconds {
+        /* font-family: 'Tallica', sans-serif; */
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 1px;
+        margin-bottom: 1px;
+    }
+
+    .countdown .label {
+        font-size: 9px;
+        margin-top: 0px;
+    }
+
+    .alert-text {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+        height: auto;
+        /* Se ajusta a su contenido */
+        width: 100%;
+    }
+
+    .navbar-container {
+        padding: 12px 32px !important;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo-container {
+        max-width: 150px;
+        padding: 8px 0;
+    }
 
     .btn-offer-mobile {
-        margin-right: 8px;
         display: inline-block;
+        margin-right: 10px;
+    }
+
+    .btn-offer {
+        display: none;
+    }
+
+    /* Para el menú desplegable de Bootstrap en móvil */
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #010e45;
+        z-index: 1000;
+        /* Importante: Ajustar max-height para que quepa en el viewport debajo del contador y navbar */
+        /* calc(100vh - (altura contador + altura navbar)) */
+        max-height: calc(100vh - var(--fixed-header-height));
+        /* Usaremos una variable CSS si es posible, o JS */
+        overflow-y: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+        display: block;
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 0;
+        background-color: inherit;
+        width: 100%;
+    }
+
+    .dropdown-item {
+        /* ELIMINAR O AJUSTAR ESTAS PROPIEDADES PARA CENTRAR */
+        padding-left: 0;
+        /* Eliminar el padding a la izquierda para que no empuje el texto */
+        text-align: center;
+        /* Cambiar a center para alinear el texto al centro */
+        color: #fbb601;
+        display: block;
+        /* Asegurarse de que sea un bloque para que text-align funcione correctamente */
+        padding: 10px 0;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #f18500;
+    }
+}
+
+@media(max-width: 493px) {
+
+    /* Contador */
+    .alert-content-container {
+        padding: 10px;
+    }
+
+    .alert-text {
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 1px;
+    }
+
+    .countdown div {
+        width: 50px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .countdown span#days,
+    .countdown span#hours,
+    .countdown span#minutes,
+    .countdown span#seconds {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }
+
+    .countdown .label {
+        font-size: 10px;
+    }
+
+    .alert-button {
+        padding: 6px 18px;
+        font-size: 12px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+        height: auto;
+        /* Se ajusta a su contenido */
+        width: 100%;
+    }
+
+    .navbar-container {
+        padding: 4px 12px !important;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo-container {
+        max-width: 150px;
+    }
+
+    .btn-offer-mobile {
+        display: inline-block;
+        margin-right: 10px;
     }
 
     .btn-offer {

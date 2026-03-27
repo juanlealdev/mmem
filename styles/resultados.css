@@ -1,9 +1,8 @@
 /* Estilo General de la Sección */
 #resultados-maraton {
-    margin-top: 15px;
     text-align: center;
     background: #f4f4f4;
-    padding: 50px 20px;
+    padding: 0 20px;
 }
 
 #resultados-maraton h2 {
@@ -77,4 +76,12 @@
 
 .btn-resultado:hover {
     background: #1f4c00;
+}
+
+@media (max-width: 480px) {
+    .video-section h3 {
+        font-size: 1.3rem;
+        color: #333;
+        margin-bottom: 15px;
+    }
 }

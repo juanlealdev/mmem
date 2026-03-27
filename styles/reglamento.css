@@ -1,50 +1,45 @@
 /* ====== SECCIÓN REGLAMENTO ====== */
 #reglamento {
-    width: 90%;
+    width: 100%;
     max-width: 1000px;
     margin: 40px auto;
     padding: 30px;
-    background: #ffffff;
-    border-radius: 10px;
-    border: 3px solid #648d00;
-    /* Borde verde oscuro */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* Sombra más visible */
 }
 
 /* Título Principal */
-#reglamento h2 {
+#reglamento h1 {
+    font-family: 'Inter', sans-serif;
     text-align: center;
     font-size: 32px;
-    color: #648d00;
+    color: #010e45;
     /* Verde oscuro */
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 25px;
-    border-bottom: 3px solid #ffca01;
+    border-bottom: 3px solid #ffb700;
     /* Amarillo fuerte */
     padding-bottom: 10px;
 }
 
 /* Subtítulos de artículos */
 #reglamento h3 {
+    font-family: 'Arial', sans-serif;
     font-size: 22px;
-    color: #86af05;
-    /* Verde claro pasto */
-    border-left: 5px solid #648d00;
-    /* Verde oscuro */
-    padding-left: 12px;
+    color: #010e45;
     margin-top: 30px;
-    font-weight: bold;
+    font-weight: 900;
+    letter-spacing: normal;
 }
 
 /* Subtítulos menores */
 #reglamento h4 {
+    font-family: 'Arial', sans-serif;
     font-size: 18px;
     color: #222;
     /* Más oscuro */
     margin-top: 20px;
     font-weight: bold;
+    letter-spacing: normal;
 }
 
 /* Párrafos */
@@ -58,13 +53,13 @@
 
 /* Estilo para los iconos en párrafos */
 #reglamento p i {
-    color: #648d00;
+    color: #010e45;
     margin-right: 5px;
 }
 
 /* Enlaces */
 #reglamento a {
-    color: #ffca01;
+    color: #ffb700;
     /* Amarillo fuerte */
     text-decoration: none;
     font-weight: bold;
@@ -78,23 +73,46 @@
 
 /* Listas */
 #reglamento ul {
-    padding-left: 25px;
+    list-style: none;
+    padding-left: 0;
+    margin: 15px 0;
 }
 
 #reglamento ul li {
+    position: relative;
+    padding-left: 28px;
     margin-bottom: 8px;
     font-size: 16px;
     color: #222;
     /* Más oscuro */
 }
 
+#reglamento .website-link {
+    color: #ffb700;
+}
+
 /* Listas con iconos personalizados */
 #reglamento ul li::before {
     content: "✔";
-    color: #648d00;
+    color: #010e45;
     /* Verde oscuro */
     font-weight: bold;
-    margin-right: 8px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Listas ordenadas */
+#reglamento ol {
+    padding-left: 25px;
+    margin: 15px 0;
+}
+
+#reglamento ol li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #222;
+    line-height: 1.8;
 }
 
 /* Tablas */
@@ -105,7 +123,7 @@
     background: #f8f9fa;
     border-radius: 5px;
     overflow: hidden;
-    border: 2px solid #648d00;
+    border: 2px solid #010e45;
     /* Borde en toda la tabla */
 }
 
@@ -117,8 +135,7 @@
 }
 
 #reglamento th {
-    background-color: #648d00;
-    /* Verde oscuro */
+    background-color: #010e45;
     color: white;
     font-size: 16px;
     text-transform: uppercase;
@@ -128,7 +145,6 @@
     font-size: 15px;
     background-color: #ffffff;
     color: #222;
-    /* Más oscuro */
 }
 
 /* Resaltar filas impares en la tabla */
@@ -141,7 +157,7 @@
     background: #fef7e0;
     /* Fondo amarillo suave */
     padding: 15px;
-    border-left: 6px solid #ffca01;
+    border-left: 6px solid #ffb700;
     /* Amarillo fuerte */
     margin: 20px 0;
     font-size: 16px;
@@ -153,7 +169,15 @@
 /* Iconos en los bloques destacados */
 #reglamento .destacado i {
     margin-right: 8px;
-    color: #ffca01;
+    color: #ffb700;
+}
+
+/* Grid de categorías */
+#reglamento .categorias-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 30px 0;
 }
 
 /* Botón */
@@ -163,18 +187,18 @@
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    color: white;
-    background-color: #648d00;
-    /* Verde oscuro */
+    color: #010e45 !important;
+    background-color: transparent;
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s ease;
+    border: 3px solid #010e45;
 }
 
 .boton:hover {
-    background-color: #86af05;
-    /* Verde claro */
+    background-color: #010e45;
     transform: translateY(-2px);
+    color: #ffffff !important;
 }
 
 /* ========== RESPONSIVE DESIGN ========== */
@@ -182,6 +206,7 @@
     #reglamento {
         width: 95%;
         padding: 20px;
+        margin-top: 10px;
     }
 
     #reglamento h2 {
@@ -207,6 +232,7 @@
     #reglamento {
         width: 98%;
         padding: 15px;
+        margin-top: 10px;
     }
 
     #reglamento h2 {
@@ -219,6 +245,7 @@
 
     #reglamento p,
     #reglamento ul li,
+    #reglamento ol li,
     #reglamento td {
         font-size: 14px;
     }
@@ -226,11 +253,21 @@
     #reglamento th {
         font-size: 14px;
     }
+
+    /* Grid de categorías responsive */
+    #reglamento .categorias-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
 }
 
 @media (max-width: 480px) {
+    #reglamento h1 {
+        font-size: 20px;
+        line-height: 24px;
+    }
     #reglamento {
-        margin-top: 60px;
+        margin-top: 15px;
         width: 100%;
         padding: 10px;
         border-radius: 0;
@@ -244,11 +281,12 @@
     #reglamento h3 {
         font-size: 16px;
         padding-left: 8px;
-        border-left: 4px solid #648d00;
+        border-left: 4px solid #010e45;
     }
 
     #reglamento p,
     #reglamento ul li,
+    #reglamento ol li,
     #reglamento td {
         font-size: 13px;
         line-height: 1.5;
@@ -256,5 +294,11 @@
 
     #reglamento th {
         font-size: 13px;
+    }
+
+    /* Grid de categorías responsive */
+    #reglamento .categorias-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
     }
 }

@@ -1,43 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-
-    <title>Resultados | Media Maratón Entre Montañas | Desafío Cocora</title>
-     <link rel="icon" type="image/png" href="favicon.png">
-    
-    <meta name="description" content="Corre 100% sobre asfalto, entre las montañas del Valle del Cocora. Respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.">
-
-    
-    <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento,">
-
-    
-    <meta name="author" content="Media Maratón Entre Montañas | Desafío Cocora ">
-    <meta name="copyright" content="© 2025 MMEM | Desafío Cocora">
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://tudominio.com/favicon.ico" type="image/x-icon">
-
-    <!-- Canonical para evitar contenido duplicado -->
-    <link rel="canonical" href="https://mediamaratonentremontanas.com.co">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- JavaScript -->
-    <script src="script.js" defer></script>
-
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="<meta name="google-site-verification" content="o_baRqjiHFjfs-EFKfBLLMNLCr99TN1GQsJmcWJ25NM" />">
-
-    <meta name="robots" content="index, follow">
-</head>
-
 <?php
-include_once('./Templates/header.php');
+    header('X-Robots-Tag: noindex, nofollow, noimageindex', true);
+    $pageTitle = "Resultados | Media MaratÃ³n Entre MontaÃ±as | Valle de Cocora - Salento";
+    $pageDescription = "Consulta los resultados oficiales de ediciones anteriores de la Media MaratÃ³n Entre MontaÃ±as. La versiÃ³n 2026 aÃºn no publica resultados.";
+    $pageUrl = "https://mediamaratonentremontanas.com.co/Resultados.php";
+    $pageRobots = "noindex, nofollow, noimageindex";
+    include_once('./Templates/header.php');
+    include_once('./Templates/redes_icons.php');
 ?>
 
 <section id="resultados-maraton">
@@ -64,7 +32,10 @@ include_once('./Templates/header.php');
 
     <div class="resultados-section">
         <h3>Resultados Entre MontaÃ±as 2024</h3>
-        <a href="https://tustiempos.com/resultados/media-maraton-entre-montanas/" class="btn-resultado" target="_blank">
+        <p style="max-width:600px;margin:0 auto 1rem;">
+            AÃºn no habilitamos el mÃ³dulo de resultados para la ediciÃ³n 2026. Te invitamos a revivir la experiencia 2024 mientras actualizamos la nueva informaciÃ³n.
+        </p>
+        <a href="https://tustiempos.com/resultados/media-maraton-entre-montanas/" class="btn-resultado" target="_blank" rel="noopener">
             ðŸ“Š Consulta aquÃ­ tus resultados 2024
         </a>
     </div>
@@ -81,3 +52,6 @@ include_once('./Templates/header.php');
         </b>
     </div>
 </footer>
+
+</body>
+</html>

@@ -174,14 +174,6 @@ a:hover {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.card-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: white;
-    /* Para que contraste mejor con el verde */
-    margin-bottom: 10px;
-}
-
 .btn-register {
     background: linear-gradient(135deg, #f18500, #ffca01);
     /* Botón naranja → amarillo */
@@ -213,12 +205,6 @@ a:hover {
     text-align: center;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.hero-title {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 15px;
 }
 
 .hero-text {
@@ -541,26 +527,26 @@ h3 {
 
 /* ----- SECCIÓN CARRUSEL GALERÍA ----- */
 /* ----- SECCIÓN CARRUSEL GALERÍA ----- */
-#section_8 {
+#galeria {
     background: linear-gradient(135deg, var(--color-verde-oscuro), #ffca01);
     border-radius: 10px;
     padding: 10px;
 }
 
 /* El carrusel debe mostrar solo una imagen a la vez */
-#section_8 .carousel-inner {
+#galeria .carousel-inner {
     display: flex;
 }
 
 /* Cada slide ocupa el 100% del ancho del carrusel */
-#section_8 .carousel-item {
+#galeria .carousel-item {
     width: 100%;
     /* Ocupa toda la pantalla */
     text-align: center;
 }
 
 /* Todas las imágenes deben tener el mismo tamaño */
-#section_8 .carousel-item img {
+#galeria .carousel-item img {
     width: 100%;
     /* La imagen ocupa todo el ancho */
     max-width: 400px;
@@ -599,7 +585,6 @@ h3 {
     margin: 5px 0;
 }
 
-/* ----- RESPONSIVIDAD ----- */
 @media (max-width: 1200px) {
 
     .carousel-control-prev-icon,

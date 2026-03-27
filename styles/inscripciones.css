@@ -1,0 +1,31 @@
+#inscripciones {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: #ffffff;
+}
+
+/* Título Principal */
+#inscripciones h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #010e45;
+    /* Verde oscuro */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 42px;
+    border-bottom: 3px solid #ffca01;
+    /* Amarillo fuerte */
+    padding-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+    #inscripciones {
+        padding-top: 42px;
+        padding-bottom: 60px;
+    }
+
+    #inscripciones h1 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+}
