@@ -2,8 +2,3 @@ User-agent: *
 Allow:/
 
 Sitemap: https://mediamaratonentremontanas.com.co/sitemap.xml
-Sitemap: http://mediamaratonentremontanas.com.co/sitemap.xml
-Sitemap: https://mediamaratonentremontanas.com.co/index.php
-Sitemap: https://mediamaratonentremontanas.com.co/informacion.php
-Sitemap: https://mediamaratonentremontanas.com.co/resultados.php
-Sitemap: https://mediamaratonentremontanas.com.co/reglamento.php

@@ -1,255 +1,566 @@
 <?php
-    $cdn = "https://dev.mmem.com.co";
-    $pageTitle = "Media Maratón Entre Montañas | Desafío Cocora";
+  $pageTitle = "Media Maratón Entre Montañas | Valle de Cocora - Salento";
 
-    include_once('./Templates/header.php');
-    include_once('./Templates/redes_icons.php'); // Asegúrate de que este archivo no imprima HTML antes de <body>
-    
-    // Tus definiciones de $patrocinadores y $logos
-    $patrocinadores = [
-        [ 'src' => $cdn .'/Images/2025/nexus.webp', 'alt' => 'Nexus', 'format' => 'horizontal' ],
-        // [ 'src' => $cdn .'/Images/2025/healthySports.webp', 'alt' => 'Healthy Sports' ],
-        [ 'src' => $cdn .'/Images/2025/imdera.webp', 'alt' => 'IMDERA', 'format' => 'horizontal' ],
-        [ 'src' => $cdn .'/Images/2025/los-arrieros.webp', 'alt' => 'Parque Los Arrieros', 'format' => 'vertical' ],
-        [ 'src' => $cdn .'/Images/2025/gatorade.webp', 'alt' => 'Gatorade', 'format' => 'vertical' ],
-        [ 'src' => $cdn .'/Images/2025/andiautos.webp', 'alt' => 'Andiautos', 'format' => 'horizontal' ],
-        [ 'src' => $cdn .'/Images/2025/smartfit.webp', 'alt' => 'Smart Fit', 'format' => 'horizontal' ],
-        [ 'src' => $cdn .'/Images/2025/rivera-cp.webp', 'alt' => 'Rivera Coffee Park', 'format' => 'vertical' ],
-        [ 'src' => $cdn .'/Images/2025/santa-barbara.webp', 'alt' => 'Industrias Santa Barbara', 'format' => 'horizontal' ],
-        [ 'src' => $cdn .'/Images/2025/4-elementos.webp', 'alt' => '4 Elementos café artesanal', 'format' => 'vertical' ],
-        [ 'src' => $cdn .'/Images/2025/perea.webp', 'alt' => 'Consejal Perea', 'format' => 'horizontal' ],
-        [ 'src' => $cdn .'/Images/2025/sura.webp', 'alt' => 'Sura', 'format' => 'horizontal' ],
-        [ 'src' => $cdn .'/Images/2025/ocaso.webp', 'alt' => 'Ocaso', 'format' => 'vertical' ],
-        [ 'src' => $cdn .'/Images/2025/la-montaña.svg', 'alt' => 'La Montaña Agromercados', 'format' => 'horizontal' ],
-        [ 'src' => $cdn .'/Images/2025/pc.webp', 'alt' => 'Producto Colombia', 'format' => 'vertical' ],
-    ];
-    $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
+  include_once('./Templates/header.php');
+  include_once('./Templates/redes_icons.php'); // Asegúrate de que este archivo no imprima HTML antes de <body>
+
+  // Feedback para la sección Vincula tu marca
+  $brandStatus = $_GET['brand_status'] ?? null;
+  $brandStatus = in_array($brandStatus, ['success', 'error'], true) ? $brandStatus : null;
+  $brandMessage = isset($_GET['brand_message']) ? htmlspecialchars($_GET['brand_message'], ENT_QUOTES, 'UTF-8') : null;
+  
+  // Tus definiciones de $patrocinadores y $logos
+  $patrocinadores = [
+    [ 'src' => $cdn .'/Images/2025/nexus.webp', 'alt' => 'Nexus', 'format' => 'horizontal' ],
+    // [ 'src' => $cdn .'/Images/2025/healthySports.webp', 'alt' => 'Healthy Sports' ],
+    [ 'src' => $cdn .'/Images/2025/imdera.webp', 'alt' => 'IMDERA', 'format' => 'horizontal' ],
+    [ 'src' => $cdn .'/Images/2025/los-arrieros.webp', 'alt' => 'Parque Los Arrieros', 'format' => 'vertical' ],
+    [ 'src' => $cdn .'/Images/2025/gatorade.webp', 'alt' => 'Gatorade', 'format' => 'vertical' ],
+    [ 'src' => $cdn .'/Images/2025/andiautos.webp', 'alt' => 'Andiautos', 'format' => 'horizontal' ],
+    [ 'src' => $cdn .'/Images/2025/smartfit.webp', 'alt' => 'Smart Fit', 'format' => 'horizontal' ],
+    [ 'src' => $cdn .'/Images/2025/rivera-cp.webp', 'alt' => 'Rivera Coffee Park', 'format' => 'vertical' ],
+    [ 'src' => $cdn .'/Images/2025/santa-barbara.webp', 'alt' => 'Industrias Santa Barbara', 'format' => 'horizontal' ],
+    [ 'src' => $cdn .'/Images/2025/4-elementos.webp', 'alt' => '4 Elementos café artesanal', 'format' => 'vertical' ],
+    [ 'src' => $cdn .'/Images/2025/perea.webp', 'alt' => 'Consejal Perea', 'format' => 'horizontal' ],
+    [ 'src' => $cdn .'/Images/2025/sura.webp', 'alt' => 'Sura', 'format' => 'horizontal' ],
+    [ 'src' => $cdn .'/Images/2025/ocaso.webp', 'alt' => 'Ocaso', 'format' => 'vertical' ],
+    [ 'src' => $cdn .'/Images/2025/la-montaña.svg', 'alt' => 'La Montaña Agromercados', 'format' => 'horizontal' ],
+    [ 'src' => $cdn .'/Images/2025/pc.webp', 'alt' => 'Producto Colombia', 'format' => 'vertical' ],
+  ];
+  $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
+  
+  $galleryFiles = [
+    'F1-MIBUC (117).avif',
+    'F1-MIBUC (124).avif',
+    'F1-MIBUC (168).avif',
+    'F1-MIBUC (169).avif',
+    'F1-MIBUC (173).avif',
+    'F1-MIBUC (181).avif',
+    'F1-MIBUC (184).avif',
+    'F1-MIBUC (192).avif',
+    'F1-MIBUC (193).avif',
+    'F1-MIBUC (198).avif',
+    'F1-MIBUC (205).avif',
+    'F1-MIBUC (232).avif',
+    'F1-MIBUC (24).avif',
+    'F1-MIBUC (250).avif',
+    'F1-MIBUC (26).avif',
+    'F1-MIBUC (263).avif',
+    'F1-MIBUC (265).avif',
+    'F1-MIBUC (30).avif',
+    'F1-MIBUC (301).avif',
+    'F1-MIBUC (354).avif',
+    'F1-MIBUC (36).avif',
+    'F1-MIBUC (37).avif',
+    'F1-MIBUC (371).avif',
+    'F1-MIBUC (387).avif',
+    'F1-MIBUC (388).avif',
+    'F1-MIBUC (396).avif',
+    'F1-MIBUC (404).avif',
+    'F1-MIBUC (408).avif',
+    'F1-MIBUC (416).avif',
+    'F1-MIBUC (54).avif',
+    'F1-MIBUC (56).avif',
+    'F1-MIBUC (73).avif',
+    'F2-MIBUC (105).avif',
+    'F2-MIBUC (110).avif',
+    'F2-MIBUC (114).avif',
+    'F2-MIBUC (125).avif',
+    'F2-MIBUC (129).avif',
+    'F2-MIBUC (152).avif',
+    'F2-MIBUC (164).avif',
+    'F2-MIBUC (165).avif',
+    'F2-MIBUC (168).avif',
+    'F2-MIBUC (170).avif',
+    'F2-MIBUC (173).avif',
+    'F2-MIBUC (174).avif',
+    'F2-MIBUC (187).avif',
+    'F2-MIBUC (214).avif',
+    'F2-MIBUC (220).avif',
+    'F2-MIBUC (238).avif',
+    'F2-MIBUC (24).avif',
+    'F2-MIBUC (256).avif',
+    'F2-MIBUC (282).avif',
+    'F2-MIBUC (3).avif',
+    'F2-MIBUC (32).avif',
+    'F2-MIBUC (336).avif',
+    'F2-MIBUC (338).avif',
+    'F2-MIBUC (341).avif',
+    'F2-MIBUC (342).avif',
+    'F2-MIBUC (344).avif',
+    'F2-MIBUC (346).avif',
+    'F2-MIBUC (352).avif',
+    'F2-MIBUC (354).avif',
+    'F2-MIBUC (358).avif',
+    'F2-MIBUC (387).avif',
+    'F2-MIBUC (397).avif',
+    'F2-MIBUC (401).avif',
+    'F2-MIBUC (403).avif',
+    'F2-MIBUC (407).avif',
+    'F2-MIBUC (408).avif',
+    'F2-MIBUC (414).avif',
+    'F2-MIBUC (423).avif',
+    'F2-MIBUC (425).avif',
+    'F2-MIBUC (426).avif',
+    'F2-MIBUC (77).avif',
+    'F2-MIBUC (84).avif',
+    'F2-MIBUC (94).avif',
+    'F2-MIBUC (96).avif',
+  ];
+
+  $galleryBaseUrl = $cdn . '/Images/2026/gallery';
+  $galleryAltText = 'Recopilación fotográfica del día de la carrera de la Media Maratón Entre Montañas Salento';
+  
+  $totalGalleryFiles = count($galleryFiles);
+  $firstCarouselCount = (int) ceil($totalGalleryFiles / 2);
+  $galleryCarousels = [
+    array_slice($galleryFiles, 0, $firstCarouselCount),
+    array_slice($galleryFiles, $firstCarouselCount),
+  ];
+
+  if (!function_exists('encodeGalleryFileName')) {
+    function encodeGalleryFileName(string $fileName): string
+    {
+      static $replacements = [
+        '%28' => '(',
+        '%29' => ')',
+      ];
+
+      return strtr(rawurlencode($fileName), $replacements);
+    }
+  }
+
+  if (!function_exists('renderGalleryCarousel')) {
+    function renderGalleryCarousel(string $id, array $images, string $baseUrl, string $altText): void
+    {
+      if (empty($images)) {
+        return;
+      }
+
+      $slides = array_chunk($images, 3);
+      ?>
+      <div id="<?= $id ?>" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <?php foreach ($slides as $slideIndex => $slideImages): ?>
+            <div class="carousel-item<?= $slideIndex === 0 ? ' active' : '' ?>">
+              <div class="d-flex justify-content-center gap-2 flex-wrap">
+                <?php foreach ($slideImages as $fileName): ?>
+                  <img
+                    src="<?= $baseUrl . '/' . encodeGalleryFileName($fileName) ?>"
+                    class="img-fluid"
+                    alt="<?= $altText ?>"
+                    loading="lazy"
+                    decoding="async"
+                  >
+                <?php endforeach; ?>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#<?= $id ?>" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#<?= $id ?>" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <?php
+    }
+  }
 ?>
 
-<main class="site-main">
-
+  <!-- BANNER DE LA CARRERA -->
+  <main class="site-main">
     <section class="carousel-section" style="margin-top: -90px;">
-        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="<?= $cdn ?>/Images/2025/BANNER_MMEM_1.webp" alt="Corredores en Valle de Cocora con texto: Corre 100% en asfalto.">
-                </div>
-                <div class="carousel-item">
-                    <img src="<?= $cdn ?>/Images/2025/BANNER_MMEM_2.webp" alt="Corredores saltando con texto: 10K y 21K - 14 de septiembre.">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
+      <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <picture>
+              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2026/MMEM26_bannervertical_1.avif">
+              <img src="<?= $cdn ?>/Images/2026/MMEM26_banner_1.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2026. A la izquierda, dos corredores ascienden por una carretera montañosa verde y soleada. A la derecha, una corredora sonriente pasa frente a una casa colorida de estilo colonial tradicional en Salento, Quindío. El texto central dice CARRERA DE CALLE DE AFORO LIMITADO con los colores de la bandera de Colombia. La fecha es 13 DOMINGO SEPTIEMBRE 2026.">
+            </picture>
+          </div>
+          <div class="carousel-item active">
+            <picture>
+              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2026/MMEM26_bannervertical_2.avif">
+              <img src="<?= $cdn ?>/Images/2026/MMEM26_banner_2.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2026. Muestra a un hombre y una mujer corredores sonrientes, luciendo camisetas negras de la carrera, con un fondo abstracto de franjas de colores. A la derecha, una gran multitud de corredores celebra en un pueblo. El texto destaca: UNA CARRERA QUE SOLO PODRÍA OCURRIR AQUÍ, RUNNING ENTRE EL VALLE DE COCORA. La fecha es 13 DOMINGO SEPTIEMBRE 2026.">
+            </picture>
+          </div>
         </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+      </div>
     </section>
 
-    <section class="sponsor-carousel">
-  <!-- <h3 class="sponsor-title">Nuestros Patrocinadores</h3> -->
-  <div class="slider-wrapper">
-    <div class="slider-track">
-      <?php foreach ($logos as $patrocinador): ?>
-        <div class="logo-item <?= $patrocinador['format'] ?>">
-          <img src="<?= $patrocinador['src'] ?>" alt="<?= htmlspecialchars($patrocinador['alt']) ?>">
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-
-    <!-- <section class="cupos-section">
-        <div class="cupos-container">
-            <div class="progress-bar-container">
-                <div class="progress-fill"></div>
-                <div class="progress-text">70%</div>
+    <!-- SECCION DE PATROCINADORES -->
+    <!-- <section class="sponsor-carousel">
+      <h3 class="sponsor-title">Nuestros Patrocinadores</h3>
+      <div class="slider-wrapper">
+        <div class="slider-track">
+          <?php foreach ($logos as $patrocinador): ?>
+            <div class="logo-item <?= $patrocinador['format'] ?>">
+              <img src="<?= $patrocinador['src'] ?>" alt="<?= htmlspecialchars($patrocinador['alt']) ?>">
             </div>
-            <div class="progress-label">
-                CUPOS <span class="vendidos">VENDIDOS</span>
-            </div>
+          <?php endforeach; ?>
         </div>
+      </div>
     </section> -->
 
-<section class="video-shirt-container">
-  <video src="<?= $cdn ?>/videos/MMEM_lanzamiento_camiseta.mp4" controls playsinline muted autoplay loop></video>
-</section>
-
-
-    <section  class="container section-inscribete my-5">
-        <div id="section-inscribete" style="scroll-margin-top: 170px;"class="row g-4">
-                            <div class="col-md-6">
-                <div class="card div_card_inscribete">
-                    <h5 class="card-title">INSCRIPCIONES 10K</h5>
-                    <a class="btn btn-register" href="https://biciq.com/info-event/10k-media-maraton-entre-montanas-950d9e9f" target="_blank">INSCRÍBETE AHORA</a>
-                </div>
-            </div>
-
-                            <div class="col-md-6">
-                <div class="card div_card_inscribete">
-                    <h5 class="card-title">INSCRIPCIONES 21K</h5>
-                    <a class="btn btn-register" href="https://biciq.com/info-event/7b307c0e-9d2c-4243-9959-79f3652328d9" target="_blank">INSCRÍBETE AHORA</a>
-                </div>
-            </div>
+    <!-- <section class="cupos-section">
+      <div class="cupos-container">
+        <div class="progress-bar-container">
+          <div class="progress-fill"></div>
+          <div class="progress-text">70%</div>
         </div>
-     </section>      
-
-    <section class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="hero-section">
-                    <h2 class="hero-title">¿Listo para correr Entre Montañas? ⛰️</h2>
-                    <p class="hero-text">
-                        La <strong>MM Entre Montañas</strong> te ofrece la oportunidad de combinar tu pasión por el running con la exploración de uno de los paisajes más emblemáticos de Colombia.
-                        Corre 100% sobre asfalto, respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.
-                    </p>
-                    <p class="hero-text">
-                        Un evento sin igual en el Valle de Cocora. Corre rodeado de la majestuosa palma de cera y siente la adrenalina de una carrera inolvidable.
-                    </p>
-                    <p class="hero-text">
-                        <strong>¡Sé parte de esta experiencia única y descubre por qué el Quindío es el destino favorito de los amantes de la naturaleza!</strong>
-                    </p>
-                </div>
-            </div>
+        <div class="progress-label">
+          CUPOS <span class="vendidos">VENDIDOS</span>
         </div>
+      </div>
+    </section> -->
+
+    <!-- BOTONES DE INSCRIPCIONES -->
+    <section id="section-inscribete" class="container section-inscribete my-5">
+      <div class="card div_card_inscribete">
+        <h5 class="card-title">10K y 22K</h5>
+        <a class="btn btn-register" href="inscripciones.php">INSCRÍBETE AHORA</a>
+        <div class="warning-register">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="currentColor"><path d="M12 14a1 1 0 0 1-1-1v-3a1 1 0 1 1 2 0v3a1 1 0 0 1-1 1m-1.5 2.5a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0"/><path d="M10.23 3.216c.75-1.425 2.79-1.425 3.54 0l8.343 15.852C22.814 20.4 21.85 22 20.343 22H3.657c-1.505 0-2.47-1.6-1.77-2.931zM20.344 20L12 4.147L3.656 20z"/></g></svg>
+          <span>Solo para mayores de 18 años</span>
+        </div>
+      </div>
     </section>
-
-        <section class="container py-3" id="section_4">
-        <div class="row text-center justify-content-center g-4">
-                 
-                            <div class="col-md-3 info-item">
-                <div class="info-icon">
-                    <img src="<?= $cdn ?>/Images/Icon/icono-fecha.svg" alt="Icono de calendario" loading="lazy" style="width: 80px; height: 80px;">
-                </div>
-                <div class="info-title" style="font-size: 16px;">FECHA</div>
-                <div class="info-description" style="font-size: 14px;">SEPTIEMBRE 14/2025</div>
-            </div>
-
-                            <div class="col-md-3 info-item">
-                <div class="info-icon">
-                    <img src="<?= $cdn ?>/Images/Icon/ico-recorrido.webp" alt="Icono de mapa con marcador" loading="lazy" style="width: 80px; height: 80px;">
-                </div>
-                <div class="info-title" style="font-size: 16px;">DISTANCIAS</div>
-                <div class="info-description" style="font-size: 14px;">21 K y 10 K</div>
-            </div>
-
-                            <div class="col-md-3 info-item">
-                <div class="info-icon">
-                    <img src="<?= $cdn ?>/Images/Icon/icono-zona.svg" alt="Icono de ubicación" loading="lazy" style="width: 80px; height: 80px;">
-                </div>
-                <div class="info-title" style="font-size: 16px;">SALIDA Y META</div>
-                <div class="info-description" style="font-size: 14px;">
-                    Plaza de Bolívar Salento<br>
-                </div>
-            </div>
+    <!-- <section id="section-inscribete" class="container section-inscribete my-5">
+      <div class="card div_card_inscribete">
+        <h5 class="card-title">INSCRIPCIONES 10K</h5>
+        <a class="btn btn-register" href="inscripciones.php">INSCRÍBETE AHORA</a>
+        <div class="warning-register">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="currentColor"><path d="M12 14a1 1 0 0 1-1-1v-3a1 1 0 1 1 2 0v3a1 1 0 0 1-1 1m-1.5 2.5a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0"/><path d="M10.23 3.216c.75-1.425 2.79-1.425 3.54 0l8.343 15.852C22.814 20.4 21.85 22 20.343 22H3.657c-1.505 0-2.47-1.6-1.77-2.931zM20.344 20L12 4.147L3.656 20z"/></g></svg>
+          <span>Solo para mayores de 18 años</span>
         </div>
-    </section>
-
-    <section class="container my-3 my-md-5" id="section_6">
-        <div class="row">
-            <div class="col">
-                                <div class="img">
-                    <img 
-                        src="<?= $cdn ?>/Images/2025/MMEM_recorrido21k.webp" 
-                        class="rounded img-fluid" 
-                        alt="Mapa del recorrido 21K de la carrera Entre Montañas"
-                        loading="lazy"
-                    >
-                </div>
-                <div class="texto">
-                    <div>
-                        <div class="route-21k">
-                          <h3 class="fw-bold">Recorrido 21K</h3>
-                          <span>Distancia Oficial 22K</span>
-                        </div>
-                        <p>
-                            ⛰️ La MM Entre Montañas te espera el 14 de septiembre en el Valle de Cócora. Disfruta de una carrera de 21 km sobre asfalto con vistas espectaculares de la Cordillera Central. Esta ruta inicia en la Plaza de Bolívar Salento, pasa por la calle real de Salento y alcanza su punto de retorno a los 11k en el emblemático restaurante Donde JuanB, encontraras la meta en la Plaza de Bolívar Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
-                        </p>
-                    </div>
-                                                <div class="section">
-                        <img 
-                            src="<?= $cdn ?>/Images/2025/MMEM_21k.webp" 
-                            alt="Corredores participando en la carrera 21K de Entre Montañas" 
-                            loading="lazy"
-                            width="570" 
-                            height="400"
-                        >
-                    </div>
-                    <div class="section_6_link">
-                        <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=466450603311333376" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
-                    </div>
-                </div>
-            </div>
-             
-            <div class="col">
-                                <div class="img">
-                    <img 
-                        src="<?= $cdn ?>/Images/2025/MMEM_recorrido10k.webp" 
-                        class="rounded img-fluid" 
-                        alt="Mapa del recorrido 10K de la carrera Entre Montañas"
-                        loading="lazy"
-                    >
-                </div>
-                <div class="texto">
-                    <div>
-                        <h3 class="fw-bold">Recorrido 10K</h3>
-                        <p>
-                            ¡Domina los 10K en el corazón del Quindío! ⛰️ La MM Entre Montañas te invita a poner a prueba tus límites el 14 de septiembre en el Valle de Cocora. Disfruta de un desafiante recorrido de 10 km sobre asfalto con vistas panorámicas de la Cordillera Central. Esta ruta inicia en la Plaza de Bolívar Salento, pasa por la calle real de Salento y alcanza su punto de retorno a los 5k, encontraras la meta en la Plaza de Bolívar Salento. Vive la emoción de la competencia, respira aire puro y descubre la magia del Quindío. "¿Eres un #runner de corazón? ¡Demuéstralo! Inscripciones abiertas para los más locos por correr."
-                        </p>
-                    </div>
-                                                <div class="section">
-                        <img 
-                            src="<?= $cdn ?>/Images/2025/MMEM_10k.webp" 
-                            alt="Corredores participando en la carrera 10K de Entre Montañas" 
-                            loading="lazy"
-                            width="570" 
-                            height="400"
-                        >
-                    </div>
-                    <div class="section_6_link">
-                        <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=467843139351314432" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
-                    </div>
-                </div>
-            </div>
+      </div>
+    
+      <div class="card div_card_inscribete">
+        <h5 class="card-title">INSCRIPCIONES 22K</h5>
+        <a class="btn btn-register" href="inscripciones.php">INSCRÍBETE AHORA</a>
+        <div class="warning-register">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><g fill="currentColor"><path d="M12 14a1 1 0 0 1-1-1v-3a1 1 0 1 1 2 0v3a1 1 0 0 1-1 1m-1.5 2.5a1.5 1.5 0 1 1 3 0a1.5 1.5 0 0 1-3 0"/><path d="M10.23 3.216c.75-1.425 2.79-1.425 3.54 0l8.343 15.852C22.814 20.4 21.85 22 20.343 22H3.657c-1.505 0-2.47-1.6-1.77-2.931zM20.344 20L12 4.147L3.656 20z"/></g></svg>
+          <span>Solo para mayores de 18 años</span>
         </div>
-    </section>
+      </div>
+    </section> -->
 
-    <section class="testimonial-section">
-  <div class="testimonial-frame">
-    <h2 class="testimonial-title">Testimonios <strong>MMEM</strong></h2>
+    <section class="container section-intro my-5">
+      <h2 class="hero-title">Running en uno de los paisajes más impresionantes del planeta</h2>
+      <div class="intro-content">
+
+      <!-- VIDEO INTRODUCCIÓN -->
+      <div class="video-intro-container">
+        <video src="<?= $cdn ?>/videos/RESUMEN_MMEM2025.mp4" controls playsinline muted autoplay loop></video>
+      </div>
       
-    <div class="testimonial-body">
-            <div class="testimonial-videos">
-        <video class="testimonial-1" src="<?= $cdn ?>/videos/lv_0_20250522122720.mp4" title="Testimonio 1" controls playsinline></video>
-        <video class="testimonial-2" src="<?= $cdn ?>/videos/lv_0_20250709181342.mp4" title="Testimonio 2" controls playsinline></video>
-    </div>
+      <!-- INTRODUCCIÓN A LA CARRERA -->
+      <div class="intro-description">
+        <div style="margin-bottom: 24px;">
+          <p>
+            La <strong>MM Entre Montañas</strong> te ofrece la oportunidad de combinar tu pasión por el running con la exploración de uno de los paisajes más emblemáticos de Colombia.
+            Corre 100% sobre asfalto, respira aire puro, disfruta de la brisa fresca de la montaña, del mejor paisaje natural de Colombia, de las emblemáticas casas pintorescas de Salento, del aroma a café y déjate envolver por la magia del Quindío.
+          </p>
+          <p>
+            Un evento sin igual en el Valle de Cocora. Corre rodeado de la majestuosa palma de cera y siente la adrenalina de una carrera inolvidable.
+          </p>
+          <p style="margin-top: 32px; font-size: 18px;">
+            <strong>¡Sé parte de esta experiencia única y descubre por qué el Quindío es el destino favorito de los amantes de la naturaleza!</strong>
+          </p>
+      </div>
 
-            <div class="testimonial-carousel">
-        <div class="arrow left" onclick="prevTestimonial()">&#8249;</div>
-        <div class="testimonial-image-wrapper">
-        <div class="testimonial-slider" id="testimonial-slider">
+      <!-- DETALLES DE LA CARRERA -->
+      <div id="section_4" class="intro-details">
+                  
+        <div class="col-md-3">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24"><path fill="currentColor" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+          </div>
+          <div class="info-title">FECHA</div>
+          <div class="info-description">13 de septiembre de 2026</div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24"><path fill="currentColor" d="M6.72 16.64a1 1 0 1 1 .56 1.92c-.5.146-.86.3-1.091.44c.238.143.614.303 1.136.452C8.48 19.782 10.133 20 12 20s3.52-.218 4.675-.548c.523-.149.898-.309 1.136-.452c-.23-.14-.59-.294-1.09-.44a1 1 0 0 1 .559-1.92c.668.195 1.28.445 1.75.766c.435.299.97.82.97 1.594c0 .783-.548 1.308-.99 1.607c-.478.322-1.103.573-1.786.768C15.846 21.77 14 22 12 22s-3.846-.23-5.224-.625c-.683-.195-1.308-.446-1.786-.768c-.442-.3-.99-.824-.99-1.607c0-.774.535-1.295.97-1.594c.47-.321 1.082-.571 1.75-.766M12 7.5c-1.54 0-2.502 1.667-1.732 3c.357.619 1.017 1 1.732 1c1.54 0 2.502-1.667 1.732-3A2 2 0 0 0 12 7.5" class="duoicon-primary-layer"/><path fill="currentColor" d="M12 2a7.5 7.5 0 0 1 7.5 7.5c0 2.568-1.4 4.656-2.85 6.14a16.4 16.4 0 0 1-1.853 1.615c-.594.446-1.952 1.282-1.952 1.282a1.71 1.71 0 0 1-1.69 0a21 21 0 0 1-1.952-1.282A16.4 16.4 0 0 1 7.35 15.64C5.9 14.156 4.5 12.068 4.5 9.5A7.5 7.5 0 0 1 12 2" class="duoicon-secondary-layer" opacity=".3"/></svg>
+          </div>
+          <div class="info-title">DISTANCIAS</div>
+          <div class="info-description">22K y 10K</div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="info-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 512 512"><path fill="currentColor" d="M23 24v464h18V386.9c152.3 29.4 277.6 29.4 430 0V488h18V24h-18v16h-23v32h23v32h-23v32h23v232.6c-153.3 29.9-276.7 29.9-430 0V104h23V72H41V24zm41 48h32V40H64zm32 0v32h32V72zm32 0h32V40h-32zm32 0v32h32V72zm32 0h32V40h-32zm32 0v32h32V72zm32 0h32V40h-32zm32 0v32h32V72zm32 0h32V40h-32zm32 0v32h32V72zm32 0h32V40h-32zm32 0v32h32V72zm0 32h-32v32h32zm-64 0h-32v32h32zm-64 0h-32v32h32zm-64 0h-32v32h32zm-64 0h-32v32h32zm-64 0H64v32h32z"/></svg>
+          </div>
+          <div class="info-title">SALIDA Y META</div>
+          <div class="info-description">Plaza de Bolívar Salento</div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- SECCION TEMPORAL DE MAPAS -->
+    <section class="container my-3 my-md-5" id="section_6">
+      <div class="temp-map-wrapper">
+        <article class="temp-map-card">
+          <div class="temp-map-copy">
+            <div class="route-21k">
+              <h3 class="fw-bold">Recorrido 22K</h3>
+            </div>
+            <p>
+              La MM Entre Montañas te espera el 13 de septiembre en Salento. Disfruta de una carrera de 22 km sobre asfalto, con vistas espectaculares de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 11, en el restaurante Las Palmas de Cocora. La meta estará en la Plaza de Bolívar de Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
+            </p>
+          </div>
+          <div class="temp-map-media">
+            <img 
+              src="<?= $cdn ?>/Images/2025/MMEM_21k.webp" 
+              alt="Corredores participando en la carrera 21K de Entre Montañas" 
+              loading="lazy"
+              width="570" 
+              height="400"
+            >
+          </div>
+        </article>
+              
+        <article class="temp-map-card">
+          <div class="temp-map-copy">
+            <h3 class="fw-bold">Recorrido 10K</h3>
+            <p>
+              La MM Entre Montañas te invita a poner a prueba tus límites el 13 de septiembre en Salento. Disfruta de un recorrido de 10 km sobre asfalto, con vistas panorámicas de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 5. Encontraras la meta en la Plaza de Bolívar de Salento. Vive la emoción de la competencia, respira aire puro y descubre la magia del Salento.
+              Inscríbete ahora y disfruta de unos 10K inolvidables, rodeado de naturaleza
+            </p>
+          </div>
+          <div class="temp-map-media">
+            <img 
+              src="<?= $cdn ?>/Images/2025/MMEM_10k.webp" 
+              alt="Corredores participando en la carrera 10K de Entre Montañas" 
+              loading="lazy"
+              width="570" 
+              height="400"
+            >
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCION DE MAPAS TEMPORALMENTE DESACTIVADA -->
+    <!-- <section class="container my-3 my-md-5" id="section_6">
+      <div class="row">
+        <div class="col">
+          <div class="img">
+            <img 
+              src="<?= $cdn ?>/Images/2025/MMEM_recorrido21k.webp" 
+              class="rounded img-fluid" 
+              alt="Mapa del recorrido 21K de la carrera Entre Montañas"
+              loading="lazy"
+            >
+          </div>
+            <div class="texto">
+              <div>
+                <div class="route-21k">
+                  <h3 class="fw-bold">Recorrido 22K</h3>
                 </div>
+                <p>
+                  La MM Entre Montañas te espera el 13 de septiembre en Salento. Disfruta de una carrera de 22 km sobre asfalto, con vistas espectaculares de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 11, en el restaurante Las Palmas de Cocora. La meta estará en la Plaza de Bolívar de Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
+                </p>
+              </div>
+                                            <div class="section">
+              <img 
+                src="<?= $cdn ?>/Images/2025/MMEM_21k.webp" 
+                alt="Corredores participando en la carrera 21K de Entre Montañas" 
+                loading="lazy"
+                width="570" 
+                height="400"
+              >
+            </div>
+            <div class="section_6_link">
+              <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=466450603311333376" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
+            </div>
+          </div>
         </div>
-        <div class="arrow right" onclick="nextTestimonial()">&#8250;</div>
+              
+        <div class="col">
+          <div class="img">
+            <img 
+              src="<?= $cdn ?>/Images/2025/MMEM_recorrido10k.webp" 
+              class="rounded img-fluid" 
+              alt="Mapa del recorrido 10K de la carrera Entre Montañas"
+              loading="lazy"
+            >
+          </div>
+          <div class="texto">
+            <div>
+              <h3 class="fw-bold">Recorrido 10K</h3>
+              <p>
+                La MM Entre Montañas te invita a poner a prueba tus límites el 13 de septiembre en Salento. Disfruta de un recorrido de 10 km sobre asfalto, con vistas panorámicas de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 5. Encontraras la meta en la Plaza de Bolívar de Salento. Vive la emoción de la competencia, respira aire puro y descubre la magia del Salento.
+                Inscríbete ahora y disfruta de unos 10K inolvidables, rodeado de naturaleza
+              </p>
+            </div>
+            <div class="section">
+              <img 
+                src="<?= $cdn ?>/Images/2025/MMEM_10k.webp" 
+                alt="Corredores participando en la carrera 10K de Entre Montañas" 
+                loading="lazy"
+                width="570" 
+                height="400"
+              >
+            </div>
+            <div class="section_6_link">
+              <a href="https://api.coros.com/coros/data/share-track?regionId=1&id=467843139351314432" target="_blank" class="btn btn-primary">Descarga el Recorrido GPX</a>
+            </div>
+          </div>
         </div>
+      </div>
+    </section> -->
 
-                <img class="testimonial-logo" src="<?= $cdn ?>/Images/2025/mmem_logo.svg" alt="MMEM Logo" />
-    </div>
-</section>
+    <!-- SECCIÓN TESTIMONIOS -->
+    <section class="testimonial-section">
+      <div class="testimonial-frame">
+        <h2 class="testimonial-title">Testimonios <strong>MMEM</strong></h2>
+        
+        <div class="testimonial-body">
+          <!-- <div class="testimonial-videos">
+            <video class="testimonial-1" src="<?= $cdn ?>/videos/lv_0_20250522122720.mp4" title="Testimonio 1" controls playsinline></video>
+            <video class="testimonial-2" src="<?= $cdn ?>/videos/lv_0_20250709181342.mp4" title="Testimonio 2" controls playsinline></video>
+          </div> -->
 
+          <div class="testimonial-carousel">
+            <div class="arrow left" onclick="prevTestimonial()">&#8249;</div>
+            <div class="testimonial-image-wrapper">
+            <div class="testimonial-slider" id="testimonial-slider"></div>
+          </div>
+          <div class="arrow right" onclick="nextTestimonial()">&#8250;</div>
+        </div>
+        <img class="testimonial-logo" src="<?= $cdn ?>/Images/2025/mmem_logo.svg" alt="MMEM Logo" />
+      </div>
+    </section>
+
+    <!-- SECCIÓN VINCULA TU MARCA -->
+    <section id="link-your-brand-section">
+      <div class="container link-brand-wrapper">
+        <div class="link-brand-copy">
+          <h1>Vincula tu marca a la Media Maratón Entre Montañas Salento</h1>
+          
+          <p class="link-brand-subtext">
+            (Aliados, patrocinadores y expositores)
+          </p>
+          <p class="link-brand-invite">
+            Déjanos tus datos de contacto
+          </p>
+        </div>
+        <form class="link-brand-form" id="link-brand-form" method="post" action="link-brand-email.php" novalidate>
+          <?php
+            $hasBrandFeedback = $brandStatus && $brandMessage;
+            $feedbackClasses = 'link-brand-feedback';
+            if ($hasBrandFeedback) {
+              $feedbackClasses .= $brandStatus === 'success' ? ' success' : ' error';
+            }
+          ?>
+          <div
+            class="<?= $feedbackClasses ?>"
+            data-feedback
+            role="status"
+            aria-live="polite"
+            <?= $hasBrandFeedback ? '' : 'hidden' ?>
+          >
+            <?= $hasBrandFeedback ? $brandMessage : '' ?>
+          </div>
+          <div class="form-field">
+            <label for="brand-name">Nombre</label>
+            <input
+              type="text"
+              id="brand-name"
+              name="nombre"
+              placeholder="Nombre completo"
+              autocomplete="off"
+              minlength="3"
+              maxlength="80"
+              pattern="^[A-Za-zÀ-ÿ'\s]{3,80}$"
+              title="Usa solo letras y espacios (3 a 80 caracteres)."
+              required
+            >
+          </div>
+          <div class="form-field">
+            <label for="brand-phone">Teléfono</label>
+            <input
+              type="tel"
+              id="brand-phone"
+              name="telefono"
+              placeholder="Número de contacto"
+              autocomplete="off"
+              inputmode="tel"
+              minlength="7"
+              maxlength="20"
+              pattern="^[0-9+()\-\s]{7,20}$"
+              title="Entre 7 y 20 caracteres. Solo números, espacios y + ( ) -."
+              required
+            >
+          </div>
+          <div class="form-field">
+            <label for="brand-email">Correo electrónico</label>
+            <input
+              type="email"
+              id="brand-email"
+              name="correo"
+              placeholder="nombre@empresa.com"
+              autocomplete="off"
+              maxlength="120"
+              title="Correo electrónico válido (máx. 120 caracteres)."
+              required
+            >
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SECCIÓN ARMA TU PLAN -->
+    <section class="plan-container" data-nosnippet>
+      <div class="container">
+        <h1 class="plan-title">ARMA TU PLAN</h1>
+        <div id="plan-content"></div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN GALERÍA -->
+    <section class="container-fluid py-5 d-flex gap-1 flex-column" id="galeria">
+        <?php
+          $carouselIds = ['carouselExample', 'carouselExample_2'];
+          foreach ($carouselIds as $index => $carouselId) {
+            $images = $galleryCarousels[$index] ?? [];
+            renderGalleryCarousel($carouselId, $images, $galleryBaseUrl, $galleryAltText);
+          }
+        ?>
+      </section>
+  </main>
+
+  <?php include_once('./Templates/footer.php'); ?>
+
+</body>
+</html>
+
+<!-- Script para el testimonios -->
 <script>
   // Este script de testimonial no debería ir en el head, está bien aquí o en un archivo JS separado.
   const testimonialImages = [
-    { url: "<?= $cdn ?>/Images/2025/t2%402x.webp", alt: "Testimonio 1" },
-    { url: "<?= $cdn ?>/Images/2025/t1%402x.webp", alt: "Testimonio 2" },
-    { url: "<?= $cdn ?>/Images/2025/t4%402x.webp", alt: "Testimonio 3" },
-    { url: "<?= $cdn ?>/Images/2025/t5%402x.webp", alt: "Testimonio 4" },
-    { url: "<?= $cdn ?>/Images/2025/t6%402x.webp", alt: "Testimonio 5" },
-    { url: "<?= $cdn ?>/Images/2025/t7%402x.webp", alt: "Testimonio 6" },
-    { url: "<?= $cdn ?>/Images/2025/t8%402x.webp", alt: "Testimonio 7" }
+    { url: "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2026/testimonio1.JPG", alt: "Testimonio 1" },
+    { url: "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2026/testimonio2.JPG", alt: "Testimonio 2" },
+    { url: "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2026/testimonio3.JPG", alt: "Testimonio 3" },
+    { url: "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2026/testimonio4.JPG", alt: "Testimonio 4" },
+    { url: "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev/Images/2026/testimonio5.JPG", alt: "Testimonio 5" },
   ];
 
   const slider = document.getElementById("testimonial-slider");
@@ -347,25 +658,11 @@
   });
 </script>
 
-
-<div class="plan-container">
-  <div class="container">
-    <h1 class="plan-title">ARMA TU PLAN</h1>
-    <div id="plan-content"></div>
-  </div>
-</div>
-
+<!-- Script para Arma Tu Plan -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const planData = {
       destacados: [
-        {
-          image: "<?= $cdn ?>/Images/2025/MMEM_TheCoffee.webp",
-          title: "",
-          description: "",
-          extra: "",
-          contact: ""
-        },
         {
           image: "<?= $cdn ?>/Images/2025/PARQUE_LOS_ARRIEROS.webp",
           title: "Parque Los Arrieros",
@@ -461,18 +758,18 @@
     if (!text) return "";
 
     const instagramUrls = {
-        "@parquelosarrieros": "https://www.instagram.com/parquelosarrieros/",
-        "@fincaelocasosalento": "https://www.instagram.com/fincaelocasosalento/",
-        "@hsalentoreal": "https://www.instagram.com/hsalentoreal/",
-        "@viajerohostels": "https://www.instagram.com/viajerohostels/",
-        "@hotelacasadelaurita": "https://www.instagram.com/hotelacasadelaurita/",
-        "@coffeetreebhsalento": "https://www.instagram.com/coffeetreebhsalento/",
-        "@expedicionmorrogacho": "https://www.instagram.com/expedicionmorrogacho/"
+      "@parquelosarrieros": "https://www.instagram.com/parquelosarrieros/",
+      "@fincaelocasosalento": "https://www.instagram.com/fincaelocasosalento/",
+      "@hsalentoreal": "https://www.instagram.com/hsalentoreal/",
+      "@viajerohostels": "https://www.instagram.com/viajerohostels/",
+      "@hotelacasadelaurita": "https://www.instagram.com/hotelacasadelaurita/",
+      "@coffeetreebhsalento": "https://www.instagram.com/coffeetreebhsalento/",
+      "@expedicionmorrogacho": "https://www.instagram.com/expedicionmorrogacho/"
     };
 
     // @coffeetreebhsalento
     
-    const linkStyle = "color: #F7CA46; font-weight: bold; text-decoration: underline;";
+    const linkStyle = "color: #FFFFFF; font-weight: bold; text-decoration: underline;";
 
     // Regex que captura los 3 tipos de elementos en grupos separados
     const regex = /^(Ubicación:|Horarios:|Duración:|Contacto:)|(@[\w.-]+)|(https?:\/\/\S+|www\.\S+)/gim;
@@ -480,7 +777,7 @@
     const highlightedText = text.replace(regex, (match, keyword, mention, link) => {
         // Grupo 1: Si es una palabra clave (Ubicación, etc.)
         if (keyword) {
-            return `<span style="color: #F7CA46; font-weight: bold;">${keyword}</span>`;
+            return `<span style="color: #FFFFFF; font-weight: bold;">${keyword}</span>`;
         }
         // Grupo 2: Si es una @mención
         if (mention) {
@@ -488,7 +785,7 @@
             if (url) {
                 return `<a href="${url}" target="_blank" rel="noopener noreferrer" style="${linkStyle}">${mention}</a>`;
             }
-            return `<span style="color: #F7CA46; font-weight: bold;">${mention}</span>`;
+            return `<span style="color: #FFFFFF; font-weight: bold;">${mention}</span>`;
         }
         // Grupo 3: Si es un enlace (http o www)
         if (link) {
@@ -500,128 +797,162 @@
 
     // Finalmente, convierte los saltos de línea a <br>
     return highlightedText.replace(/\n/g, "<br>");
-};
+  };
 
-    const createSection = (title, items) => {
-      const section = document.createElement("div");
-      section.className = "plan-section";
+  const transparentPlaceholder = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
 
-      const heading = document.createElement("h2");
-      heading.textContent = title;
-      section.appendChild(heading);
+  const createSection = (title, items) => {
+    const section = document.createElement("div");
+    section.className = "plan-section";
 
-      const grid = document.createElement("div");
-      grid.className = "plan-grid";
+    const heading = document.createElement("h2");
+    heading.textContent = title;
+    section.appendChild(heading);
 
-      items.forEach((item) => {
-        const card = document.createElement("div");
-        card.className = "plan-card";
+    const grid = document.createElement("div");
+    grid.className = "plan-grid";
 
-        if (!item.title && !item.description && !item.extra && !item.contact) {
-          card.innerHTML = `<img src="${item.image}" alt="Promo" style="width:100%; height:100%; object-fit:cover; border-radius:0;">`;
-        } else {
-            card.innerHTML = `
-            <img src="${item.image}" alt="${item.title}" />
-            <div class="card-content">
-            <h3>${item.title}</h3>
-            <div>
-            ${item.description ? `<p>${highlightKeywords(item.description)}</p>` : ""}
-            ${item.extra ? `<p>${highlightKeywords(item.extra)}</p>` : ""}
-            </div>
-            <div>
-            ${item.contact ? `<p><span style="color: #F7CA46; font-weight: bold;">Contacto:</span> ${item.contact}</p>` : ""}
-            </div>
-            </div>
-            `;
+    items.forEach((item) => {
+      const card = document.createElement("div");
+      card.className = "plan-card";
+
+      if (!item.title && !item.description && !item.extra && !item.contact) {
+        card.innerHTML = `<img src="${item.image}" alt="Promo" style="width:100%; height:100%; object-fit:cover; border-radius:0;">`;
+      } else {
+        card.innerHTML = `
+        <img 
+          src="${transparentPlaceholder}" 
+          data-src="${item.image}" 
+          alt="${item.title}" 
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="card-content">
+        <h3>${item.title}</h3>
+        <div>
+        ${item.description ? `<p>${highlightKeywords(item.description)}</p>` : ""}
+        ${item.extra ? `<p>${highlightKeywords(item.extra)}</p>` : ""}
+        </div>
+        <div>
+        ${item.contact ? `<p><span style="color: #FFFFFF; font-weight: bold;">Contacto:</span> ${item.contact}</p>` : ""}
+        </div>
+        </div>
+        `;
+      }
+      grid.appendChild(card);
+    });
+    section.appendChild(grid);
+    return section;
+  };
+
+  //contentDiv.appendChild(createSection("Destacados", planData.destacados));
+  contentDiv.appendChild(createSection("Hoteles", planData.hoteles));
+  contentDiv.appendChild(createSection("Restaurantes", planData.restaurantes));
+  contentDiv.appendChild(createSection("Otras Actividades", planData.otrasActividades));
+
+  const lazyLoadPlanImages = () => {
+    const planImages = document.querySelectorAll('.plan-card img[data-src]');
+    if (!('IntersectionObserver' in window) || planImages.length === 0) {
+      planImages.forEach((img) => {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
         }
-        grid.appendChild(card);
       });
-      section.appendChild(grid);
-      return section;
-    };
+      return;
+    }
 
-    contentDiv.appendChild(createSection("Destacados", planData.destacados));
-    contentDiv.appendChild(createSection("Hoteles", planData.hoteles));
-    contentDiv.appendChild(createSection("Restaurantes", planData.restaurantes));
-    contentDiv.appendChild(createSection("Otras Actividades", planData.otrasActividades));
-  });
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+        const target = entry.target;
+        if (target.dataset.src) {
+          target.src = target.dataset.src;
+          target.removeAttribute('data-src');
+        }
+        obs.unobserve(target);
+      });
+    }, { rootMargin: '200px 0px' });
+
+    planImages.forEach((img) => observer.observe(img));
+  };
+
+  lazyLoadPlanImages();
+});
 </script>
 
-    <section class="container-fluid py-5 d-flex gap-1 flex-column" id="section_8">
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-inner">
+<!-- Script para Vincula tu marca -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("link-brand-form");
+    if (!form) return;
 
-                                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(226).webp" class="img-fluid" alt="Corredores en la línea de salida de la Media Maratón Entre Montañas">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(283).webp" class="img-fluid" alt="Participantes esperando el inicio de la Media Maratón Entre Montañas">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(280).webp" class="img-fluid" alt="Corredora concentrada durante la Media Maratón Entre Montañas con dorsal 0308">
-                    </div>
-                </div>
+    const feedbackEl = form.querySelector("[data-feedback]");
+    const submitButton = form.querySelector('button[type="submit"]');
+    const defaultButtonText = submitButton ? submitButton.textContent.trim() : "";
+    const defaultError = "No pudimos enviar tu solicitud. Inténtalo nuevamente en unos minutos.";
 
-                                <div class="carousel-item">
-                    <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(234).webp" class="img-fluid" alt="Imagen 4">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(233).webp" class="img-fluid" alt="Imagen 5">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(232).webp" class="img-fluid" alt="Imagen 6">
-                    </div>
-                </div>
+    const setFeedback = (status, message) => {
+      if (!feedbackEl) return;
+      feedbackEl.classList.remove("success", "error");
+      if (status) {
+        feedbackEl.classList.add(status);
+      }
+      if (!message) {
+        feedbackEl.hidden = true;
+        feedbackEl.textContent = "";
+        return;
+      }
+      feedbackEl.hidden = false;
+      feedbackEl.textContent = message;
+    };
 
-                                <div class="carousel-item">
-                    <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(270).webp" class="img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(7).webp" class="img-fluid" alt="Corredora feliz cruza la meta de la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(130).webp" class="img-fluid" alt="Corredor en la salida de la Media Maratón Entre Montañas.">
-                    </div>
-                </div>
-            </div>
+    const toggleSubmitting = (isSubmitting) => {
+      if (!submitButton) return;
+      submitButton.disabled = isSubmitting;
+      submitButton.textContent = isSubmitting ? "Enviando…" : defaultButtonText;
+    };
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-        </div>
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-        <div id="carouselExample_2" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-inner">
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
 
-                                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(602).webp" class="img-fluid" alt="Media Maratón Entre Montañas: podio de ganadores.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(1).webp" class="img-fluid" alt="Grupo de participantes en Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(289).webp" class="img-fluid" alt="Grupo de corredores en la Media Maratón Entre Montañas.">
-                    </div>
-                </div>
+      const formData = new FormData(form);
+      setFeedback(null, "Enviando tu solicitud...");
+      toggleSubmitting(true);
 
-                                <div class="carousel-item">
-                    <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(80).webp" alt="Corredor en la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(257).webp" class="img-fluid" alt="Corredora con dorsal 0332 en la salida de la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/MMEM_(252).webp" class="img-fluid" alt="Corredores en la salida de la Media Maratón Entre Montañas.">
-                    </div>
-                </div>
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            "X-Requested-With": "XMLHttpRequest",
+            "Accept": "application/json"
+          }
+        });
 
-                                <div class="carousel-item">
-                    <div class="d-flex justify-content-center gap-2">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(596).webp" class="img-fluid" alt="Corredora cruza la meta de la Media Maratón Entre Montañas con los brazos en alto.">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(589).webp" class="img-fluid" alt="Corredora sonriente en la Media Maratón Entre Montañas.">
-                        <img src="<?= $cdn ?>/Images/2025/Media_Maratón_Entre_Montañas_(558).webp" class="img-fluid" alt="Corredores en la Media Maratón Entre Montañas con el dorsal 0308.">
-                    </div>
-                </div>
-            </div>
+        const data = await response.json().catch(() => null);
+        const status = data?.status === "success" ? "success" : "error";
+        const message = data?.message || (status === "success"
+          ? "¡Gracias! Recibimos tus datos y te contactaremos muy pronto."
+          : defaultError);
 
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample_2" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample_2" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-        </div>
-    </section>
-</main>
+        setFeedback(status, message);
 
-<?php include_once('./Templates/footer.php'); ?>
-</body>
-</html>
+        if (status === "success") {
+          form.reset();
+        }
+      } catch (error) {
+        setFeedback("error", defaultError);
+      } finally {
+        toggleSubmitting(false);
+      }
+    });
+  });
+</script>

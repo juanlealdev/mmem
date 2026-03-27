@@ -1,21 +1,35 @@
-/* Estilos del Contador */
-.alert-bar-wrapper {
+@font-face {
+    font-family: 'Tallica';
+    src: url('../public/fonts/Tallica_prueba-VF.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Contenedor compartido para contador y navbar */
+.header-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1050;
-    /* Debe estar por encima del navbar */
-    /* Altura fija para que el navbar pueda posicionarse debajo en escritorio */
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to top, #010e45, #1b6aa5);
+}
+
+/* Estilos del Contador */
+.alert-bar-wrapper {
+    width: 100%;
     overflow: hidden;
-    /* Asegura que el contenido interno no se salga */
+    position: relative;
 }
 
 .alert-bar-gradient {
     width: 100%;
     height: 100%;
     /* Ocupa el 100% de la altura de .alert-bar-wrapper */
-    background: linear-gradient(to bottom, #e58b34, #f7ca46);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,26 +42,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 60px;
+    padding: 10px 60px 0 60px;
     box-sizing: border-box;
-    color: white;
+    color: rgba(255, 255, 255, 0.9);;
 }
 
 .alert-text {
-    font-weight: 750;
-    max-width: 45%;
-    font-family: 'Arial', sans-serif;
-}
-
-.alert-text p {
-    font-size: 14px;
-    font-weight: 400;
-    margin: 0;
-}
-
-.alert-text strong {
-    font-size: 24px;
     font-weight: 700;
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: 28px;
+    letter-spacing: 3px;
+    word-spacing: 4px;
+    text-align: center;
+    margin: 0;
+    font-family: 'Tallica', 'Arial', sans-serif;
 }
 
 .countdown-container {
@@ -65,8 +74,8 @@
 }
 
 .countdown div {
-    background-color: #648d00;
-    color: #ffca01;
+    background-color: #1b6aa5;
+    color: rgba(255, 255, 255, 0.9);
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
@@ -85,27 +94,27 @@
 .countdown span#minutes,
 .countdown span#seconds {
     font-family: 'Tallica', sans-serif;
-    font-size: 26px;
-    letter-spacing: 0.9px;
+    font-size: 24px;
+    line-height: 40px;
     display: block;
 }
 
 .countdown .label {
     display: block;
-    font-size: 10px;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: 600;
     font-family: 'Arial', sans-serif;
     letter-spacing: 0.7px;
     margin-top: 0;
 }
 
 .alert-button {
-    background-color: black;
-    color: rgb(255, 200, 0);
-    border: 1px solid black;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
     padding: 8px 24px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
     transition: all 0.3s;
@@ -113,21 +122,19 @@
 }
 
 .alert-button:hover {
-    box-shadow: 0 0 5px black;
+    background: #010e45;
+    color: #1b6aa5;
+    border: 2px solid #010e45;
 }
 
 /* Estilo general del Navbar */
 .custom-navbar {
-    background-color: #648d00;
+    background-color: transparent;
     padding: 0;
-    position: fixed;
-    /* Asegura que el navbar sea fijo */
-    top: 85px;
-    /* Valor inicial, JS lo ajustará */
+    position: relative;
     width: 100%;
-    z-index: 1040;
-    /* Ligeramente menor que el contador para que este quede encima */
-    height: 90px;
+    z-index: 2;
+    height: 70px;
     /* Altura fija para escritorio */
 }
 
@@ -137,24 +144,34 @@
 
 .navbar-logo-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    height: 60px;
+    justify-content: center;
+    height: 40px;
     max-width: 200px;
+}
+
+.navbar-logo-container-date {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #fbb601;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
 }
 
 .navbar-logo {
     width: auto;
     height: 100%;
-    margin-right: 15px;
     position: relative;
-    padding: 8px 10px;
 }
 
 .navbar-brand {
     font-family: 'Georgia', serif;
     font-size: 1.8rem;
     font-weight: bold;
-    color: #ffca01;
+    color: #fbb601;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
@@ -168,7 +185,7 @@
 .nav-link {
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
-    color: #ffca01;
+    color: #fbb601;
     margin-right: 15px;
     text-transform: capitalize;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -201,74 +218,27 @@
     display: inline-block;
 }
 
-@media(max-width: 493px) {
+.last-nav-link {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
 
-    /* Contador */
-    .alert-content-container {
-        padding: 10px;
-    }
+.navbar button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 1px;
+}
 
-    .alert-text strong {
-        font-size: 15px;
-    }
-
-    .alert-text p {
-        font-size: 11px;
-    }
-
-    .countdown div {
-        width: 50px;
-        padding-top: 2px;
-        padding-bottom: 2px;
-    }
-
-    .countdown span#days,
-    .countdown span#hours,
-    .countdown span#minutes,
-    .countdown span#seconds {
-        font-size: 20px;
-    }
-
-    .countdown .label {
-        font-size: 10px;
-    }
-
-    .alert-button {
-        padding: 6px 18px;
-        font-size: 12px;
-    }
-
-    /* Navbar */
-    .custom-navbar {
-        height: auto;
-        /* Se ajusta a su contenido */
-        top: auto;
-        /* JS lo posicionará dinámicamente */
-        position: fixed;
-        /* Asegura que el navbar sea fijo */
-        width: 100%;
-
-        z-index: 1040;
-    }
-
-    .navbar-container {
-        padding: 0;
-        flex-wrap: wrap;
-    }
-
-    .navbar-logo-container {
-        max-width: 150px;
-        height: 50px;
-    }
-
-    .btn-offer-mobile {
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-    .btn-offer {
-        display: none;
-    }
+.navbar button:focus,
+.navbar button:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
 }
 
 @media(max-width: 992px) {
@@ -282,9 +252,6 @@
         height: auto;
     }
 
-    .alert-text {
-        max-width: 100%;
-    }
 
     /* Aseguramos que la barra del contador tenga una altura mínima en móviles */
     .alert-bar-wrapper {
@@ -292,11 +259,7 @@
         /* Permite que el contenido determine la altura */
         min-height: 85px;
         /* Pero asegúrate de que no se haga demasiado pequeño */
-        position: fixed;
-        top: 0;
-        left: 0;
         width: 100%;
-        z-index: 1050;
     }
 
     .alert-bar-gradient {
@@ -318,8 +281,10 @@
     .countdown span#hours,
     .countdown span#minutes,
     .countdown span#seconds {
-        font-family: 'Tallica', sans-serif;
-        font-size: 28px;
+        /* font-family: 'Tallica', sans-serif; */
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 1px;
         margin-bottom: 1px;
     }
 
@@ -328,35 +293,26 @@
         margin-top: 0px;
     }
 
-    .alert-text strong {
-        font-size: 16px;
-    }
-
-    .alert-text p {
-        font-size: 12px;
+    .alert-text {
+        font-size: 18px;
+        line-height: 28px;
     }
 
     /* Navbar */
     .custom-navbar {
         height: auto;
         /* Se ajusta a su contenido */
-        top: auto;
-        /* JS lo posicionará dinámicamente */
-        position: fixed;
-        /* Asegura que el navbar sea fijo */
         width: 100%;
-
-        z-index: 1040;
     }
 
     .navbar-container {
-        padding: 0;
+        padding: 12px 32px !important;
         flex-wrap: wrap;
     }
 
     .navbar-logo-container {
         max-width: 150px;
-        height: 50px;
+        padding: 8px 0;
     }
 
     .btn-offer-mobile {
@@ -374,9 +330,8 @@
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #648d00;
+        background-color: #010e45;
         z-index: 1000;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         /* Importante: Ajustar max-height para que quepa en el viewport debajo del contador y navbar */
         /* calc(100vh - (altura contador + altura navbar)) */
         max-height: calc(100vh - var(--fixed-header-height));
@@ -421,7 +376,7 @@
         /* Eliminar el padding a la izquierda para que no empuje el texto */
         text-align: center;
         /* Cambiar a center para alinear el texto al centro */
-        color: #ffca01;
+        color: #fbb601;
         display: block;
         /* Asegurarse de que sea un bloque para que text-align funcione correctamente */
         padding: 10px 0;
@@ -431,4 +386,69 @@
         background-color: rgba(255, 255, 255, 0.1);
         color: #f18500;
     }
+}
+
+@media(max-width: 493px) {
+
+    /* Contador */
+    .alert-content-container {
+        padding: 10px;
+    }
+
+    .alert-text {
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 1px;
+    }
+
+    .countdown div {
+        width: 50px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .countdown span#days,
+    .countdown span#hours,
+    .countdown span#minutes,
+    .countdown span#seconds {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 2px;
+        font-weight: 600;
+    }
+
+    .countdown .label {
+        font-size: 10px;
+    }
+
+    .alert-button {
+        padding: 6px 18px;
+        font-size: 12px;
+    }
+
+    /* Navbar */
+    .custom-navbar {
+        height: auto;
+        /* Se ajusta a su contenido */
+        width: 100%;
+    }
+
+    .navbar-container {
+        padding: 4px 12px !important;
+        flex-wrap: wrap;
+    }
+
+    .navbar-logo-container {
+        max-width: 150px;
+    }
+
+    .btn-offer-mobile {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .btn-offer {
+        display: none;
+    }
+
 }

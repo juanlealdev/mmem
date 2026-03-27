@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://mediamaratonentremontanas.com.co/</loc>
+    <image:image>
+      <image:loc>https://dev.mmem.com.co/Images/2026/gallery/F1-MIBUC%20(416).avif</image:loc>
+      <image:caption>Corredores atravesando el Valle del Cocora durante la Media Maratón Entre Montañas.</image:caption>
+      <image:title>Media Maratón Entre Montañas - Valle del Cocora</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://dev.mmem.com.co/Images/2026/gallery/F1-MIBUC%20(56).avif</image:loc>
+      <image:caption>Participantes disfrutando del paisaje cafetero en Salento.</image:caption>
+      <image:title>Media Maratón Entre Montañas - Participantes</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://mediamaratonentremontanas.com.co/index.php</loc>
+    <image:image>
+      <image:loc>https://dev.mmem.com.co/Images/2026/gallery/F2-MIBUC%20(173).avif</image:loc>
+      <image:caption>Emoción en la línea de salida de la MMEM.</image:caption>
+      <image:title>Media Maratón Entre Montañas - Salida</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://dev.mmem.com.co/Images/2026/gallery/F1-MIBUC%20(250).avif</image:loc>
+      <image:caption>Atletas avanzando entre montañas y palmas de cera.</image:caption>
+      <image:title>Media Maratón Entre Montañas - Atletas entre montañas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://dev.mmem.com.co/Images/2026/gallery/F2-MIBUC%20(110).avif</image:loc>
+      <image:caption>Participantes disfrutando del paisaje cafetero en Salento.</image:caption>
+      <image:title>Media Maratón Entre Montañas - Paisaje Cafetero Salento</image:title>
+    </image:image>
+  </url>
+
+</urlset>
+

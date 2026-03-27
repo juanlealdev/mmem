@@ -1,5 +1,9 @@
 <?php
-    $pageTitle = "Resultados | Media Maraton Entre Montañas | Desafío Cocora";
+    header('X-Robots-Tag: noindex, nofollow, noimageindex', true);
+    $pageTitle = "Resultados | Media Maratón Entre Montañas | Valle de Cocora - Salento";
+    $pageDescription = "Consulta los resultados oficiales de ediciones anteriores de la Media Maratón Entre Montañas. La versión 2026 aún no publica resultados.";
+    $pageUrl = "https://mediamaratonentremontanas.com.co/Resultados.php";
+    $pageRobots = "noindex, nofollow, noimageindex";
     include_once('./Templates/header.php');
     include_once('./Templates/redes_icons.php');
 ?>
@@ -28,7 +32,10 @@
 
     <div class="resultados-section">
         <h3>Resultados Entre Montañas 2024</h3>
-        <a href="https://tustiempos.com/resultados/media-maraton-entre-montanas/" class="btn-resultado" target="_blank">
+        <p style="max-width:600px;margin:0 auto 1rem;">
+            Aún no habilitamos el módulo de resultados para la edición 2026. Te invitamos a revivir la experiencia 2024 mientras actualizamos la nueva información.
+        </p>
+        <a href="https://tustiempos.com/resultados/media-maraton-entre-montanas/" class="btn-resultado" target="_blank" rel="noopener">
             📊 Consulta aquí tus resultados 2024
         </a>
     </div>
