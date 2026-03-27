@@ -447,7 +447,7 @@
     </section>
 
     <!-- SECCIÓN VINCULA TU MARCA -->
-    <section id="link-your-brand-section">
+    <section id="link-your-brand-section" style="display:none;">
       <div class="container link-brand-wrapper">
         <div class="link-brand-copy">
           <h1>Vincula tu marca a la Media Maratón Entre Montañas Salento</h1>
