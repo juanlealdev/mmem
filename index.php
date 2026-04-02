@@ -682,7 +682,7 @@
         {
           image: "<?= $cdn ?>/Images/2025/HOTEL_SALENTO_REAL.webp",
           title: "Hotel Salento Real",
-          description: "27% de descuento, código: MMEM27\n@hsalentoreal\nwww.hotelsalentoreal.com",
+          description: "@hsalentoreal\nwww.hotelsalentoreal.com",
           contact: "+57 316 629 6142"
         },
         {
@@ -692,15 +692,9 @@
           contact: "+57 313 428 3448"
         },
         {
-          image: "<?= $cdn ?>/Images/2025/CASA_DE%20_LAURITA.webp",
-          title: "Hotel La Casa de Laurita",
-          description: "10% de descuento\n@hotelacasadelaurita",
-          contact: "+57 313 383 3294"
-        },
-        {
           image: "<?= $cdn ?>/Images/2025/HOTEL_CAFFEE_%20TREE.webp",
           title: "Hotel Coffee Tree Boutique Hostel",
-          description: "15% de descuento\n@coffeetreebhsalento\nwww.coffeetreebh.com",
+          description: "@coffeetreebhsalento\nwww.coffeetreebh.com",
           contact: "+57 318 890 6999"
         }
       ],
@@ -732,7 +726,7 @@
         {
           image: "<?= $cdn ?>/Images/2025/ASCAMUSA.webp",
           title: "Cabalgata Ascamusa",
-          description: "15% de descuento",
+          description: "",
           contact: "+57 322 933 4342 | +57 312 226 5527 | +57 3122156116"
         },
         {
