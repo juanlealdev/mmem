@@ -528,7 +528,7 @@
     </section>
 
     <!-- SECCIÓN ARMA TU PLAN -->
-    <section class="plan-container" data-nosnippet>
+    <section class="plan-container" data-nosnippet style="display: none;">
       <div class="container">
         <h1 class="plan-title">ARMA TU PLAN</h1>
         <div id="plan-content"></div>
