@@ -949,6 +949,18 @@ h3 {
     width: 120px;
 }
 
+/* ----- BANNER HOTEL OFICIAL ----- */
+.hotel-banner-section {
+    width: 100%;
+    line-height: 0;
+}
+
+.hotel-banner-section img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
 /* ----- SECCIÓN VINCULA TU MARCA ----- */
 #link-your-brand-section {
     background: #f0f8ff;

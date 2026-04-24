@@ -446,6 +446,14 @@
       </div>
     </section>
 
+    <!-- BANNER HOTEL OFICIAL -->
+    <section class="hotel-banner-section">
+      <picture>
+        <source media="(max-width: 768px)" srcset="<?= $cdn ?>/Images/2026/hotel-oficial-banner-mobile.webp">
+        <img src="<?= $cdn ?>/Images/2026/hotel-oficial-banner-desktop.webp" alt="Hotel Oficial - Hotel Mocawa Plaza" loading="lazy" style="width: 100%;">
+      </picture>
+    </section>
+
     <!-- SECCIÓN VINCULA TU MARCA -->
     <section id="link-your-brand-section" style="display:none;">
       <div class="container link-brand-wrapper">
