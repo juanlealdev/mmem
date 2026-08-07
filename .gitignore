@@ -1,3 +1,5 @@
 .DS_Store
+config-mail.php
+error_log
 Templates/carrusel.php
 styles/carrusel.css
