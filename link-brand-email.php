@@ -3,6 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
+require_once __DIR__ . '/mail-config.php';
 
 /**
  * Determina si la solicitud espera una respuesta JSON (fetch/AJAX).
@@ -96,17 +97,11 @@ if (!filter_var($correo, FILTER_VALIDATE_EMAIL) || strlen($correo) > 120) {
 $mail = new PHPMailer(true);
 
 try {
-    $mail->isSMTP();
-    $mail->Host       = 'mail.mediamaratonentremontanas.com.co';
-    $mail->SMTPAuth   = true;
-    $mail->Username   = 'info@mediamaratonentremontanas.com.co';
-    $mail->Password   = 'Z}RGi1v%~I,=n%7,';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port       = 465;
+    $config = cargarConfigMail();
+    aplicarConfigMail($mail, $config);
 
-    $mail->CharSet = 'UTF-8';
-    $mail->setFrom('info@mediamaratonentremontanas.com.co', 'MMEM');
-    $mail->addAddress('mmentremontanas@gmail.com');
+    $mail->setFrom($config['remitente']['correo'], $config['remitente']['nombre']);
+    $mail->addAddress($config['destinatario']);
 
     $mail->isHTML(true);
     $mail->Subject = 'MMEM - Solicitud de vinculación de marca';
@@ -125,6 +120,11 @@ try {
 
     respondBrandFeedback('error', 'No pudimos enviar tu solicitud. Inténtalo nuevamente en unos minutos.');
 } catch (Exception $e) {
+    respondBrandFeedback('error', 'Ocurrió un error al enviar tu solicitud. Escríbenos a info@mediamaratonentremontanas.com.co.');
+} catch (Throwable $e) {
+    // Cubre errores de configuración (config-mail.php ausente o incompleto),
+    // que no son Exception de PHPMailer y provocarían un fatal sin este catch.
+    error_log('MMEM link-brand-email: ' . $e->getMessage());
     respondBrandFeedback('error', 'Ocurrió un error al enviar tu solicitud. Escríbenos a info@mediamaratonentremontanas.com.co.');
 }
 ?>
