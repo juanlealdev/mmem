@@ -315,27 +315,43 @@
       <div class="temp-map-wrapper">
         <article class="temp-map-card">
           <div class="temp-map-copy">
-            <div class="route-21k">
+            <div class="temp-map-heading">
               <h3 class="fw-bold">Recorrido 22K</h3>
+              <a
+                href="https://api.coros.com/coros/data/share-track?regionId=1&amp;id=479394555362508800"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-track"
+                aria-label="Ver el recorrido de 22K en Coros"
+              >Ver recorrido</a>
             </div>
             <p>
-              La MM Entre Montañas te espera el 13 de septiembre en Salento. Disfruta de una carrera de 22 km sobre asfalto, con vistas espectaculares de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 11, en el restaurante Las Palmas de Cocora. La meta estará en la Plaza de Bolívar de Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
+              La MM Entre Montañas te espera el 13 de septiembre en Salento. Disfruta de una carrera de 22 km sobre asfalto, con vistas espectaculares de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 11, en el restaurante Donde Juan B. La meta estará en la Plaza de Bolívar de Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
             </p>
           </div>
           <div class="temp-map-media">
             <img 
-              src="<?= $cdn ?>/Images/2025/MMEM_21k.webp" 
-              alt="Corredores participando en la carrera 21K de Entre Montañas" 
+              src="<?= $cdn ?>/Images/2026/MMEM-22k.webp"
+              alt="Corredores participando en la carrera 22K de Entre Montañas"
               loading="lazy"
-              width="570" 
-              height="400"
+              width="1000"
+              height="627"
             >
           </div>
         </article>
               
         <article class="temp-map-card">
           <div class="temp-map-copy">
-            <h3 class="fw-bold">Recorrido 10K</h3>
+            <div class="temp-map-heading">
+              <h3 class="fw-bold">Recorrido 10K</h3>
+              <a
+                href="https://api.coros.com/coros/data/share-track?regionId=1&amp;id=479394038362112000"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-track"
+                aria-label="Ver el recorrido de 10K en Coros"
+              >Ver recorrido</a>
+            </div>
             <p>
               La MM Entre Montañas te invita a poner a prueba tus límites el 13 de septiembre en Salento. Disfruta de un recorrido de 10 km sobre asfalto, con vistas panorámicas de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 5. Encontraras la meta en la Plaza de Bolívar de Salento. Vive la emoción de la competencia, respira aire puro y descubre la magia del Salento.
               Inscríbete ahora y disfruta de unos 10K inolvidables, rodeado de naturaleza
@@ -343,11 +359,11 @@
           </div>
           <div class="temp-map-media">
             <img 
-              src="<?= $cdn ?>/Images/2025/MMEM_10k.webp" 
-              alt="Corredores participando en la carrera 10K de Entre Montañas" 
+              src="<?= $cdn ?>/Images/2026/MMEM-10k.webp"
+              alt="Corredores participando en la carrera 10K de Entre Montañas"
               loading="lazy"
-              width="570" 
-              height="400"
+              width="1000"
+              height="645"
             >
           </div>
         </article>

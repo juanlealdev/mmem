@@ -1996,7 +1996,7 @@ h3 {
 
 .temp-map-card {
     flex: 1;
-    background: linear-gradient(135deg, rgba(27, 106, 165, 0.8), #1b6aa5);
+    background: linear-gradient(135deg, rgba(163, 8, 26, 0.95), #a3081a);
     border-radius: 16px;
     padding: 24px;
     color: #ffffff;
@@ -2016,6 +2016,42 @@ h3 {
 .temp-map-copy h3 {
     color: #ffffff;
     margin-bottom: 0;
+}
+
+.temp-map-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.temp-map-heading h3 {
+    margin: 0;
+}
+
+.btn-track {
+    background: transparent;
+    color: rgba(255, 202, 1, 0.9);
+    border: 2px solid rgba(255, 202, 1, 0.9);
+    border-radius: 10px;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 20px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.btn-track:hover,
+.btn-track:focus {
+    background: rgba(255, 202, 1, 0.9);
+    color: #a3081a;
 }
 
 .temp-map-copy p {
