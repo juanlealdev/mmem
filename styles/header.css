@@ -16,6 +16,24 @@
     display: flex;
     flex-direction: column;
     background: linear-gradient(to top, #010e45, #1b6aa5);
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.header-wrapper.is-collapsed {
+    transform: translateY(calc(-1 * var(--alert-bar-height, 0px)));
+}
+
+body {
+    transition: padding-top 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .header-wrapper,
+    body {
+        transition: none;
+    }
 }
 
 /* Estilos del Contador */

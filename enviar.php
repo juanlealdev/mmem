@@ -4,6 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 
 // Cargar PHPMailer
 require 'vendor/autoload.php'; // Si usas Composer
+require_once __DIR__ . '/mail-config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
@@ -29,16 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Enviar correo
     $mail = new PHPMailer(true);
     try {
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'mmentremontanas@gmail.com'; // 🟡 Tu correo Gmail
-        $mail->Password   = 'clave-de-aplicacion'; // 🟡 Contraseña de aplicación
-        $mail->SMTPSecure = 'tls';
-        $mail->Port       = 587;
+        $config = cargarConfigMail();
+        aplicarConfigMail($mail, $config);
 
-        $mail->setFrom('tucorreo@gmail.com', 'Formulario Web');
-        $mail->addAddress('tucorreo@gmail.com');
+        $mail->setFrom($config['remitente']['correo'], 'Formulario Web');
+        $mail->addAddress($config['destinatario']);
 
         $mail->isHTML(true);
         $mail->Subject = 'Nuevo registro de carrera';
@@ -61,6 +57,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } catch (Exception $e) {
         echo "Error al enviar el mensaje: {$mail->ErrorInfo}";
+    } catch (Throwable $e) {
+        // Errores de configuración: no son Exception de PHPMailer.
+        error_log('MMEM enviar: ' . $e->getMessage());
+        echo "Error al enviar el mensaje. Intenta nuevamente en unos minutos.";
     }
 }
 ?>
