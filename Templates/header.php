@@ -4,6 +4,15 @@
     $cdn = "https://dev.mmem.com.co";
     //$cdn = "https://pub-beed5a84e0dc42b5a1c29e3473b62b98.r2.dev";
 
+    if (!function_exists('assetUrl')) {
+        function assetUrl(string $ruta): string
+        {
+            $absoluta = __DIR__ . '/../' . ltrim($ruta, './');
+
+            return $ruta . '?v=' . (is_file($absoluta) ? filemtime($absoluta) : '1');
+        }
+    }
+
     // Define metadata defaults if they are not set before including the header
     if (!isset($pageTitle)) {
         $pageTitle = "Media Maratón Entre Montañas | Salento, Valle del Cocora, Quindío";
@@ -139,12 +148,12 @@
     <link rel="preload" href="public/fonts/Tallica_prueba-VF.woff2" as="font" type="font/woff2" crossorigin>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/header.css?v=17122025">
-    <link rel="stylesheet" href="./styles/Main.css?v=17122025">
-    <link rel ="stylesheet" href="styles/informacion.css?v=17122025">
-    <link rel ="stylesheet" href="styles/reglamento.css?v=17122025">
-    <link rel ="stylesheet" href="styles/resultados.css?v=17122025">
-    <link rel ="stylesheet" href="styles/inscripciones.css?v=17122025">
+    <link rel="stylesheet" href="<?= assetUrl('./styles/header.css') ?>">
+    <link rel="stylesheet" href="<?= assetUrl('./styles/Main.css') ?>">
+    <link rel ="stylesheet" href="<?= assetUrl('styles/informacion.css') ?>">
+    <link rel ="stylesheet" href="<?= assetUrl('styles/reglamento.css') ?>">
+    <link rel ="stylesheet" href="<?= assetUrl('styles/resultados.css') ?>">
+    <link rel ="stylesheet" href="<?= assetUrl('styles/inscripciones.css') ?>">
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
     
@@ -298,9 +307,11 @@
                 ? headerWrapper.getBoundingClientRect().height
                 : alertBarHeight + navbarHeight;
 
-            const totalFixedHeaderHeight = headerHeight;
+            const isCollapsed = headerWrapper ? headerWrapper.classList.contains('is-collapsed') : false;
+            const totalFixedHeaderHeight = headerHeight - (isCollapsed ? alertBarHeight : 0);
             body.style.paddingTop = `${totalFixedHeaderHeight}px`;
             document.documentElement.style.setProperty('--fixed-header-height', `${totalFixedHeaderHeight}px`);
+            document.documentElement.style.setProperty('--alert-bar-height', `${alertBarHeight}px`);
 
             const navbarCollapse = document.getElementById('navbarNav');
             if (navbarCollapse) {
@@ -318,6 +329,37 @@
         updateCountdownAndHeaderPosition();
         setInterval(updateCountdownAndHeaderPosition, 1000);
         window.addEventListener('resize', updateCountdownAndHeaderPosition);
+
+        const headerWrapperEl = document.querySelector('.header-wrapper');
+        let scrollTicking = false;
+
+        function syncAlertBarVisibility() {
+            scrollTicking = false;
+            if (!headerWrapperEl) return;
+
+            const y = Math.max(window.scrollY, 0);
+            const menuAbierto = document.getElementById('navbarNav')?.classList.contains('show');
+            const estaColapsado = headerWrapperEl.classList.contains('is-collapsed');
+            let colapsar = estaColapsado;
+
+            if (menuAbierto || y <= 2) {
+                colapsar = false;
+            } else if (y > 8) {
+                colapsar = true;
+            }
+
+            if (colapsar !== estaColapsado) {
+                headerWrapperEl.classList.toggle('is-collapsed', colapsar);
+                updateCountdownAndHeaderPosition();
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!scrollTicking) {
+                scrollTicking = true;
+                requestAnimationFrame(syncAlertBarVisibility);
+            }
+        }, { passive: true });
 
         const navbarCollapseElement = document.getElementById('navbarNav');
         if (navbarCollapseElement) {
