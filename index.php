@@ -9,25 +9,40 @@
   $brandStatus = in_array($brandStatus, ['success', 'error'], true) ? $brandStatus : null;
   $brandMessage = isset($_GET['brand_message']) ? htmlspecialchars($_GET['brand_message'], ENT_QUOTES, 'UTF-8') : null;
   
-  // Tus definiciones de $patrocinadores y $logos
+  // Logos de patrocinadores 2026, servidos desde el CDN.
+  $logosBase = $cdn . '/Images/2026/partners';
+  // w/h son las dimensiones reales del archivo (sirven para el atributo width/height
+  // y para calcular la altura optica). 'escala' es un ajuste fino opcional para
+  // logos cuyo trazo pesa mas de lo que sugiere su caja (por defecto 1).
   $patrocinadores = [
-    [ 'src' => $cdn .'/Images/2025/nexus.webp', 'alt' => 'Nexus', 'format' => 'horizontal' ],
-    // [ 'src' => $cdn .'/Images/2025/healthySports.webp', 'alt' => 'Healthy Sports' ],
-    [ 'src' => $cdn .'/Images/2025/imdera.webp', 'alt' => 'IMDERA', 'format' => 'horizontal' ],
-    [ 'src' => $cdn .'/Images/2025/los-arrieros.webp', 'alt' => 'Parque Los Arrieros', 'format' => 'vertical' ],
-    [ 'src' => $cdn .'/Images/2025/gatorade.webp', 'alt' => 'Gatorade', 'format' => 'vertical' ],
-    [ 'src' => $cdn .'/Images/2025/andiautos.webp', 'alt' => 'Andiautos', 'format' => 'horizontal' ],
-    [ 'src' => $cdn .'/Images/2025/smartfit.webp', 'alt' => 'Smart Fit', 'format' => 'horizontal' ],
-    [ 'src' => $cdn .'/Images/2025/rivera-cp.webp', 'alt' => 'Rivera Coffee Park', 'format' => 'vertical' ],
-    [ 'src' => $cdn .'/Images/2025/santa-barbara.webp', 'alt' => 'Industrias Santa Barbara', 'format' => 'horizontal' ],
-    [ 'src' => $cdn .'/Images/2025/4-elementos.webp', 'alt' => '4 Elementos café artesanal', 'format' => 'vertical' ],
-    [ 'src' => $cdn .'/Images/2025/perea.webp', 'alt' => 'Consejal Perea', 'format' => 'horizontal' ],
-    [ 'src' => $cdn .'/Images/2025/sura.webp', 'alt' => 'Sura', 'format' => 'horizontal' ],
-    [ 'src' => $cdn .'/Images/2025/ocaso.webp', 'alt' => 'Ocaso', 'format' => 'vertical' ],
-    [ 'src' => $cdn .'/Images/2025/la-montaña.svg', 'alt' => 'La Montaña Agromercados', 'format' => 'horizontal' ],
-    [ 'src' => $cdn .'/Images/2025/pc.webp', 'alt' => 'Producto Colombia', 'format' => 'vertical' ],
+    [ 'src' => $logosBase .'/decathlon.webp',       'alt' => 'Decathlon',                  'w' => 600, 'h' =>  90, 'escala' => 0.82 ],
+    [ 'src' => $logosBase .'/ugua.webp',            'alt' => 'Ügua',                       'w' => 600, 'h' => 283, 'escala' => 0.85 ],
+    [ 'src' => $logosBase .'/la-montana.webp',      'alt' => 'La Montaña Agromercados',    'w' => 600, 'h' => 181 ],
+    [ 'src' => $logosBase .'/electrolife.webp',     'alt' => 'Electrolife',                'w' => 600, 'h' => 224 ],
+    [ 'src' => $logosBase .'/4-elementos.webp',     'alt' => '4 Elementos café artesanal', 'w' => 600, 'h' => 525 ],
+    [ 'src' => $logosBase .'/txs.webp',             'alt' => 'TXS Steaks & Burgers',       'w' => 530, 'h' => 294 ],
+    [ 'src' => $logosBase .'/por-mi-colombia.webp', 'alt' => 'Por Mi Colombia',            'w' => 600, 'h' => 125 ],
+    [ 'src' => $logosBase .'/healthy-sports.webp',  'alt' => 'Healthy Sports',             'w' => 212, 'h' =>  97 ],
   ];
-  $logos = array_merge($patrocinadores, $patrocinadores, $patrocinadores, $patrocinadores,$patrocinadores);
+
+  // Altura optica: en vez de una altura fija (que hace enormes a los logos anchos),
+  // se normaliza el AREA. Para area constante A y proporcion r = w/h, la altura es
+  // sqrt(A / r); asi un logo muy alargado baja de alto y uno cuadrado sube, y todos
+  // ocupan un peso visual parecido. Se acota para evitar extremos.
+  $areaObjetivo = 9000;
+  $altoMin = 40;
+  $altoMax = 82;
+  foreach ($patrocinadores as $i => $p) {
+    $ratio = $p['w'] / $p['h'];
+    $alto  = max($altoMin, min($altoMax, sqrt($areaObjetivo / $ratio)));
+    $patrocinadores[$i]['alto'] = round($alto * ($p['escala'] ?? 1));
+  }
+
+  // El carrusel repite el set N veces y se desplaza exactamente 100/N %, que es
+  // justo el ancho de un set: asi el loop empalma sin saltos.
+  // N debe ser suficiente para que (N-1) sets cubran la pantalla mas ancha; con
+  // 8 logos un set mide ~2400px, asi que 3 copias cubren hasta ~4800px.
+  $copiasCarrusel = 3;
   
   $galleryFiles = [
     'F1-MIBUC (117).avif',
@@ -199,18 +214,26 @@
     </section>
 
     <!-- SECCION DE PATROCINADORES -->
-    <!-- <section class="sponsor-carousel">
-      <h3 class="sponsor-title">Nuestros Patrocinadores</h3>
+    <section class="sponsor-carousel" aria-labelledby="sponsor-title">
+      <h3 class="sponsor-title visually-hidden" id="sponsor-title">Nuestros Patrocinadores</h3>
       <div class="slider-wrapper">
-        <div class="slider-track">
-          <?php foreach ($logos as $patrocinador): ?>
-            <div class="logo-item <?= $patrocinador['format'] ?>">
-              <img src="<?= $patrocinador['src'] ?>" alt="<?= htmlspecialchars($patrocinador['alt']) ?>">
-            </div>
-          <?php endforeach; ?>
+        <div class="slider-track" style="--copias: <?= (int) $copiasCarrusel ?>">
+          <?php for ($copia = 0; $copia < $copiasCarrusel; $copia++): ?>
+            <?php foreach ($patrocinadores as $patrocinador): ?>
+              <div class="logo-item" style="--alto: <?= (int) $patrocinador['alto'] ?>px"<?= $copia ? ' aria-hidden="true"' : '' ?>>
+                <img
+                  src="<?= htmlspecialchars($patrocinador['src']) ?>"
+                  alt="<?= $copia ? '' : htmlspecialchars($patrocinador['alt']) ?>"
+                  width="<?= (int) $patrocinador['w'] ?>"
+                  height="<?= (int) $patrocinador['h'] ?>"
+                  loading="lazy"
+                  decoding="async">
+              </div>
+            <?php endforeach; ?>
+          <?php endfor; ?>
         </div>
       </div>
-    </section> -->
+    </section>
 
     <!-- <section class="cupos-section">
       <div class="cupos-container">
