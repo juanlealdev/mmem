@@ -23,6 +23,10 @@
     --color-amarillo: #ffca01;
     --color-blanco: #ffffff;
     --color-gris-fondo: #f9f9f9;
+    /* Fondo real de la pagina: lo pinta .site-main y tapa al del body.
+       El -rgb existe para poder usarlo con alpha en degradados. */
+    --color-fondo-main: #f0f8ff;
+    --color-fondo-main-rgb: 240, 248, 255;
     --color-texto: #333;
 }
 
@@ -72,7 +76,7 @@ header a:hover {
 }
 
 .site-main {
-    background-color: #f0f8ff;
+    background-color: var(--color-fondo-main);
 }
 
 /*estilo header y contador*/
@@ -759,77 +763,124 @@ h3 {
 }
 
 /* SECCION PATROCINADORES */
+/* Sin fondo propio: se deja transparente para que herede el del body, igual que
+   hace la seccion de inscripciones que va justo debajo. Asi ambas coinciden por
+   construccion y no por repetir el mismo valor en dos sitios. */
 .sponsor-carousel {
+    --escala-logos: 1;
     width: 100%;
-    background-image: url('https://dev.mmem.com.co/Images/2025/horizontalSponsorsBackground%20.webp');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: transparent;
     padding: 80px 50px;
     box-sizing: border-box;
     overflow: hidden;
 }
 
-/* .sponsor-title {
-    font-family: 'Arial', sans-serif;
-    font-size: 30px;
-    font-weight: 500;
-    color: #fff;
-    text-align: center;
-    margin-bottom: 40px;
-} */
-
+/* Difuminado en los extremos SIN tocar el color de los logos.
+   Antes se usaba mask-image, que volvia translucido al propio logo: durante todo
+   el tramo de la banda el logo se veia lavado. Aqui el degradado va ENCIMA, en el
+   color del fondo, asi que el logo conserva su color y simplemente queda tapado.
+   La banda es de ancho fijo (no un % del viewport) y con curva suave, para que el
+   logo viaje a color pleno casi todo el recorrido y solo se funda al borde. */
 .slider-wrapper {
+    --difuminado: 90px;
     overflow: hidden;
     position: relative;
     width: 100%;
-    /* efecto de transparencia en bordes */
-    -webkit-mask-image: linear-gradient(to right, transparent 10%, black 10%, black 95%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 90%, transparent 100%);
 }
 
+.slider-wrapper::before,
+.slider-wrapper::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    width: var(--difuminado);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.slider-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right,
+            rgba(var(--color-fondo-main-rgb), 1) 0%,
+            rgba(var(--color-fondo-main-rgb), 0.92) 30%,
+            rgba(var(--color-fondo-main-rgb), 0.65) 55%,
+            rgba(var(--color-fondo-main-rgb), 0.28) 78%,
+            rgba(var(--color-fondo-main-rgb), 0) 100%);
+}
+
+.slider-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left,
+            rgba(var(--color-fondo-main-rgb), 1) 0%,
+            rgba(var(--color-fondo-main-rgb), 0.92) 30%,
+            rgba(var(--color-fondo-main-rgb), 0.65) 55%,
+            rgba(var(--color-fondo-main-rgb), 0.28) 78%,
+            rgba(var(--color-fondo-main-rgb), 0) 100%);
+}
+
+/* El espaciado va como padding del item, NO como gap del track: asi cada logo
+   incluye su propio espacio y el ancho total es exactamente N x (set + espaciado),
+   que es lo que hace que el desplazamiento empalme sin salto. */
 .slider-track {
+    --copias: 3;
     display: flex;
     align-items: center;
-    gap: 100px;
     width: max-content;
-    animation: scroll 90s linear infinite;
+    animation: scroll 69s linear infinite;
 }
 
 .logo-item {
+    --alto: 64px;   /* lo sobreescribe PHP con la altura optica de cada logo */
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-inline: 70px;
 }
 
 .logo-item img {
-    height: 64px;
-    object-fit: contain;
+    height: calc(var(--alto) * var(--escala-logos));
+    width: auto;
     transition: transform 0.3s ease;
-}
-
-.vertical img {
-    height: 74px !important;
 }
 
 .logo-item img:hover {
     transform: scale(1.1);
 }
 
+/* Desplaza exactamente el ancho de UN set (100% / numero de copias) */
 @keyframes scroll {
-    0% {
+    from {
         transform: translateX(0);
     }
 
-    100% {
-        transform: translateX(-40%);
+    to {
+        transform: translateX(calc(-100% / var(--copias)));
     }
 }
 
 .slider-track:hover {
     animation-play-state: paused;
     cursor: default;
+}
+
+/* Respeta a quien pide menos movimiento: sin animacion, un solo set en grilla */
+@media (prefers-reduced-motion: reduce) {
+    .slider-track {
+        animation: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        row-gap: 30px;
+    }
+
+    .slider-track > [aria-hidden="true"] {
+        display: none;
+    }
+
+    .logo-item img:hover {
+        transform: none;
+    }
 }
 
 /* ----------------*/
@@ -1402,78 +1453,9 @@ h3 {
         font-family: 'Arial', sans-serif;
     }
 
-    /* SECCION PATROCINADORES */
+    /* SECCION PATROCINADORES — solo lo que cambia; el resto hereda del bloque base */
     .sponsor-carousel {
-        width: 100%;
-        background-image: url('https://dev.mmem.com.co/Images/2025/horizontalSponsorsBackground%20.webp');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
         padding: 60px 30px;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-
-    /* .sponsor-title {
-        font-family: 'Arial', sans-serif;
-        font-size: 25px;
-        font-weight: bold;
-        color: #fff;
-        text-align: center;
-        margin-bottom: 35px;
-    } */
-
-    .slider-wrapper {
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-        /* efecto de transparencia en bordes */
-        -webkit-mask-image: linear-gradient(to right, transparent 10%, black 10%, black 90%, transparent 100%);
-        mask-image: linear-gradient(to right, transparent 0%, black 5%, black 80%, transparent 100%);
-    }
-
-    .slider-track {
-        display: flex;
-        align-items: center;
-        gap: 100px;
-        animation: scroll 90s linear infinite;
-    }
-
-    .logo-item {
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo-item img {
-        height: 64px;
-        object-fit: contain;
-        transition: transform 0.3s ease;
-    }
-
-    .vertical img {
-        height: 74px !important;
-    }
-
-    .logo-item img:hover {
-        transform: scale(1.1);
-    }
-
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
-    .slider-track:hover {
-        animation-play-state: paused;
-        cursor: grab;
     }
 
     /* ----------------*/
@@ -1761,78 +1743,19 @@ h3 {
         font-family: 'Arial', sans-serif;
     }
 
-    /* SECCION PATROCINADORES */
+    /* SECCION PATROCINADORES — solo lo que cambia; el resto hereda del bloque base.
+       Un unico factor reescala todas las alturas opticas y conserva las proporciones. */
     .sponsor-carousel {
-        width: 100%;
-        background-image: url('https://dev.mmem.com.co/Images/2025/horizontalSponsorsBackground%20.webp');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        padding: 20px 20px;
-        box-sizing: border-box;
-        overflow: hidden;
+        --escala-logos: 0.7;
+        padding: 20px;
     }
-
-
-    /* .sponsor-title {
-        font-family: 'Arial', sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        color: #fff;
-        text-align: center;
-        margin-bottom: 20px;
-    } */
 
     .slider-wrapper {
-        overflow: hidden;
-        position: relative;
-        width: 100%;
-        /* efecto de transparencia en bordes */
-        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-        mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    }
-
-    .slider-track {
-        display: flex;
-        align-items: center;
-        gap: 60px;
-        animation: scroll 90s linear infinite;
+        --difuminado: 40px;
     }
 
     .logo-item {
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .logo-item img {
-        height: 45px;
-        object-fit: contain;
-        transition: transform 0.3s ease;
-    }
-
-    .vertical img {
-        height: 64px !important;
-    }
-
-    .logo-item img:hover {
-        transform: scale(1.1);
-    }
-
-    @keyframes scroll {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-50%);
-        }
-    }
-
-    .slider-track:hover {
-        animation-play-state: paused;
-        cursor: grab;
+        padding-inline: 45px;
     }
 
     /* SECCIÓN TESTIMONIOS COMPLETA */
