@@ -18,10 +18,12 @@
     [ 'src' => $logosBase .'/decathlon.webp',       'alt' => 'Decathlon',                  'w' => 600, 'h' =>  90, 'escala' => 0.82 ],
     [ 'src' => $logosBase .'/ugua.webp',            'alt' => 'Ügua',                       'w' => 600, 'h' => 283, 'escala' => 0.85 ],
     [ 'src' => $logosBase .'/la-montana.webp',      'alt' => 'La Montaña Agromercados',    'w' => 600, 'h' => 181 ],
-    [ 'src' => $logosBase .'/electrolife.webp',     'alt' => 'Electrolife',                'w' => 600, 'h' => 224 ],
+    [ 'src' => $logosBase .'/electrolife-2026.webp','alt' => 'Electrolife',                'w' => 896, 'h' => 327 ],
     [ 'src' => $logosBase .'/4-elementos.webp',     'alt' => '4 Elementos café artesanal', 'w' => 600, 'h' => 525 ],
     [ 'src' => $logosBase .'/txs.webp',             'alt' => 'TXS Steaks & Burgers',       'w' => 530, 'h' => 294 ],
-    [ 'src' => $logosBase .'/por-mi-colombia.webp', 'alt' => 'Por Mi Colombia',            'w' => 600, 'h' => 125 ],
+    [ 'src' => $logosBase .'/por-mi-colombia-turismo.webp',     'alt' => 'Por Mi Colombia: promuevo un turismo responsable',                'w' => 600, 'h' => 125, 'escala' => 1.4 ],
+    [ 'src' => $logosBase .'/por-mi-colombia-ninez.webp',       'alt' => 'Por Mi Colombia: protejo de la explotación sexual comercial a nuestras niñas, niños y adolescentes', 'w' => 600, 'h' => 154, 'escala' => 1.4 ],
+    [ 'src' => $logosBase .'/por-mi-colombia-ecosistemas.webp', 'alt' => 'Por Mi Colombia: protejo los ecosistemas y sus especies',         'w' => 600, 'h' => 129, 'escala' => 1.4 ],
     [ 'src' => $logosBase .'/healthy-sports.webp',  'alt' => 'Healthy Sports',             'w' => 212, 'h' =>  97 ],
   ];
 
@@ -41,7 +43,7 @@
   // El carrusel repite el set N veces y se desplaza exactamente 100/N %, que es
   // justo el ancho de un set: asi el loop empalma sin saltos.
   // N debe ser suficiente para que (N-1) sets cubran la pantalla mas ancha; con
-  // 8 logos un set mide ~2400px, asi que 3 copias cubren hasta ~4800px.
+  // 10 logos un set mide ~3270px, asi que 3 copias cubren hasta ~6540px.
   $copiasCarrusel = 3;
   
   $galleryFiles = [
