@@ -826,7 +826,10 @@ h3 {
     display: flex;
     align-items: center;
     width: max-content;
-    animation: scroll 69s linear infinite;
+    /* La duracion es del set completo, asi que al agregar logos hay que subirla o
+       el carrusel acelera. 69s cuadraban con 8 logos (~2350px); con 10 (~3270px)
+       el equivalente a la misma velocidad son 96s. */
+    animation: scroll 96s linear infinite;
 }
 
 .logo-item {
