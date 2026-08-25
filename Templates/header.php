@@ -220,7 +220,7 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/573138157376" target="_blank" rel="noopener noreferrer" class="alert-button">Tienda Merch</a>
+                <a href="https://estoesquindio.com/categoria-producto/colombia-magica-mmem-x-eeq/" target="_blank" rel="noopener noreferrer" class="alert-button">Tienda Merch</a>
             </div>
         </div>
     </div>
