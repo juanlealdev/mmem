@@ -36,8 +36,7 @@
 
         <div class="info-box">
             <h3>🎽 Entrega de Kits</h3>
-            <p>📅 <strong>Viernes 17 de septiembre</strong> | ⏰ De 10:00 a.m. a 6:00 p.m.</p>
-            <p>📅 <strong>Sábado 18 de septiembre</strong> | ⏰ De 9:00 a.m. a 7:00 p.m.</p>
+            <p>📅 <strong>Sábado 18 de septiembre</strong> | ⏰ De 8:00 a.m. a 8:00 p.m.</p>
             <p>📍 <strong>Coliseo Cubierto de Salento</strong></p>
             <p>El kit oficial solo será entregado al titular de la inscripción con su documento de identidad original.</p>
             <p>Si no puedes reclamarlo personalmente, tu representante debe presentar:</p>
