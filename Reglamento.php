@@ -1,4 +1,10 @@
 <?php
+    // Oculta temporalmente hasta publicar el reglamento 2027.
+    // Para reactivar: borrar estas dos directivas, descomentar el link en
+    // Templates/header.php y volver a agregar la URL en sitemap.xml.
+    header('X-Robots-Tag: noindex, nofollow', true);
+    $pageRobots = "noindex, nofollow";
+
     $pageTitle = "Reglamento | Media Maratón Entre Montañas | Valle de Cocora - Salento";
     $pageDescription = "Consulta el reglamento oficial de la Media Maratón Entre Montañas 2026.";
     $pageUrl = "https://mediamaratonentremontanas.com.co/Reglamento.php";
