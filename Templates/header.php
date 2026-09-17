@@ -230,7 +230,7 @@
         <div class="container-fluid shared-container navbar-container d-flex align-items-center justify-content-between">
             <a href="index.php" class="navbar-logo-container">
                 <img src="public/images/logo.svg" alt="Logo" class="navbar-logo">
-                <span class="navbar-logo-container-date">13/sep/2026</span>
+                <span class="navbar-logo-container-date">19/sep/2027</span>
             </a>
             
             <div class="navbar-toggle-wrapper d-lg-none">
@@ -270,7 +270,7 @@
     <script>
         // Tu script de JavaScript existente para el contador y el posicionamiento
         function updateCountdownAndHeaderPosition() {
-            const targetDate = new Date("2026-09-13T00:00:00");
+            const targetDate = new Date("2027-09-19T00:00:00");
             const now = new Date();
             const diff = targetDate - now;
 
