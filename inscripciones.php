@@ -1,5 +1,7 @@
 <?php
-    $pageTitle = "Información | Media Maratón Entre Montañas | Desafío Cocora";
+    $pageTitle = "Inscripciones | Media Maratón Entre Montañas | Desafío Cocora";
+    $pageUrl = "https://mediamaratonentremontanas.com.co/inscripciones.php";
+
     include_once('./Templates/header.php');
     include_once('./Templates/redes_icons.php');
 ?>

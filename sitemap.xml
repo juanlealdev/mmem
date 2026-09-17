@@ -13,11 +13,6 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://mediamaratonentremontanas.com.co/index.php</loc>
-  <lastmod>2025-12-02T00:21:48+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://mediamaratonentremontanas.com.co/Reglamento.php</loc>
   <lastmod>2025-12-02T00:21:48+00:00</lastmod>
   <priority>0.80</priority>
@@ -28,12 +23,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://mediamaratonentremontanas.com.co/Resultados.php</loc>
-  <lastmod>2025-12-02T00:21:48+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mediamaratonentremontanas.com.co/Inscripciones.php</loc>
+  <loc>https://mediamaratonentremontanas.com.co/inscripciones.php</loc>
   <lastmod>2025-12-02T00:21:48+00:00</lastmod>
   <priority>0.80</priority>
 </url>

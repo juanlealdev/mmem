@@ -255,7 +255,7 @@
                     </li>
                     <!-- <li class="nav-item me-3"><a class="nav-link" href="Resultados.php">MM2024</a></li> -->
                     <li class="nav-item" >
-                        <a class="nav-link last-nav-link" href="Inscripciones.php" role="button" aria-expanded="false">
+                        <a class="nav-link last-nav-link" href="inscripciones.php" role="button" aria-expanded="false">
                             INSCRIPCIONES
                         </a>
                     </li>
@@ -267,7 +267,6 @@
     </nav>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         // Tu script de JavaScript existente para el contador y el posicionamiento
         function updateCountdownAndHeaderPosition() {
