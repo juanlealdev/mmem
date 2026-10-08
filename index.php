@@ -188,19 +188,19 @@
 
   <!-- BANNER DE LA CARRERA -->
   <main class="site-main">
-    <section class="carousel-section" style="margin-top: -90px;">
+    <section class="carousel-section">
       <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
           <div class="carousel-item">
             <picture>
-              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2026/MMEM26_bannervertical_1.avif">
-              <img src="<?= $cdn ?>/Images/2026/MMEM26_banner_1.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2026. A la izquierda, dos corredores ascienden por una carretera montañosa verde y soleada. A la derecha, una corredora sonriente pasa frente a una casa colorida de estilo colonial tradicional en Salento, Quindío. El texto central dice CARRERA DE CALLE DE AFORO LIMITADO con los colores de la bandera de Colombia. La fecha es 13 DOMINGO SEPTIEMBRE 2026.">
+              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2027/MMEM27_bannervertical_1.avif">
+              <img src="<?= $cdn ?>/Images/2027/MMEM27_banner_1.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2027. Un corredor celebra con los brazos en alto sobre una carretera del Valle de Cocora, con palmas de cera y montañas al fondo, junto a casas coloridas de Salento. El texto dice: VALLE DE COCORA - SALENTO / COLOMBIA. CORRE EN UNO DE LOS LUGARES MÁS HERMOSOS DEL PLANETA. 10K y 22K. 19 DE SEPTIEMBRE 2027.">
             </picture>
           </div>
           <div class="carousel-item active">
             <picture>
-              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2026/MMEM26_bannervertical_2.avif">
-              <img src="<?= $cdn ?>/Images/2026/MMEM26_banner_2.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2026. Muestra a un hombre y una mujer corredores sonrientes, luciendo camisetas negras de la carrera, con un fondo abstracto de franjas de colores. A la derecha, una gran multitud de corredores celebra en un pueblo. El texto destaca: UNA CARRERA QUE SOLO PODRÍA OCURRIR AQUÍ, RUNNING ENTRE EL VALLE DE COCORA. La fecha es 13 DOMINGO SEPTIEMBRE 2026.">
+              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2027/MMEM27_bannervertical_2.avif">
+              <img src="<?= $cdn ?>/Images/2027/MMEM27_banner_2.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2027. Una corredora con visera y ropa amarillo neón avanza por una carretera del Valle de Cocora entre palmas de cera y flores rosadas. El texto dice: VALLE DE COCORA - SALENTO / COLOMBIA. CORRE EN UNO DE LOS LUGARES MÁS HERMOSOS DEL PLANETA. 10K y 22K. 19 DE SEPTIEMBRE 2027.">
             </picture>
           </div>
         </div>
@@ -312,7 +312,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 24 24"><path fill="currentColor" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
           </div>
           <div class="info-title">FECHA</div>
-          <div class="info-description">13 de septiembre de 2026</div>
+          <div class="info-description">19 de septiembre de 2027</div>
         </div>
 
         <div class="col-md-3">
@@ -351,7 +351,7 @@
               >Ver recorrido</a>
             </div>
             <p>
-              La MM Entre Montañas te espera el 13 de septiembre en Salento. Disfruta de una carrera de 22 km sobre asfalto, con vistas espectaculares de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 11, en el restaurante Donde Juan B. La meta estará en la Plaza de Bolívar de Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
+              La MM Entre Montañas te espera el 19 de septiembre en Salento. Disfruta de una carrera de 22 km sobre asfalto, con vistas espectaculares de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 11, en el restaurante Donde Juan B. La meta estará en la Plaza de Bolívar de Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
             </p>
           </div>
           <div class="temp-map-media">
@@ -378,7 +378,7 @@
               >Ver recorrido</a>
             </div>
             <p>
-              La MM Entre Montañas te invita a poner a prueba tus límites el 13 de septiembre en Salento. Disfruta de un recorrido de 10 km sobre asfalto, con vistas panorámicas de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 5. Encontraras la meta en la Plaza de Bolívar de Salento. Vive la emoción de la competencia, respira aire puro y descubre la magia del Salento.
+              La MM Entre Montañas te invita a poner a prueba tus límites el 19 de septiembre en Salento. Disfruta de un recorrido de 10 km sobre asfalto, con vistas panorámicas de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 5. Encontraras la meta en la Plaza de Bolívar de Salento. Vive la emoción de la competencia, respira aire puro y descubre la magia del Salento.
               Inscríbete ahora y disfruta de unos 10K inolvidables, rodeado de naturaleza
             </p>
           </div>
@@ -413,7 +413,7 @@
                   <h3 class="fw-bold">Recorrido 22K</h3>
                 </div>
                 <p>
-                  La MM Entre Montañas te espera el 13 de septiembre en Salento. Disfruta de una carrera de 22 km sobre asfalto, con vistas espectaculares de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 11, en el restaurante Las Palmas de Cocora. La meta estará en la Plaza de Bolívar de Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
+                  La MM Entre Montañas te espera el 19 de septiembre en Salento. Disfruta de una carrera de 22 km sobre asfalto, con vistas espectaculares de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 11, en el restaurante Las Palmas de Cocora. La meta estará en la Plaza de Bolívar de Salento. Disfruta de la vista de las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!
                 </p>
               </div>
                                             <div class="section">
@@ -444,7 +444,7 @@
             <div>
               <h3 class="fw-bold">Recorrido 10K</h3>
               <p>
-                La MM Entre Montañas te invita a poner a prueba tus límites el 13 de septiembre en Salento. Disfruta de un recorrido de 10 km sobre asfalto, con vistas panorámicas de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 5. Encontraras la meta en la Plaza de Bolívar de Salento. Vive la emoción de la competencia, respira aire puro y descubre la magia del Salento.
+                La MM Entre Montañas te invita a poner a prueba tus límites el 19 de septiembre en Salento. Disfruta de un recorrido de 10 km sobre asfalto, con vistas panorámicas de la Cordillera Central. La ruta inicia en la Plaza de Bolívar de Salento, recorre la Calle Real, continúa hacia la vía al Valle de Cocora y alcanza su punto de retorno en el kilómetro 5. Encontraras la meta en la Plaza de Bolívar de Salento. Vive la emoción de la competencia, respira aire puro y descubre la magia del Salento.
                 Inscríbete ahora y disfruta de unos 10K inolvidables, rodeado de naturaleza
               </p>
             </div>
@@ -487,13 +487,15 @@
       </div>
     </section>
 
-    <!-- BANNER HOTEL OFICIAL -->
+    <!-- BANNER HOTEL OFICIAL — oculto a la espera del hotel oficial de la edicion 2027.
+         Para reactivarlo: descomentar y actualizar las imagenes del CDN.
     <section class="hotel-banner-section">
       <picture>
         <source media="(max-width: 768px)" srcset="<?= $cdn ?>/Images/2026/hotel-oficial-banner-mobile.webp">
         <img src="<?= $cdn ?>/Images/2026/hotel-oficial-banner-desktop.webp" alt="Hotel Oficial - Hotel Mocawa Plaza" loading="lazy" style="width: 100%;">
       </picture>
     </section>
+    -->
 
     <!-- SECCIÓN VINCULA TU MARCA -->
     <section id="link-your-brand-section" style="display:none;">
