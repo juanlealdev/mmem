@@ -8,12 +8,12 @@
 #inscripciones h1 {
     text-align: center;
     font-size: 32px;
-    color: #010e45;
+    color: #0b0b0b;
     /* Verde oscuro */
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 42px;
-    border-bottom: 3px solid #ffca01;
+    border-bottom: 3px solid #f6b3c4;
     /* Amarillo fuerte */
     padding-bottom: 10px;
 }
@@ -39,7 +39,7 @@
 }
 
 .inscripciones-respaldo p {
-    color: #010e45;
+    color: #0b0b0b;
     font-size: 17px;
     margin-bottom: 20px;
 }
@@ -52,9 +52,9 @@
    .btn-register, que es blanco sobre blanco fuera de las secciones oscuras. */
 .inscripciones-respaldo .btn-respaldo {
     display: inline-block;
-    background: #010e45;
+    background: #0b0b0b;
     color: #ffffff;
-    border: 2px solid #010e45;
+    border: 2px solid #0b0b0b;
     border-radius: 12px;
     padding: 16px 32px;
     font-size: 18px;
@@ -68,7 +68,7 @@
 
 .inscripciones-respaldo .btn-respaldo:hover {
     transform: translateY(-1px);
-    background: #ffca01;
-    border-color: #ffca01;
-    color: #010e45;
+    background: #f6b3c4;
+    border-color: #f6b3c4;
+    color: #0b0b0b;
 }

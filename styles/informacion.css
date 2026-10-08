@@ -13,7 +13,7 @@
 
 #info-maraton h2 {
     font-size: 2rem;
-    color: #010e45;
+    color: #0b0b0b;
     font-weight: bold;
     margin-bottom: 20px;
     line-height: 3rem;
@@ -28,7 +28,7 @@
 #info-maraton .highlight {
     font-size: 1.4rem;
     font-weight: bold;
-    color: #010e45;
+    color: #0b0b0b;
     margin: 10px 0;
 }
 
@@ -48,7 +48,7 @@
 
 #info-maraton .info-box h3 {
     font-size: 1.5rem;
-    color: #010e45;
+    color: #0b0b0b;
     margin-bottom: 10px;
 }
 
@@ -81,7 +81,7 @@
 
 #info-maraton .btn {
     display: inline-block;
-    background: #2c6700;
+    background: #0b0b0b;
     color: white;
     padding: 12px 20px;
     border-radius: 5px;
@@ -92,15 +92,15 @@
 }
 
 #info-maraton .btn:hover {
-    background: #1f4c00;
+    background: #0b0b0b;
 }
 
 #info-maraton .btn-alt {
-    background: #007bff;
+    background: #0b0b0b;
 }
 
 #info-maraton .btn-alt:hover {
-    background: #0056b3;
+    background: #c2577a;
 }
 
 @media (max-width: 493px) {
