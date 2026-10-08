@@ -229,7 +229,7 @@
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container-fluid shared-container navbar-container d-flex align-items-center justify-content-between">
             <a href="index.php" class="navbar-logo-container">
-                <img src="<?= assetUrl('public/images/logo-mmem-2027.webp') ?>" alt="Media Maratón Entre Montañas" class="navbar-logo" width="240" height="240">
+                <img src="<?= assetUrl('public/images/logo-mmem-2027-horizontal.webp') ?>" alt="Media Maratón Entre Montañas" class="navbar-logo" width="436" height="240">
                 <span class="navbar-logo-container-date">19/sep/2027</span>
             </a>
             

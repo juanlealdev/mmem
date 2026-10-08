@@ -167,7 +167,7 @@ body {
     justify-content: center;
     gap: 12px;
     height: 58px;
-    max-width: 220px;
+    max-width: 260px;
     text-decoration: none;
 }
 
@@ -331,7 +331,7 @@ body {
     }
 
     .navbar-logo-container {
-        max-width: 220px;
+        max-width: 260px;
         padding: 8px 0;
     }
 
@@ -459,7 +459,7 @@ body {
     }
 
     .navbar-logo-container {
-        max-width: 220px;
+        max-width: 260px;
     }
 
     .btn-offer-mobile {
