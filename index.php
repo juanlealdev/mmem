@@ -188,19 +188,19 @@
 
   <!-- BANNER DE LA CARRERA -->
   <main class="site-main">
-    <section class="carousel-section" style="margin-top: -90px;">
+    <section class="carousel-section">
       <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
           <div class="carousel-item">
             <picture>
-              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2026/MMEM26_bannervertical_1.avif">
-              <img src="<?= $cdn ?>/Images/2026/MMEM26_banner_1.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2026. A la izquierda, dos corredores ascienden por una carretera montañosa verde y soleada. A la derecha, una corredora sonriente pasa frente a una casa colorida de estilo colonial tradicional en Salento, Quindío. El texto central dice CARRERA DE CALLE DE AFORO LIMITADO con los colores de la bandera de Colombia. La fecha es 13 DOMINGO SEPTIEMBRE 2026.">
+              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2027/MMEM27_bannervertical_1.avif">
+              <img src="<?= $cdn ?>/Images/2027/MMEM27_banner_1.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2027. Un corredor celebra con los brazos en alto sobre una carretera del Valle de Cocora, con palmas de cera y montañas al fondo, junto a casas coloridas de Salento. El texto dice: VALLE DE COCORA - SALENTO / COLOMBIA. CORRE EN UNO DE LOS LUGARES MÁS HERMOSOS DEL PLANETA. 10K y 22K. 19 DE SEPTIEMBRE 2027.">
             </picture>
           </div>
           <div class="carousel-item active">
             <picture>
-              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2026/MMEM26_bannervertical_2.avif">
-              <img src="<?= $cdn ?>/Images/2026/MMEM26_banner_2.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2026. Muestra a un hombre y una mujer corredores sonrientes, luciendo camisetas negras de la carrera, con un fondo abstracto de franjas de colores. A la derecha, una gran multitud de corredores celebra en un pueblo. El texto destaca: UNA CARRERA QUE SOLO PODRÍA OCURRIR AQUÍ, RUNNING ENTRE EL VALLE DE COCORA. La fecha es 13 DOMINGO SEPTIEMBRE 2026.">
+              <source media="(max-width: 575.98px)" srcset="<?= $cdn ?>/Images/2027/MMEM27_bannervertical_2.avif">
+              <img src="<?= $cdn ?>/Images/2027/MMEM27_banner_2.avif" alt="Banner promocional de la Media Maratón Entre Montañas 2027. Una corredora con visera y ropa amarillo neón avanza por una carretera del Valle de Cocora entre palmas de cera y flores rosadas. El texto dice: VALLE DE COCORA - SALENTO / COLOMBIA. CORRE EN UNO DE LOS LUGARES MÁS HERMOSOS DEL PLANETA. 10K y 22K. 19 DE SEPTIEMBRE 2027.">
             </picture>
           </div>
         </div>

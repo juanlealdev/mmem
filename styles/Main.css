@@ -146,6 +146,12 @@ a:hover {
     background-repeat: no-repeat;
 }
 
+/* El body ya reserva el alto del header fijo (padding-top), asi que el
+   banner del hero arranca justo debajo sin compensaciones extra. */
+#imageCarousel .carousel-item img {
+    margin-top: 0;
+}
+
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
