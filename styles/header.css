@@ -152,7 +152,7 @@ body {
     position: relative;
     width: 100%;
     z-index: 2;
-    height: 70px;
+    height: 96px;
     /* Altura fija para escritorio */
 }
 
@@ -166,7 +166,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 2px;
-    height: 60px;
+    height: 82px;
     max-width: 260px;
     text-decoration: none;
 }
@@ -183,7 +183,7 @@ body {
 
 .navbar-logo {
     width: auto;
-    height: 44px;
+    height: 64px;
     position: relative;
 }
 
