@@ -11,12 +11,12 @@
     font-family: 'Inter', sans-serif;
     text-align: center;
     font-size: 32px;
-    color: #010e45;
+    color: #0b0b0b;
     /* Verde oscuro */
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 25px;
-    border-bottom: 3px solid #ffb700;
+    border-bottom: 3px solid #f6b3c4;
     /* Amarillo fuerte */
     padding-bottom: 10px;
 }
@@ -25,7 +25,7 @@
 #reglamento h3 {
     font-family: 'Arial', sans-serif;
     font-size: 22px;
-    color: #010e45;
+    color: #0b0b0b;
     margin-top: 30px;
     font-weight: 900;
     letter-spacing: normal;
@@ -53,13 +53,13 @@
 
 /* Estilo para los iconos en párrafos */
 #reglamento p i {
-    color: #010e45;
+    color: #0b0b0b;
     margin-right: 5px;
 }
 
 /* Enlaces */
 #reglamento a {
-    color: #ffb700;
+    color: #f6b3c4;
     /* Amarillo fuerte */
     text-decoration: none;
     font-weight: bold;
@@ -67,7 +67,7 @@
 
 #reglamento a:hover {
     text-decoration: underline;
-    color: #f18500;
+    color: #c2577a;
     /* Naranja quemado */
 }
 
@@ -88,13 +88,13 @@
 }
 
 #reglamento .website-link {
-    color: #ffb700;
+    color: #f6b3c4;
 }
 
 /* Listas con iconos personalizados */
 #reglamento ul li::before {
     content: "✔";
-    color: #010e45;
+    color: #0b0b0b;
     /* Verde oscuro */
     font-weight: bold;
     position: absolute;
@@ -123,7 +123,7 @@
     background: #f8f9fa;
     border-radius: 5px;
     overflow: hidden;
-    border: 2px solid #010e45;
+    border: 2px solid #0b0b0b;
     /* Borde en toda la tabla */
 }
 
@@ -135,7 +135,7 @@
 }
 
 #reglamento th {
-    background-color: #010e45;
+    background-color: #0b0b0b;
     color: white;
     font-size: 16px;
     text-transform: uppercase;
@@ -154,10 +154,10 @@
 
 /* Bloques destacados */
 #reglamento .destacado {
-    background: #fef7e0;
+    background: #fdeef2;
     /* Fondo amarillo suave */
     padding: 15px;
-    border-left: 6px solid #ffb700;
+    border-left: 6px solid #f6b3c4;
     /* Amarillo fuerte */
     margin: 20px 0;
     font-size: 16px;
@@ -169,7 +169,7 @@
 /* Iconos en los bloques destacados */
 #reglamento .destacado i {
     margin-right: 8px;
-    color: #ffb700;
+    color: #f6b3c4;
 }
 
 /* Grid de categorías */
@@ -187,16 +187,16 @@
     font-size: 16px;
     font-weight: bold;
     text-align: center;
-    color: #010e45 !important;
+    color: #0b0b0b !important;
     background-color: transparent;
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s ease;
-    border: 3px solid #010e45;
+    border: 3px solid #0b0b0b;
 }
 
 .boton:hover {
-    background-color: #010e45;
+    background-color: #0b0b0b;
     transform: translateY(-2px);
     color: #ffffff !important;
 }
@@ -281,7 +281,7 @@
     #reglamento h3 {
         font-size: 16px;
         padding-left: 8px;
-        border-left: 4px solid #010e45;
+        border-left: 4px solid #0b0b0b;
     }
 
     #reglamento p,

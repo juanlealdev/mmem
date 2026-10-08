@@ -17,16 +17,16 @@
 
 /* ----- PALETA DE COLORES ----- */
 :root {
-    --color-verde-claro: #86af05;
-    --color-verde-oscuro: #648d00;
-    --color-naranja: #f18500;
-    --color-amarillo: #ffca01;
+    --color-verde-claro: #0b0b0b;
+    --color-verde-oscuro: #0b0b0b;
+    --color-naranja: #c2577a;
+    --color-amarillo: #f6b3c4;
     --color-blanco: #ffffff;
     --color-gris-fondo: #f9f9f9;
     /* Fondo real de la pagina: lo pinta .site-main y tapa al del body.
        El -rgb existe para poder usarlo con alpha en degradados. */
-    --color-fondo-main: #f0f8ff;
-    --color-fondo-main-rgb: 240, 248, 255;
+    --color-fondo-main: #ffffff;
+    --color-fondo-main-rgb: 255, 255, 255;
     --color-texto: #333;
 }
 
@@ -51,7 +51,7 @@ h6,
 .card-title,
 .custom-text {
     font-family: 'Tallica', sans-serif;
-    color: #010e45;
+    color: #0b0b0b;
     letter-spacing: 1px;
     word-spacing: 2px;
 }
@@ -92,8 +92,8 @@ header a:hover {
 
 /* ----- BOTONES ----- */
 .btn-primary {
-    background-color: transparent;
-    color: #fbb601;
+    background-color: #0b0b0b;
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -102,9 +102,9 @@ header a:hover {
 }
 
 .btn-primary:hover {
-    background-color: #fbb601;
-    color: #FFFFFF;
-    border: 2px solid #fbb601;
+    background-color: #f6b3c4;
+    color: #0b0b0b;
+    border: 2px solid #f6b3c4;
 }
 
 .btn-secondary {
@@ -155,7 +155,7 @@ a:hover {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background: radial-gradient(circle, rgba(34, 193, 195, 1) 0%, rgba(0, 77, 0, 1) 100%);
+    background: radial-gradient(circle, #2a2a2a 0%, #0b0b0b 100%);
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -165,7 +165,7 @@ a:hover {
     box-shadow:
         inset 4px 4px 8px rgba(0, 0, 0, 0.3),
         inset -4px -4px 8px rgba(255, 255, 255, 0.1),
-        0px 4px 15px rgba(0, 255, 100, 0.4);
+        0px 4px 15px rgba(246, 179, 196, 0.4);
     transition: all 0.3s ease-in-out;
     border: 2px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(5px);
@@ -178,8 +178,8 @@ a:hover {
     box-shadow:
         inset 6px 6px 12px rgba(0, 0, 0, 0.3),
         inset -6px -6px 12px rgba(255, 255, 255, 0.1),
-        0px 6px 20px rgba(0, 255, 100, 0.6);
-    background: linear-gradient(145deg, rgba(34, 193, 195, 1) 20%, rgba(0, 77, 0, 1) 80%);
+        0px 6px 20px rgba(246, 179, 196, 0.6);
+    background: linear-gradient(145deg, #2a2a2a 20%, #0b0b0b 80%);
 }
 
 /* Flechas con efecto elegante */
@@ -221,7 +221,7 @@ a:hover {
 
 
 .div_card_inscribete {
-    background-color: #fbb601;
+    background-color: #0b0b0b;
     border-radius: 12px;
     padding: 40px;
     text-align: center;
@@ -243,7 +243,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(251, 182, 1, 0.9);
+    background-color: rgba(11, 11, 11, 0.78);
     border-radius: 12px;
 }
 
@@ -261,10 +261,9 @@ a:hover {
 }
 
 .btn-register {
-    background: transparent;
-    /* Botón naranja → amarillo */
-    color: #ffffff;
-    border: 2px solid #ffffff;
+    background: #f6b3c4;
+    color: #0b0b0b;
+    border: 2px solid #f6b3c4;
     border-radius: 12px;
     padding: 16px 32px;
     font-size: 18px;
@@ -279,8 +278,9 @@ a:hover {
 
 .btn-register:hover {
     transform: translateY(-1px);
-    background: rgba(255, 255, 255, 0.7);
-    color: rgba(251, 182, 1, 0.9);
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #0b0b0b;
 }
 
 .div_card_inscribete h5 {
@@ -367,7 +367,7 @@ a:hover {
 /* SECTION ICONOS DE DISTANCIA CALENDARIO */
 /* Estilos para la sección de información */
 #section_4 .info-item {
-    background: linear-gradient(135deg, var(--color-verde-oscuro), #ffca01);
+    background: #0b0b0b;
     /* Naranja quemado */
     color: white;
     /* Texto blanco */
@@ -397,7 +397,7 @@ a:hover {
 
 /* Íconos con fondo circular amarillo */
 #section_4 .info-icon {
-    background-color: #1b6aa5;
+    background-color: #0b0b0b;
     /* Amarillo */
     border-radius: 50%;
     padding: 20px;
@@ -459,7 +459,7 @@ a:hover {
 }
 
 .social-icons-fixed a {
-    color: #3498db;
+    color: #0b0b0b;
     /* Azul */
     font-size: 32px;
     transition: color 0.3s ease;
@@ -499,7 +499,7 @@ a:hover {
 }
 
 .route-21k > span {
-    color: #ffca01;
+    color: #f6b3c4;
     font-size: 14px;
 }
 
@@ -541,7 +541,7 @@ a:hover {
 }
 
 #section_6 .recorrido-texto {
-    background-color: rgba(255, 202, 1, 0.1);
+    background-color: rgba(246, 179, 196, 0.1);
     /* Amarillo suave */
 
     border-radius: 10px;
@@ -567,7 +567,7 @@ a:hover {
 
 #section_6 .row .col .texto {
     width: 50%;
-    background: linear-gradient(135deg, #85A31D, #F7941D);
+    background: linear-gradient(135deg, #0b0b0b, #2a2a2a);
 }
 
 
@@ -576,9 +576,9 @@ a:hover {
 
 /* Botones o textos importantes */
 #section_6 .boton-destacado {
-    background-color: #f18500;
+    background-color: #0b0b0b;
     /* Fondo naranja */
-    color: #ffca01;
+    color: #f6b3c4;
     /* Texto amarillo fuerte */
     padding: 10px 15px;
     border-radius: 5px;
@@ -634,7 +634,7 @@ h3 {
 
 /* ----- SECCIÓN CARRUSEL GALERÍA ----- */
 #galeria {
-    background: #dd0a1e;
+    background: #0b0b0b;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -674,7 +674,10 @@ h3 {
 
 /* ----- FOOTER ----- */
 .footer_marathon {
-    background-color: #dd0a1e;;
+    /* El correo es una palabra larga sin cortes: en pantallas angostas
+       desbordaba la pagina a lo ancho y eso descuadraba el header fijo. */
+    overflow-wrap: anywhere;
+    background-color: #0b0b0b;;
     color: var(--color-blanco);
     padding: 15px 0;
     text-align: justify;
@@ -730,7 +733,7 @@ h3 {
 }
 
 .progress-fill {
-    background-color: #f5b000;
+    background-color: #f6b3c4;
     height: 98%;
     width: 70%;
     /* ajusta dinámicamente este valor */
@@ -745,7 +748,7 @@ h3 {
     transform: translate(-50%, -50%);
     font-size: 45px;
     font-weight: bold;
-    color: #91b706;
+    color: #f6b3c4;
     font-family: 'Arial', sans-serif;
     z-index: 2;
     text-shadow:
@@ -763,7 +766,7 @@ h3 {
 
 .progress-label .vendidos {
     font-size: 22px;
-    color: #ffb700;
+    color: #f6b3c4;
     font-weight: 900;
     font-family: 'Arial', sans-serif;
 }
@@ -834,8 +837,8 @@ h3 {
     width: max-content;
     /* La duracion es del set completo, asi que al agregar logos hay que subirla o
        el carrusel acelera. 69s cuadraban con 8 logos (~2350px); con 10 (~3270px)
-       el equivalente a la misma velocidad son 96s. */
-    animation: scroll 96s linear infinite;
+       el equivalente a la misma velocidad son 96s; con 3 (~790px), 23s. */
+    animation: scroll 23s linear infinite;
 }
 
 .logo-item {
@@ -1007,6 +1010,7 @@ h3 {
     bottom: 20px;
     right: 30px;
     width: 120px;
+    height: auto;
 }
 
 /* ----- BANNER HOTEL OFICIAL ----- */
@@ -1023,7 +1027,7 @@ h3 {
 
 /* ----- SECCIÓN VINCULA TU MARCA ----- */
 #link-your-brand-section {
-    background: #f0f8ff;
+    background: #ffffff;
     color: #ffffff;
     padding: 80px 0;
 }
@@ -1077,7 +1081,7 @@ h3 {
     gap: 16px;
     padding: 32px;
     border-radius: 16px;
-    background: rgba(255, 202, 1, 0.2);
+    background: rgba(246, 179, 196, 0.2);
     backdrop-filter: blur(4px);
 }
 
@@ -1092,14 +1096,14 @@ h3 {
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: #F1961E;
+    color: #0b0b0b;
 }
 
 .link-brand-form input {
     width: 100%;
     padding: 12px 16px;
     border-radius: 10px;
-    border: 1px solid rgba(241, 150, 30, 0.2);
+    border: 1px solid rgba(11, 11, 11, 0.2);
     background: rgba(255, 255, 255, 0.6);
     color: #333333;
     font-size: 1rem;
@@ -1108,12 +1112,12 @@ h3 {
 
 .link-brand-form input:focus {
     outline: none;
-    border-color: rgb(241, 150, 30);
+    border-color: rgb(11, 11, 11);
 }
 
 .link-brand-form button {
     margin-top: 24px;
-    border: 2px solid #fbb601;
+    border: 2px solid #0b0b0b;
     align-self: flex-end;
     min-width: 160px;
     text-transform: uppercase;
@@ -1189,7 +1193,7 @@ h3 {
 /* -----  arma tu plan ----- */
 
 .plan-container {
-    background: linear-gradient(0deg, #dd0a1e, #fbb601);
+    background: #0b0b0b;
     width: 100%;
     overflow-x: hidden;
     padding: 80px 0;
@@ -1234,7 +1238,7 @@ h3 {
 }
 
 .plan-card {
-    background: #fbb601;
+    background: #f6b3c4;
     border-radius: 2px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     overflow: hidden;
@@ -1328,7 +1332,7 @@ h3 {
         box-shadow:
             inset 3px 3px 6px rgba(0, 0, 0, 0.3),
             inset -3px -3px 6px rgba(255, 255, 255, 0.1),
-            0px 3px 10px rgba(0, 255, 100, 0.3);
+            0px 3px 10px rgba(246, 179, 196, 0.3);
     }
 
     .carousel-control-prev-icon::after,
@@ -1343,7 +1347,7 @@ h3 {
         box-shadow:
             inset 4px 4px 8px rgba(0, 0, 0, 0.3),
             inset -4px -4px 8px rgba(255, 255, 255, 0.1),
-            0px 4px 15px rgba(0, 255, 100, 0.4);
+            0px 4px 15px rgba(246, 179, 196, 0.4);
     }
 
     /* Ajustar las flechas para que se vean bien en tamaños pequeños */
@@ -1426,7 +1430,7 @@ h3 {
     }
 
     .progress-fill {
-        background-color: #f5b000;
+        background-color: #f6b3c4;
         height: 98%;
         width: 70%;
         border-radius: 40px;
@@ -1439,7 +1443,7 @@ h3 {
         transform: translate(-50%, -50%);
         font-size: 30px;
         font-weight: bold;
-        color: #91b706;
+        color: #f6b3c4;
         font-family: 'Arial', sans-serif;
         z-index: 2;
         text-shadow:
@@ -1457,7 +1461,7 @@ h3 {
 
     .progress-label .vendidos {
         font-size: 20px;
-        color: #ffb700;
+        color: #f6b3c4;
         font-weight: 900;
         font-family: 'Arial', sans-serif;
     }
@@ -1716,7 +1720,7 @@ h3 {
     }
 
     .progress-fill {
-        background-color: #f5b000;
+        background-color: #f6b3c4;
         height: 98%;
         width: 70%;
         border-radius: 40px;
@@ -1729,7 +1733,7 @@ h3 {
         transform: translate(-50%, -50%);
         font-size: 26px;
         font-weight: bold;
-        color: #91b706;
+        color: #f6b3c4;
         font-family: 'Arial', sans-serif;
         z-index: 2;
         text-shadow:
@@ -1747,7 +1751,7 @@ h3 {
 
     .progress-label .vendidos {
         font-size: 17px;
-        color: #ffb700;
+        color: #f6b3c4;
         font-weight: 900;
         font-family: 'Arial', sans-serif;
     }
@@ -1928,7 +1932,7 @@ h3 {
 
 .temp-map-card {
     flex: 1;
-    background: linear-gradient(135deg, rgba(163, 8, 26, 0.95), #a3081a);
+    background: linear-gradient(135deg, rgba(11, 11, 11, 0.95), #0b0b0b);
     border-radius: 16px;
     padding: 24px;
     color: #ffffff;
@@ -1965,8 +1969,8 @@ h3 {
 
 .btn-track {
     background: transparent;
-    color: rgba(255, 202, 1, 0.9);
-    border: 2px solid rgba(255, 202, 1, 0.9);
+    color: rgba(246, 179, 196, 0.9);
+    border: 2px solid rgba(246, 179, 196, 0.9);
     border-radius: 10px;
     padding: 8px 18px;
     font-size: 14px;
@@ -1982,8 +1986,8 @@ h3 {
 
 .btn-track:hover,
 .btn-track:focus {
-    background: rgba(255, 202, 1, 0.9);
-    color: #a3081a;
+    background: rgba(246, 179, 196, 0.9);
+    color: #0b0b0b;
 }
 
 .temp-map-copy p {
@@ -2002,6 +2006,10 @@ h3 {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
+    /* Las graficas de altimetria vienen en rojo/amarillo (edicion 2026); en
+       escala de grises encajan con la paleta negro/blanco/rosa hasta tener
+       las nuevas. */
+    filter: grayscale(1);
 }
 
 @media (min-width: 992px) {

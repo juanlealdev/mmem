@@ -1,5 +1,5 @@
 <?php
-    $pageTitle = "Inscripciones | Media Maratón Entre Montañas | Desafío Cocora";
+    $pageTitle = "Inscripciones | Media Maratón Entre Montañas 2027 | Desafío Cocora";
     $pageDescription = "Inscríbete a la Media Maratón Entre Montañas 2027 en Salento, Quindío: 22K y 10K el domingo 19 de septiembre. Aforo limitado, solo mayores de 18 años.";
     $pageUrl = "https://mediamaratonentremontanas.com.co/inscripciones.php";
 

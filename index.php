@@ -1,5 +1,5 @@
 <?php
-  $pageTitle = "Media Maratón Entre Montañas | Valle de Cocora - Salento";
+  $pageTitle = "Media Maratón Entre Montañas 2027 | Valle de Cocora - Salento";
 
   include_once('./Templates/header.php');
   include_once('./Templates/redes_icons.php'); // Asegúrate de que este archivo no imprima HTML antes de <body>
@@ -15,16 +15,9 @@
   // y para calcular la altura optica). 'escala' es un ajuste fino opcional para
   // logos cuyo trazo pesa mas de lo que sugiere su caja (por defecto 1).
   $patrocinadores = [
-    [ 'src' => $logosBase .'/decathlon.webp',       'alt' => 'Decathlon',                  'w' => 600, 'h' =>  90, 'escala' => 0.82 ],
     [ 'src' => $logosBase .'/ugua.webp',            'alt' => 'Ügua',                       'w' => 600, 'h' => 283, 'escala' => 0.85 ],
-    [ 'src' => $logosBase .'/la-montana.webp',      'alt' => 'La Montaña Agromercados',    'w' => 600, 'h' => 181 ],
     [ 'src' => $logosBase .'/electrolife-2026.webp','alt' => 'Electrolife',                'w' => 896, 'h' => 327 ],
     [ 'src' => $logosBase .'/4-elementos.webp',     'alt' => '4 Elementos café artesanal', 'w' => 600, 'h' => 525 ],
-    [ 'src' => $logosBase .'/txs.webp',             'alt' => 'TXS Steaks & Burgers',       'w' => 530, 'h' => 294 ],
-    [ 'src' => $logosBase .'/por-mi-colombia-turismo.webp',     'alt' => 'Por Mi Colombia: promuevo un turismo responsable',                'w' => 600, 'h' => 125, 'escala' => 1.4 ],
-    [ 'src' => $logosBase .'/por-mi-colombia-ninez.webp',       'alt' => 'Por Mi Colombia: protejo de la explotación sexual comercial a nuestras niñas, niños y adolescentes', 'w' => 600, 'h' => 154, 'escala' => 1.4 ],
-    [ 'src' => $logosBase .'/por-mi-colombia-ecosistemas.webp', 'alt' => 'Por Mi Colombia: protejo los ecosistemas y sus especies',         'w' => 600, 'h' => 129, 'escala' => 1.4 ],
-    [ 'src' => $logosBase .'/healthy-sports.webp',  'alt' => 'Healthy Sports',             'w' => 212, 'h' =>  97 ],
   ];
 
   // Altura optica: en vez de una altura fija (que hace enormes a los logos anchos),
@@ -43,8 +36,8 @@
   // El carrusel repite el set N veces y se desplaza exactamente 100/N %, que es
   // justo el ancho de un set: asi el loop empalma sin saltos.
   // N debe ser suficiente para que (N-1) sets cubran la pantalla mas ancha; con
-  // 10 logos un set mide ~3270px, asi que 3 copias cubren hasta ~6540px.
-  $copiasCarrusel = 3;
+  // 3 logos un set mide ~790px, asi que 6 copias cubren hasta ~3950px.
+  $copiasCarrusel = 6;
   
   $galleryFiles = [
     'F1-MIBUC (117).avif',
@@ -286,7 +279,7 @@
 
       <!-- VIDEO INTRODUCCIÓN -->
       <div class="video-intro-container">
-        <video src="<?= $cdn ?>/videos/RESUMEN_MMEM2025.mp4" controls playsinline muted autoplay loop></video>
+        <video src="<?= $cdn ?>/videos/MMEM2027_intro.mp4" poster="<?= $cdn ?>/videos/MMEM2027_intro_poster.webp" width="720" height="1280" controls playsinline muted autoplay loop></video>
       </div>
       
       <!-- INTRODUCCIÓN A LA CARRERA -->
@@ -483,7 +476,7 @@
           </div>
           <div class="arrow right" onclick="nextTestimonial()">&#8250;</div>
         </div>
-        <img class="testimonial-logo" src="<?= $cdn ?>/Images/2025/mmem_logo.svg" alt="MMEM Logo" />
+        <img class="testimonial-logo" src="<?= assetUrl('public/images/logo-mmem-2027.webp') ?>" alt="Media Maratón Entre Montañas" width="240" height="240" loading="lazy" />
       </div>
     </section>
 
