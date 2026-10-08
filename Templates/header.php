@@ -230,7 +230,7 @@
         <div class="container-fluid shared-container navbar-container d-flex align-items-center justify-content-between">
             <a href="index.php" class="navbar-logo-container">
                 <img src="public/images/logo.svg" alt="Logo" class="navbar-logo">
-                <span class="navbar-logo-container-date">13/sep/2026</span>
+                <span class="navbar-logo-container-date">19/sep/2027</span>
             </a>
             
             <div class="navbar-toggle-wrapper d-lg-none">
@@ -244,18 +244,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">INICIO</a></li>
+                    <?php /* Desplegable original. Con el reglamento oculto quedaba con un solo
+                             item, asi que INFORMACION va directo a Informacion.php. Para
+                             restaurarlo: descomentar este bloque y borrar el <li> de abajo.
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav_link_subMenu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             INFORMACIÓN
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="Reglamento.php">Reglamento</a></li>
-                            <li><a class="dropdown-item" href="Informacion.php">Infomación general</a></li>
+                            <li><a class="dropdown-item" href="Informacion.php">Información general</a></li>
                         </ul>
                     </li>
+                    */ ?>
+                    <li class="nav-item"><a class="nav-link" href="Informacion.php">INFORMACIÓN</a></li>
                     <!-- <li class="nav-item me-3"><a class="nav-link" href="Resultados.php">MM2024</a></li> -->
                     <li class="nav-item" >
-                        <a class="nav-link last-nav-link" href="Inscripciones.php" role="button" aria-expanded="false">
+                        <a class="nav-link last-nav-link" href="inscripciones.php" role="button" aria-expanded="false">
                             INSCRIPCIONES
                         </a>
                     </li>
@@ -267,11 +272,10 @@
     </nav>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         // Tu script de JavaScript existente para el contador y el posicionamiento
         function updateCountdownAndHeaderPosition() {
-            const targetDate = new Date("2026-09-13T00:00:00");
+            const targetDate = new Date("2027-09-19T00:00:00");
             const now = new Date();
             const diff = targetDate - now;
 
