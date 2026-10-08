@@ -15,11 +15,11 @@
 
     // Define metadata defaults if they are not set before including the header
     if (!isset($pageTitle)) {
-        $pageTitle = "Media Maratón Entre Montañas | Salento, Valle del Cocora, Quindío";
+        $pageTitle = "Media Maratón Entre Montañas 2027 | Salento, Valle del Cocora, Quindío";
     }
 
     if (!isset($pageDescription)) {
-        $pageDescription = "Disfruta de una carrera de 22 km sobre asfalto, con vistas espectaculares de la Cordillera Central, las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!";
+        $pageDescription = "Media Maratón Entre Montañas 2027: el 19 de septiembre de 2027 corre 22K o 10K sobre asfalto, con vistas espectaculares de la Cordillera Central, las majestuosas palmas de cera y de las típicas casas pintorescas de Salento, descubre la magia del Quindío. ¡Inscríbete ahora y sé parte de esta gran aventura!";
     }
 
     $siteBaseUrl = "https://mediamaratonentremontanas.com.co";
@@ -120,12 +120,12 @@
    <title><?= htmlspecialchars($pageTitle) ?></title>
 
     <link rel="preconnect" href="<?= $cdn ?>"/>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="<?= assetUrl('favicon.png') ?>">
 
     <meta name="description" content="<?= htmlspecialchars($pageDescription) ?>">
     <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento">
     <meta name="author" content="Media Maratón Entre Montañas | Valle de Cocora - Salento">
-    <meta name="copyright" content="© 2026 MMEM | Valle de Cocora - Salento">
+    <meta name="copyright" content="© 2027 MMEM | Valle de Cocora - Salento">
 
     <link rel="canonical" href="<?= htmlspecialchars($pageUrl) ?>">
 
@@ -229,7 +229,7 @@
     <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container-fluid shared-container navbar-container d-flex align-items-center justify-content-between">
             <a href="index.php" class="navbar-logo-container">
-                <img src="public/images/logo.svg" alt="Logo" class="navbar-logo">
+                <img src="<?= assetUrl('public/images/logo-mmem-2027-horizontal.webp') ?>" alt="Media Maratón Entre Montañas" class="navbar-logo" width="436" height="240">
                 <span class="navbar-logo-container-date">19/sep/2027</span>
             </a>
             

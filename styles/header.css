@@ -15,7 +15,7 @@
     z-index: 1050;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to top, #010e45, #1b6aa5);
+    background: #0b0b0b;
     transition: transform 0.3s ease;
     will-change: transform;
 }
@@ -92,8 +92,8 @@ body {
 }
 
 .countdown div {
-    background-color: #1b6aa5;
-    color: rgba(255, 255, 255, 0.9);
+    background-color: #1f1f1f;
+    color: #f6b3c4;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
@@ -140,9 +140,9 @@ body {
 }
 
 .alert-button:hover {
-    background: #010e45;
-    color: #1b6aa5;
-    border: 2px solid #010e45;
+    background: #f6b3c4;
+    color: #0b0b0b;
+    border: 2px solid #f6b3c4;
 }
 
 /* Estilo general del Navbar */
@@ -152,7 +152,7 @@ body {
     position: relative;
     width: 100%;
     z-index: 2;
-    height: 70px;
+    height: 96px;
     /* Altura fija para escritorio */
 }
 
@@ -165,23 +165,25 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 40px;
-    max-width: 200px;
+    gap: 2px;
+    height: 82px;
+    max-width: 260px;
+    text-decoration: none;
 }
 
 .navbar-logo-container-date {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
-    line-height: 20px;
-    color: #fbb601;
+    line-height: 14px;
+    color: #f6b3c4;
     text-transform: uppercase;
     letter-spacing: 1px;
-    opacity: 0.8;
+    white-space: nowrap;
 }
 
 .navbar-logo {
     width: auto;
-    height: 100%;
+    height: 64px;
     position: relative;
 }
 
@@ -189,13 +191,13 @@ body {
     font-family: 'Georgia', serif;
     font-size: 1.8rem;
     font-weight: bold;
-    color: #fbb601;
+    color: #f6b3c4;
     text-transform: uppercase;
     transition: color 0.3s ease;
 }
 
 .navbar-brand:hover {
-    color: #f18500;
+    color: #ffffff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -203,14 +205,14 @@ body {
 .nav-link {
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
-    color: #fbb601;
+    color: #f6b3c4;
     margin-right: 15px;
     text-transform: capitalize;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #f18500;
+    color: #ffffff;
     transform: scale(1.05);
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
@@ -328,9 +330,12 @@ body {
         flex-wrap: wrap;
     }
 
+    /* Alto automatico: con el alto fijo de escritorio el logo y la fecha se
+       salian de la caja y se comian el padding de la barra. */
     .navbar-logo-container {
-        max-width: 150px;
-        padding: 8px 0;
+        max-width: 260px;
+        height: auto;
+        padding: 0;
     }
 
     .btn-offer-mobile {
@@ -348,7 +353,7 @@ body {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: #010e45;
+        background-color: #0b0b0b;
         z-index: 1000;
         /* Importante: Ajustar max-height para que quepa en el viewport debajo del contador y navbar */
         /* calc(100vh - (altura contador + altura navbar)) */
@@ -394,7 +399,7 @@ body {
         /* Eliminar el padding a la izquierda para que no empuje el texto */
         text-align: center;
         /* Cambiar a center para alinear el texto al centro */
-        color: #fbb601;
+        color: #f6b3c4;
         display: block;
         /* Asegurarse de que sea un bloque para que text-align funcione correctamente */
         padding: 10px 0;
@@ -402,7 +407,7 @@ body {
 
     .dropdown-item:hover {
         background-color: rgba(255, 255, 255, 0.1);
-        color: #f18500;
+        color: #ffffff;
     }
 }
 
@@ -452,12 +457,12 @@ body {
     }
 
     .navbar-container {
-        padding: 4px 12px !important;
+        padding: 12px 20px !important;
         flex-wrap: wrap;
     }
 
     .navbar-logo-container {
-        max-width: 150px;
+        max-width: 260px;
     }
 
     .btn-offer-mobile {
