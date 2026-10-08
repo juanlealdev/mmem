@@ -330,14 +330,12 @@ body {
         flex-wrap: wrap;
     }
 
+    /* Alto automatico: con el alto fijo de escritorio el logo y la fecha se
+       salian de la caja y se comian el padding de la barra. */
     .navbar-logo-container {
         max-width: 260px;
         height: auto;
-        padding: 4px 0;
-    }
-
-    .navbar-logo {
-        height: 44px;
+        padding: 0;
     }
 
     .btn-offer-mobile {
@@ -459,7 +457,7 @@ body {
     }
 
     .navbar-container {
-        padding: 4px 12px !important;
+        padding: 12px 20px !important;
         flex-wrap: wrap;
     }
 
