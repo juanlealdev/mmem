@@ -332,7 +332,12 @@ body {
 
     .navbar-logo-container {
         max-width: 260px;
-        padding: 8px 0;
+        height: auto;
+        padding: 4px 0;
+    }
+
+    .navbar-logo {
+        height: 44px;
     }
 
     .btn-offer-mobile {
