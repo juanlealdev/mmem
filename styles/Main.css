@@ -674,6 +674,9 @@ h3 {
 
 /* ----- FOOTER ----- */
 .footer_marathon {
+    /* El correo es una palabra larga sin cortes: en pantallas angostas
+       desbordaba la pagina a lo ancho y eso descuadraba el header fijo. */
+    overflow-wrap: anywhere;
     background-color: #0b0b0b;;
     color: var(--color-blanco);
     padding: 15px 0;
