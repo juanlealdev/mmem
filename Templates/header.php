@@ -120,7 +120,7 @@
    <title><?= htmlspecialchars($pageTitle) ?></title>
 
     <link rel="preconnect" href="<?= $cdn ?>"/>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="<?= assetUrl('favicon.png') ?>">
 
     <meta name="description" content="<?= htmlspecialchars($pageDescription) ?>">
     <meta name="keywords" content="Media Maratón, Carrera 10K, Quindío, Colombia, Valle del Cocora, Salento">
