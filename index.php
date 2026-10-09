@@ -476,7 +476,7 @@
           </div>
           <div class="arrow right" onclick="nextTestimonial()">&#8250;</div>
         </div>
-        <img class="testimonial-logo" src="<?= assetUrl('public/images/logo-mmem-2027.webp') ?>" alt="Media Maratón Entre Montañas" width="240" height="240" loading="lazy" />
+        <img class="testimonial-logo" src="<?= assetUrl('public/images/logo-mmem-2027-blanco.webp') ?>" alt="Media Maratón Entre Montañas" width="512" height="240" loading="lazy" />
       </div>
     </section>
 
