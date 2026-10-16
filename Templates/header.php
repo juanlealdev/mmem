@@ -220,7 +220,11 @@
                     </div>
                 </div>
 
-                <a href="https://estoesquindio.com/categoria-producto/colombia-magica-mmem-x-eeq/" target="_blank" rel="noopener noreferrer" class="alert-button">Tienda Merch</a>
+                <div class="alert-buttons">
+                    <a href="https://estoesquindio.com/categoria-producto/colombia-magica-mmem-x-eeq/" target="_blank" rel="noopener noreferrer" class="alert-button">Tienda Merch</a>
+                    <a href="http://www.mibuc.co/mmentremontanas" target="_blank" rel="noopener noreferrer" class="alert-button">Descarga tus fotos</a>
+                    <a href="https://kronoone.co/kronoone/webroot/kronoone.php?id=384" target="_blank" rel="noopener noreferrer" class="alert-button">Resultados 2026</a>
+                </div>
             </div>
         </div>
     </div>

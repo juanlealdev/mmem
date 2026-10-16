@@ -126,7 +126,43 @@ body {
     margin-top: 0;
 }
 
+/* Los tres botones no caben junto al texto y el contador sin partir el texto
+   en dos lineas, asi que en escritorio van en su propia fila. */
+@media(min-width: 993px) {
+    .alert-content-container {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .alert-content-container .alert-buttons {
+        flex-basis: 100%;
+        justify-content: flex-end;
+    }
+
+    .alert-content-container .alert-text {
+        flex: 1 1 0;
+        min-width: 0;
+        text-align: left;
+    }
+}
+
+@media(min-width: 993px) and (max-width: 1279px) {
+    .alert-content-container .alert-text {
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: 2px;
+    }
+}
+
+.alert-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 .alert-button {
+    white-space: nowrap;
     background-color: transparent;
     color: #ffffff;
     border: 2px solid #ffffff;
