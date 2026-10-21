@@ -253,6 +253,43 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* Bootstrap pinta en negro el desplegable abierto (.show) o el link activo
+   y le pone un anillo de foco azul; sobre el header negro no se veian. */
+.navbar-nav .nav-link.show,
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus {
+    color: #ffffff;
+}
+
+.navbar-nav .nav-link:focus-visible {
+    box-shadow: none;
+    outline: 2px solid #f6b3c4;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+/* Desplegable de escritorio en la paleta del header */
+.dropdown-menu {
+    background-color: #0b0b0b;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dropdown-item {
+    color: #f6b3c4;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.dropdown-item:active,
+.dropdown-item.active {
+    background-color: #f6b3c4;
+    color: #0b0b0b;
+}
+
 .btn-offer-mobile,
 .btn-offer {
     background-color: black;

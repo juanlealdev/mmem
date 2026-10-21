@@ -59,7 +59,8 @@
 
 /* Enlaces */
 #reglamento a {
-    color: #f6b3c4;
+    /* El rosa de marca no se lee sobre blanco; los enlaces usan su tono oscuro. */
+    color: #c2577a;
     /* Amarillo fuerte */
     text-decoration: none;
     font-weight: bold;
@@ -67,7 +68,7 @@
 
 #reglamento a:hover {
     text-decoration: underline;
-    color: #c2577a;
+    color: #0b0b0b;
     /* Naranja quemado */
 }
 
@@ -150,6 +151,24 @@
 /* Resaltar filas impares en la tabla */
 #reglamento tr:nth-child(odd) td {
     background-color: #f2f2f2;
+}
+
+/* Las tablas anchas (precios, premiación) se desplazan dentro de su caja
+   en pantallas angostas en lugar de desbordar la página. */
+#reglamento .tabla-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+#reglamento .tabla-ancha table {
+    min-width: 640px;
+}
+
+#reglamento caption {
+    caption-side: top;
+    font-weight: bold;
+    color: #0b0b0b;
+    padding: 0 0 8px;
 }
 
 /* Bloques destacados */
