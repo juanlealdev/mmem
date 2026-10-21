@@ -248,9 +248,6 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">INICIO</a></li>
-                    <?php /* Desplegable original. Con el reglamento oculto quedaba con un solo
-                             item, asi que INFORMACION va directo a Informacion.php. Para
-                             restaurarlo: descomentar este bloque y borrar el <li> de abajo.
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle nav_link_subMenu" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             INFORMACIÓN
@@ -260,8 +257,6 @@
                             <li><a class="dropdown-item" href="Informacion.php">Información general</a></li>
                         </ul>
                     </li>
-                    */ ?>
-                    <li class="nav-item"><a class="nav-link" href="Informacion.php">INFORMACIÓN</a></li>
                     <!-- <li class="nav-item me-3"><a class="nav-link" href="Resultados.php">MM2024</a></li> -->
                     <li class="nav-item" >
                         <a class="nav-link last-nav-link" href="inscripciones.php" role="button" aria-expanded="false">
